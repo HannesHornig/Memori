@@ -13,7 +13,9 @@ This is a web application version of the classic memory game built with React. I
 
 -   Match three cards cards instead of two
 
-## To Play
+## [Demo](https://responsive-tiled-grid.firebaseapp.com)
+
+## Run Locally
 
 -   Run the following commands in a command prompt:
     -   `npm install`
