@@ -13,7 +13,7 @@ This is a web application version of the classic memory game built with React. I
 
 -   Match three cards cards instead of two
 
-## [Demo](https://responsive-tiled-grid.firebaseapp.com)
+## [Demo](https://game-of-memory.firebaseapp.com)
 
 ## Run Locally
 
