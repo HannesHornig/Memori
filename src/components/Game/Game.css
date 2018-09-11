@@ -1,0 +1,68 @@
+.game {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-wrapper {
+    position: relative;
+}
+
+.grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: grid;
+    grid-gap: 2rem;
+    font-size: 4vmax;
+}
+
+.easy {
+    width: 60vmax;
+    padding: 3rem;
+}
+
+.easy .grid-wrapper {
+    padding-top: 50%;
+}
+
+.easy .grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.hard {
+    width: 35vmax;
+}
+
+.hard .grid-wrapper {
+    padding-top: 100%;
+}
+
+.hard .grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.triples {
+    width: 55vmax;
+}
+
+.triples .grid-wrapper {
+    padding-top: 66%;
+}
+
+.triples .grid {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
