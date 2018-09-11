@@ -26,16 +26,16 @@ class Game extends Component {
 
     componentDidMount() {
         const difficulty = this.props.difficulty;
-        
+
         const selectedLevel = games.find(game => game.difficulty === difficulty);
 
-                const cards = selectedLevel.cards.map(symbol => ({
-                    id: shortid.generate(),
-                    symbol,
-                    matched: false
-                }));
+        const cards = selectedLevel.cards.map(symbol => ({
+            id: shortid.generate(),
+            symbol,
+            matched: false
+        }));
 
-                this.renderCards(cards);
+        this.renderCards(cards);
     }
 
     renderCards(cards) {
@@ -128,19 +128,18 @@ class Game extends Component {
     flipCard(cardIndex, direction) {
         const rotateValue = direction === "back" ? 0 : 1;
 
-        return Animated.stagger(200, [
+        return Animated.stagger(100, [
             Animated.timing(this.state.scaleCards[cardIndex], {
                 toValue: 1.2,
-                duration: 200
+                duration: 100
             }),
-            Animated.spring(this.state.rotateCards[cardIndex], {
+            Animated.timing(this.state.rotateCards[cardIndex], {
                 toValue: rotateValue,
-                speed: 2,
-                bounciness: 5
+                duration: 200
             }),
             Animated.timing(this.state.scaleCards[cardIndex], {
                 toValue: 1,
-                duration: 200
+                duration: 100
             })
         ]);
     }
