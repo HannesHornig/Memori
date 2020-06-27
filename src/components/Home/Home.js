@@ -13,10 +13,10 @@ const Home = () => (
     <div className="home">
         <h1 className="header">Globales Memory<img src={logo}></img></h1>
         <div className="difficulty-container">
-            <div className="linkClass"> <Link to="/game/easy" ><img src={memory} height ={height}></img>Spiel mit 15 gemischten Karten</Link></div>
-            <div className="linkClass">  <Link to="/game/hard"><img src={doubleMemory} height ={height}></img>Spiel mit allen 30 Karten</Link></div>
-            <div className="linkClass"> <Link to="/game/triples"><img src={gurke} height ={height}></img>Spiel nur mit den Gemüse Karten</Link></div>
-            <div className="linkClass"> <Link to="/game/triples"><img src={banane} height ={height}></img>Spiel nur mit den Obst Karten</Link></div>
+            <div className="homeLinkClass"> <Link to="/game/easy" ><img src={memory} height ={height}></img>Spiel mit 15 gemischten Karten</Link></div>
+            <div className="homeLinkClass">  <Link to="/game/hard"><img src={doubleMemory} height ={height}></img>Spiel mit allen 30 Karten</Link></div>
+            <div className="homeLinkClass"> <Link to="/game/triples"><img src={gurke} height ={height}></img>Spiel nur mit den Gemüse Karten</Link></div>
+            <div className="homeLinkClass"> <Link to="/game/triples"><img src={banane} height ={height}></img>Spiel nur mit den Obst Karten</Link></div>
         </div>
     </div>
 );

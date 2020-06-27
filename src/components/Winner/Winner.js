@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { formatTime } from "../Timer/Timer";
 import "./Winner.css";
+import logo from "../../pictures/Grenzgaenger_Logo.PNG";
 
 class Winner extends Component {
     constructor(props) {
@@ -13,9 +14,10 @@ class Winner extends Component {
     render() {
         return (
             <div className="winner">
-                <p className="congrats-text">Congratulations, you just finished the game in {formatTime(this.props.time)}</p>
-                <div>
-                    <Link to="/">Main Menu</Link>
+                <img src={logo}></img>
+                <p className="congrats-text">Super!!! Du hast das Global Memory in der Zeit von {formatTime(this.props.time)} gewonnen.</p>
+                <div className="winnerLinkClass">
+                    <Link to="/">Zurück zum Hauptmenü</Link>
                 </div>
             </div>
         );
