@@ -4,11 +4,11 @@
         "difficulty": "easy"
     },
     {
-        "cards": ["potatoe", "cucumber"],
+        "cards": ["potatoe", "cucumber", "orange"],
          "difficulty": "hard"
     },
     {
-        "cards": ["potatoe", "cucumber"],
+        "cards": ["potatoe", "cucumber", "orange"],
                 "difficulty": "triples"
     }
 ]

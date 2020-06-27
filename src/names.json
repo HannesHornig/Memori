@@ -6,15 +6,25 @@
             "/pictures/Kartoffelpflanze.jpg",
             "/pictures/Bratkartoffeln.jpg"
         ],
-        "text": "TEEEEEEEEEEEEEEEEEEEXT"
+        "text": "Ich bin die Kartoffel und ich bin klein und rund und süß."
     },
     {
         "name": "cucumber",
         "image_paths": [
-            "/pictures/Gurke.jpg",
-            "/pictures/Banane.jpg",
-            "/pictures/Quadrate.png"
+            "/pictures/Maracuja.PNG",
+            "/pictures/MaracujaKuchen.PNG",
+            "/pictures/MaracujaPflanze.PNG"
+
         ],
-        "text": "anderer Text"
+        "text": "Die Maracuja ist ein kleines Schätzchen, die besonders mit Wodka gut schmeckt."
+    },
+    {
+        "name": "orange",
+        "image_paths": [
+            "/pictures/Orange.PNG",
+            "/pictures/Orangenbaum.PNG",
+            "/pictures/Orangensaft.PNG"
+        ],
+        "text": "Die Orange schmeckt gut, zum Wachsen braucht sie aber viel Wasser."
     }
 ]
