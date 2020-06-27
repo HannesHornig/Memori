@@ -6,7 +6,7 @@
             "/pictures/Kartoffelpflanze.jpg",
             "/pictures/Bratkartoffeln.jpg"
         ],
-        "text": "Ich bin die Kartoffel und ich bin klein und rund und süß."
+        "text": "Ich bin die Kartoffel und ich bin klein und rund und süß. Ich kam mit Columbus aus Südamerika und viele Menschen in Deutschland denken, dass ich ein tradidionell deutsches Gemüse bin."
     },
     {
         "name": "cucumber",
@@ -16,7 +16,7 @@
             "/pictures/MaracujaPflanze.PNG"
 
         ],
-        "text": "Die Maracuja ist ein kleines Schätzchen, die besonders mit Wodka gut schmeckt."
+        "text": "Die Maracuja ist ein kleines Schätzchen, die besonders mit Wodka gut schmeckt. Wenn man eine Maracuja isst, ist man immer traurig, dass sie so wenig Inhalt hat."
     },
     {
         "name": "orange",
@@ -25,6 +25,6 @@
             "/pictures/Orangenbaum.PNG",
             "/pictures/Orangensaft.PNG"
         ],
-        "text": "Die Orange schmeckt gut, zum Wachsen braucht sie aber viel Wasser."
+        "text": "Die Orange schmeckt gut, zum Wachsen braucht sie aber viel Wasser. Orangenhaut entspricht nicht dem deutschen Schönheitsideal."
     }
 ]
