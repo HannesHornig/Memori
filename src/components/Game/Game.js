@@ -15,6 +15,7 @@ class Game extends Component {
 
         this.state = {
             cards: [],
+            explanatorycards: [],
             flippedCards: [],
             dealCards: [],
             scaleCards: [],
@@ -30,6 +31,12 @@ class Game extends Component {
         const selectedLevel = games.find(game => game.difficulty === difficulty);
 
         const cards = selectedLevel.cards.map(symbol => ({
+            id: shortid.generate(),
+            symbol,
+            matched: false
+        }));
+
+        const explanatorycards = selectedLevel.cards.map(symbol => ({
             id: shortid.generate(),
             symbol,
             matched: false
@@ -87,11 +94,10 @@ class Game extends Component {
                         Animated.parallel(
                             this.state.scaleCards
                                 .filter((anim, index) => flippedCards.includes(index))
-                                .map(anim => Animated.spring(anim, { toValue: 0 }))
-                        )
+                                .map(anim => Animated.spring(anim, { toValue: 0 }))                                       
+                          )
                     ]).start(() => {
                         const countMatched = cards.reduce((count, card) => count + card.matched, 0);
-
                         if (cards.length === countMatched && cards.length > 0) {
                             this.setState({ status: "stopped" });
                             this.props.history.push("/winner");
@@ -103,6 +109,7 @@ class Game extends Component {
                             });
                         }
                     });
+
                 } else {
                     this.setState({
                         flippedCards,
@@ -161,10 +168,17 @@ class Game extends Component {
         this.renderCards(cardsReset);
     }
 
+    showStuff(showStuff) {
+        if (showStuff) {    
+            return <div>asdsasd</div>
+         } 
+     }
+
     render() {
         const cards = this.state.cards;
-
+    
         return (
+        <div className = "column">
             <div className="game">
                 <GameHeader gameStatus={this.state.status} onReset={() => this.resetGame()} />
                 <div className="content">
@@ -203,6 +217,10 @@ class Game extends Component {
                     </div>
                 </div>
             </div>
+                <div className="pictureFruits">
+                    <img src={window.location.origin + "/pictures/Kartoffel.jpg"} alt="as" width="250" height="250"></img>
+                </div>
+         </div>
         );
     }
 }
