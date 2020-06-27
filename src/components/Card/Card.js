@@ -7,7 +7,6 @@ import "./Card.css";
 class Card extends PureComponent {
     render() {
         const { style, symbol } = this.props;
-        console.log(symbol)
         return (
             <div className="card-wrapper">
                 <button className="card" style={style} onClick={() => this.props.onClick()}>

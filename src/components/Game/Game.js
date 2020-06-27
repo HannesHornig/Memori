@@ -5,6 +5,7 @@ import shortid from "shortid";
 import GameHeader from "../GameHeader/GameHeader";
 import Card from "../Card/Card";
 import games from "../../games.json";
+import names from "../../names.json"
 import "./Game.css";
 
 const AnimatedCard = Animated.createAnimatedComponent(Card);
@@ -30,11 +31,29 @@ class Game extends Component {
 
         const selectedLevel = games.find(game => game.difficulty === difficulty);
 
-        const cards = selectedLevel.cards.map(symbol => ({
-            id: shortid.generate(),
-            symbol,
-            matched: false
-        }));
+
+
+        const cards = [];
+        for (let card in selectedLevel.cards) {
+            let cardValue=selectedLevel.cards[card];
+            for(let i=0; i<3; i++){
+                let imagePath;
+                for (let value in names) {
+                    let this_value = names[value];
+                    if (this_value.name === cardValue) {
+                        console.log(this_value.image_paths[i]);
+                        imagePath=this_value.image_paths[i];
+                    }
+                }
+            cards.push(
+            {
+                id: shortid.generate(),
+                symbol:imagePath,
+                type:cardValue,
+                matched: false
+            });
+        }
+        }
 
         const explanatorycards = selectedLevel.cards.map(symbol => ({
             id: shortid.generate(),
@@ -72,7 +91,7 @@ class Game extends Component {
             return;
         }
 
-        const numCardsToMatch = this.props.difficulty === "triples" ? 3 : 2;
+        const numCardsToMatch = 3;
         const cards = this.state.cards.slice();
 
         flippedCards.push(cardIndex);
@@ -81,7 +100,7 @@ class Game extends Component {
         this.flipCard(cardIndex, "forward").start();
 
         if (flippedCards.length > 1) {
-            const allFlippedCardsMatch = flippedCards.every(flippedCardIndex => cards[cardIndex].symbol === cards[flippedCardIndex].symbol);
+            const allFlippedCardsMatch = flippedCards.every(flippedCardIndex => cards[cardIndex].type === cards[flippedCardIndex].type);
 
             if (allFlippedCardsMatch) {
                 if (flippedCards.length === numCardsToMatch) {

@@ -1,0 +1,20 @@
+[
+    {
+        "name": "potatoe",
+        "image_paths": [
+            "/pictures/Kartoffel.jpg",
+            "/pictures/Kartoffelpflanze.jpg",
+            "/pictures/Bratkartoffeln.jpg"
+        ],
+        "text": "TEEEEEEEEEEEEEEEEEEEXT"
+    },
+    {
+        "name": "cucumber",
+        "image_paths": [
+            "/pictures/Gurke.jpg",
+            "/pictures/Banane.jpg",
+            "/pictures/Quadrate.png"
+        ],
+        "text": "anderer Text"
+    }
+]
