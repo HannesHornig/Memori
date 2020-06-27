@@ -7,6 +7,7 @@ import Card from "../Card/Card";
 import games from "../../games.json";
 import names from "../../names.json"
 import "./Game.css";
+import Overlay from "../Overlay/Overlay";
 
 const AnimatedCard = Animated.createAnimatedComponent(Card);
 
@@ -14,6 +15,10 @@ class Game extends Component {
     constructor(props) {
         super(props);
 
+        
+
+        this.setOverlay = this.setOverlay.bind(this);
+        this.stupid = this.stupid.bind(this);
         this.state = {
             cards: [],
             explanatorycards: [],
@@ -22,7 +27,10 @@ class Game extends Component {
             scaleCards: [],
             rotateCards: [],
             locked: false,
-            status: "stopped"
+            status: "stopped",
+            overlay: false,
+            images: [],
+            explanation: ""
         };
     }
 
@@ -63,6 +71,24 @@ class Game extends Component {
 
         this.renderCards(cards);
     }
+
+  stupid= () =>{
+            this.setOverlay(!this.state.overlay,names[0].text,names[0].image_paths);
+  }
+
+      /**
+   * Method-Call for showing/hidding the overlay
+   * @param {boolean} toDisplay - if true, overlay is rendered
+   * @param {string} explanation  - explanationText
+   * @param {URL} img - image which is shown over the text (can be null)
+   */
+  setOverlay(toDisplay, explanation, images) {
+    this.setState({
+      overlay: toDisplay,
+      explanation: explanation,
+      images: images,
+    });
+  }
 
     renderCards(cards) {
         const randomCards = cards.sort(() => 0.5 - Math.random());
@@ -198,6 +224,7 @@ class Game extends Component {
     
         return (
         <div className = "column">
+            <Overlay display={this.state.overlay} explanation={this.state.explanation} image1={this.state.images[0]} image2={this.state.images[1]} image3={this.state.images[2]}></Overlay>
             <div className="game">
                 <GameHeader gameStatus={this.state.status} onReset={() => this.resetGame()} />
                 <div className="content">
@@ -237,7 +264,9 @@ class Game extends Component {
                 </div>
             </div>
                 <div className="pictureFruits">
-                    <img src={window.location.origin + "/pictures/Kartoffel.jpg"} alt="as" width="250" height="250"></img>
+                    <h1>Gefunden!</h1>
+                   <h4> klicke auf deine gesammelten Früchte und Gemüse um mehr zu erfahren :-)</h4>
+                    <img src={window.location.origin + "/pictures/Kartoffel.jpg"} alt="as" width="250" height="250" onClick={this.stupid}></img>
                 </div>
          </div>
         );
