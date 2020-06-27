@@ -4,11 +4,11 @@ import "./Home.css";
 
 const Home = () => (
     <div className="home">
-        <h1 className="header">Game of Memory</h1>
+        <h1 className="header">Globales Memory</h1>
         <div className="difficulty-container">
-            <Link to="/game/easy">Easy</Link>
-            <Link to="/game/hard">Hard</Link>
-            <Link to="/game/triples">Triples</Link>
+            <Link to="/game/easy">Spiel mit 15 gemischten Karten</Link>
+            <Link to="/game/triples">Spiel nur mit den Gemüse Karten</Link>
+            <Link to="/game/hard">Spiel mit allen 30 Karten</Link>
         </div>
     </div>
 );

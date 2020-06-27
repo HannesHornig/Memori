@@ -14,5 +14,7 @@
 .difficulty-container {
     display: flex;
     width: 500px;
+    flex-direction: column;
     justify-content: space-between;
+   
 }
