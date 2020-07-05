@@ -6,24 +6,52 @@
             "/pictures/Kartoffelpflanze.jpg",
             "/pictures/Bratkartoffeln.jpg"
         ],
-        "text": "Ich bin die Kartoffel und ich bin klein und rund und süß. Ich kam mit Columbus aus Südamerika und viele Menschen in Deutschland denken, dass ich ein tradidionell deutsches Gemüse bin."
+        "text": "Schon vor über 13.000 Jahren gab es mich in Südamerika. Da sah ich noch noch ein wenig anders aus. Die Menschen dort bauten mich an und veränderten mich, sodass sie mich essen konnten. Vor 500 Jahren kamen Menschen aus Spanien nach Südamerika und nahmen mich mit dem Schiff mit nach Europa. Dort gibt es mich nun überall und jedes Kind kennt mich."
     },
     {
-        "name": "cucumber",
+        "name": "mango",
         "image_paths": [
-            "/pictures/Maracuja.PNG",
-            "/pictures/MaracujaKuchen.PNG",
-            "/pictures/MaracujaPflanze.PNG"
+            "/pictures/mango1.jpg",
+            "/pictures/mango2.jpg",
+            "/pictures/mango3.jpg"
 
         ],
         "text": "Die Maracuja ist ein kleines Schätzchen, die besonders mit Wodka gut schmeckt. Wenn man eine Maracuja isst, ist man immer traurig, dass sie so wenig Inhalt hat."
     },
     {
-        "name": "orange",
+        "name": "ananas",
         "image_paths": [
-            "/pictures/Orange.PNG",
-            "/pictures/Orangenbaum.PNG",
-            "/pictures/Orangensaft.PNG"
+            "/pictures/ananas1.jpg",
+            "/pictures/ananas2.jpg",
+            "/pictures/ananas3.jpg"
+        ],
+        "text": "Die Orange schmeckt gut, zum Wachsen braucht sie aber viel Wasser. Orangenhaut entspricht nicht dem deutschen Schönheitsideal."
+    },
+    {
+        "name": "potatoeOrigin",
+        "image_paths": [
+            "/pictures/Kartoffel.jpg",
+            "/pictures/Kartoffelpflanze.jpg",
+            "/pictures/kartoffel4.jpg"
+        ],
+        "text": "Schon vor über 13.000 Jahren gab es mich in Südamerika. Da sah ich noch noch ein wenig anders aus. Die Menschen dort bauten mich an und veränderten mich, sodass sie mich essen konnten. Vor 500 Jahren kamen Menschen aus Spanien nach Südamerika und nahmen mich mit dem Schiff mit nach Europa. Dort gibt es mich nun überall und jedes Kind kennt mich."
+    },
+    {
+        "name": "mangoOrigin",
+        "image_paths": [
+            "/pictures/mango1.jpg",
+            "/pictures/mango2.jpg",
+            "/pictures/mango4.jpg"
+
+        ],
+        "text": "Die Maracuja ist ein kleines Schätzchen, die besonders mit Wodka gut schmeckt. Wenn man eine Maracuja isst, ist man immer traurig, dass sie so wenig Inhalt hat."
+    },
+    {
+        "name": "ananasOrigin",
+        "image_paths": [
+            "/pictures/ananas1.jpg",
+            "/pictures/ananas2.jpg",
+            "/pictures/ananas4.jpg"
         ],
         "text": "Die Orange schmeckt gut, zum Wachsen braucht sie aber viel Wasser. Orangenhaut entspricht nicht dem deutschen Schönheitsideal."
     }
