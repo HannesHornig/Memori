@@ -6,7 +6,7 @@ import memory from "../../pictures/Quadrate.png";
 import doubleMemory from "../../pictures/Quadrate_doppelt.png";
 import gurke from "../../pictures/Gurke.jpg";
 import banane from "../../pictures/Banane.jpg";
-
+import weltkarte from "../../pictures/weltkarte.jpg";
 
 const height ="20px";
 const Home = () => (

@@ -1,20 +1,28 @@
 .home {
-    height: 100%;
+    /*height: 100%;*/
+    /*background-image: url('http://reiten-schliestedt.dyndns.org/grabe/fotos/theoimwinter.jpg');*/
+    background-image: url('/pictures/Banane.jpg');
+    background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background-image: url('/public/pictures/5.Auflage_Weltkarte_2019_perspektiven_wechseln_sueden_oben.jpg');
-
+   
+   /* justify-content: center;*/
+  /* background-image: url('/public/Gurke.jpg');
+    background-size:contain;
+    background-position:top;
+    background: cover;*/
 }
 
 .header {
     font-size: 3rem;
    padding-top: 1 rem;
+ 
 }
 
 .description-container {
     padding: 20px; 
+  
 }
 
 .difficulty-container {
