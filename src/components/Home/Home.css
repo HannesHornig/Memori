@@ -1,7 +1,6 @@
 .home {
-    /*height: 100%;*/
-    /*background-image: url('http://reiten-schliestedt.dyndns.org/grabe/fotos/theoimwinter.jpg');*/
-    background-image: url('/pictures/Banane.jpg');
+    height: 100%;
+    background-image: url('/pictures/Weltkarte.jpg');
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -21,7 +20,7 @@
 }
 
 .description-container {
-    padding: 20px; 
+    padding: 5%; 
   
 }
 

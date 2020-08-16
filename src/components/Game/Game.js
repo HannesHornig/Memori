@@ -11,16 +11,18 @@ import Overlay from "../Overlay/Overlay";
 
 const AnimatedCard = Animated.createAnimatedComponent(Card);
 
+const data = [{ "name": "test1" }, { "name": "test2" }];
+
 class Game extends Component {
     constructor(props) {
         super(props);
 
-        
+
 
         this.setOverlay = this.setOverlay.bind(this);
-        this.stupid = this.stupid.bind(this);
         this.state = {
             cards: [],
+            found: [],
             explanatorycards: [],
             flippedCards: [],
             dealCards: [],
@@ -37,31 +39,27 @@ class Game extends Component {
     componentDidMount() {
         const difficulty = this.props.difficulty;
 
+        // find all card-types of the selected level
         const selectedLevel = games.find(game => game.difficulty === difficulty);
-
-
 
         const cards = [];
         for (let card in selectedLevel.cards) {
-            let cardValue=selectedLevel.cards[card];
-            for(let i=0; i<3; i++){
-                let imagePath;
-                for (let value in names) {
-                    let this_value = names[value];
-                    if (this_value.name === cardValue) {
-                        console.log(this_value.image_paths[i]);
-                        imagePath=this_value.image_paths[i];
-                    }
-                }
-            cards.push(
-            {
-                id: shortid.generate(),
-                symbol:imagePath,
-                type:cardValue,
-                matched: false
-            });
+            let cardValue = selectedLevel.cards[card];
+
+            const currentValue = names.find(element => element.name === cardValue);
+
+            for (let i = 0; i < 3; i++) {
+
+                cards.push(
+                    {
+                        id: shortid.generate(),
+                        symbol: currentValue.image_paths[i],
+                        type: cardValue,
+                        matched: false
+                    });
+            }
         }
-        }
+
 
         const explanatorycards = selectedLevel.cards.map(symbol => ({
             id: shortid.generate(),
@@ -72,23 +70,21 @@ class Game extends Component {
         this.renderCards(cards);
     }
 
-  stupid= () =>{
-            this.setOverlay(!this.state.overlay,names[0].text,names[0].image_paths);
-  }
 
-      /**
-   * Method-Call for showing/hidding the overlay
-   * @param {boolean} toDisplay - if true, overlay is rendered
-   * @param {string} explanation  - explanationText
-   * @param {URL} img - image which is shown over the text (can be null)
-   */
-  setOverlay(toDisplay, explanation, images) {
-    this.setState({
-      overlay: toDisplay,
-      explanation: explanation,
-      images: images,
-    });
-  }
+
+    /**
+ * Method-Call for showing/hidding the overlay
+ * @param {boolean} toDisplay - if true, overlay is rendered
+ * @param {string} explanation  - explanationText
+ * @param {URL} img - image which is shown over the text (can be null)
+ */
+    setOverlay(toDisplay, explanation, images) {
+        this.setState({
+            overlay: toDisplay,
+            explanation: explanation,
+            images: images,
+        });
+    }
 
     renderCards(cards) {
         const randomCards = cards.sort(() => 0.5 - Math.random());
@@ -105,6 +101,7 @@ class Game extends Component {
             }
         );
     }
+
 
     checkMatches(cardIndex) {
         if (this.state.status !== "started") {
@@ -134,15 +131,18 @@ class Game extends Component {
                         cards[flippedCardIndex].matched = true;
                     });
 
+                    this.state.found.push(names.find(element => element.name === cards[flippedCards[0]].type));
+
                     Animated.sequence([
                         Animated.delay(1000),
                         Animated.parallel(
                             this.state.scaleCards
                                 .filter((anim, index) => flippedCards.includes(index))
-                                .map(anim => Animated.spring(anim, { toValue: 0 }))                                       
-                          )
+                                .map(anim => Animated.spring(anim, { toValue: 0 }))
+                        )
                     ]).start(() => {
                         const countMatched = cards.reduce((count, card) => count + card.matched, 0);
+
                         if (cards.length === countMatched && cards.length > 0) {
                             this.setState({ status: "stopped" });
                             this.props.history.push("/winner");
@@ -205,6 +205,7 @@ class Game extends Component {
 
         this.setState({
             cards: cardsReset,
+            found: [],
             flippedCards: [],
             locked: false,
             status: "reset"
@@ -213,62 +214,63 @@ class Game extends Component {
         this.renderCards(cardsReset);
     }
 
-    showStuff(showStuff) {
-        if (showStuff) {    
-            return <div>asdsasd</div>
-         } 
-     }
 
     render() {
         const cards = this.state.cards;
-    
+        const reference = this;
         return (
-        <div className = "column">
-            <Overlay display={this.state.overlay} explanation={this.state.explanation} image1={this.state.images[0]} image2={this.state.images[1]} image3={this.state.images[2]}></Overlay>
-            <div className="game">
-                <GameHeader gameStatus={this.state.status} onReset={() => this.resetGame()} />
-                <div className="content">
-                    <div className={this.props.difficulty}>
-                        <div className="grid-wrapper">
-                            <div className="grid">
-                                {cards.map((card, cardIndex) => (
-                                    <AnimatedCard
-                                        key={card.id}
-                                        symbol={card.symbol}
-                                        onClick={() => this.checkMatches(cardIndex)}
-                                        style={{
-                                            opacity: this.state.dealCards[cardIndex],
-                                            transform: [
-                                                {
-                                                    translateY: this.state.dealCards[cardIndex].interpolate({
-                                                        inputRange: [0, 1],
-                                                        outputRange: ["100px", "0px"]
-                                                    })
-                                                },
-                                                {
-                                                    scale: this.state.scaleCards[cardIndex]
-                                                },
-                                                {
-                                                    rotateY: this.state.rotateCards[cardIndex].interpolate({
-                                                        inputRange: [-1, 0, 1],
-                                                        outputRange: ["-180deg", "0deg", "180deg"]
-                                                    })
-                                                }
-                                            ]
-                                        }}
-                                    />
-                                ))}
+            <div className="column">
+                <Overlay display={this.state.overlay} explanation={this.state.explanation} image1={this.state.images[0]} image2={this.state.images[1]} image3={this.state.images[2]} stop={() => this.setOverlay(false,"",[])}></Overlay>
+                <div className="game">
+                    <GameHeader gameStatus={this.state.status} onReset={() => this.resetGame()} />
+                    <div className="content">
+                        <div className={this.props.difficulty}>
+                            <div className="grid-wrapper">
+                                <div className="grid">
+                                    {cards.map((card, cardIndex) => (
+                                        <AnimatedCard
+                                            key={card.id}
+                                            symbol={card.symbol}
+                                            onClick={() => this.checkMatches(cardIndex)}
+                                            style={{
+                                                opacity: this.state.dealCards[cardIndex],
+                                                transform: [
+                                                    {
+                                                        translateY: this.state.dealCards[cardIndex].interpolate({
+                                                            inputRange: [0, 1],
+                                                            outputRange: ["100px", "0px"]
+                                                        })
+                                                    },
+                                                    {
+                                                        scale: this.state.scaleCards[cardIndex]
+                                                    },
+                                                    {
+                                                        rotateY: this.state.rotateCards[cardIndex].interpolate({
+                                                            inputRange: [-1, 0, 1],
+                                                            outputRange: ["-180deg", "0deg", "180deg"]
+                                                        })
+                                                    }
+                                                ]
+                                            }}
+                                        />
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
                 <div className="pictureFruits">
                     <h1>Gefunden!</h1>
-                   <h4> klicke auf deine gesammelten Früchte und Gemüse um mehr zu erfahren :-)</h4>
-                    <img src={window.location.origin + "/pictures/Kartoffel.jpg"} alt="as" width="250" height="250" onClick={this.stupid}></img>
+                    <h4> klicke auf deine gesammelten Früchte und Gemüse um mehr zu erfahren :-)</h4>
+                    {
+                        this.state.found.map(function (d, idx) {
+                            return (<li key={idx}>{d.name}
+                                <img src={window.location.origin + d.image_paths[0]} alt={d.name} width="100" height="100" onClick={() => reference.setOverlay(true, d.text, d.image_paths)}></img>
+                            </li>)
+                        })}
+
                 </div>
-         </div>
+            </div>
         );
     }
 }

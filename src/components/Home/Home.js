@@ -4,9 +4,6 @@ import "./Home.css";
 import logo from "../../pictures/Grenzgaenger_Logo.PNG";
 import memory from "../../pictures/Quadrate.png";
 import doubleMemory from "../../pictures/Quadrate_doppelt.png";
-import gurke from "../../pictures/Gurke.jpg";
-import banane from "../../pictures/Banane.jpg";
-import weltkarte from "../../pictures/weltkarte.jpg";
 
 const height ="20px";
 const Home = () => (
@@ -16,7 +13,7 @@ const Home = () => (
         <div className="difficulty-container">
             <div className="homeLinkClass"> <Link to="/game/easy" ><img src={memory} height ={height}></img>Kleines Memory</Link></div>
             <div className="homeLinkClass">  <Link to="/game/hard"><img src={doubleMemory} height ={height}></img>Großes Memory</Link></div>
-            <div className="homeLinkClass"> <Link to="/game/triples"><img src={gurke} height ={height}></img>Ländermemory</Link></div>
+            <div className="homeLinkClass"> <Link to="/game/triples"><img src={"/pictures/Gurke.jpg"} height ={height}></img>Ländermemory</Link></div>
         </div>
     </div>
 );
