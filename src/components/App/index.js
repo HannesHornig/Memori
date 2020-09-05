@@ -13,7 +13,11 @@ const App = () => (
             path="/game/:difficulty"
             render={props => <Game difficulty={props.match.params.difficulty} history={props.history} />}
         />
-        <Route exact path="/winner" component={Winner} />
+        <Route 
+        exact
+        path="/finished/:difficulty" 
+        render={props => <Winner difficulty={props.match.params.difficulty}/>
+        } />
     </div>
 );
 

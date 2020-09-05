@@ -17,8 +17,6 @@ class Game extends Component {
     constructor(props) {
         super(props);
 
-
-
         this.setOverlay = this.setOverlay.bind(this);
         this.state = {
             cards: [],
@@ -145,7 +143,7 @@ class Game extends Component {
 
                         if (cards.length === countMatched && cards.length > 0) {
                             this.setState({ status: "stopped" });
-                            this.props.history.push("/winner");
+                            this.props.history.push("/finished");
                         } else {
                             this.setState({
                                 cards,

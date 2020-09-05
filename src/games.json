@@ -1,14 +1,14 @@
 [
     {
         "cards": ["potatoe", "mango"],
-        "difficulty": "easy"
+        "difficulty": "small"
     },
     {
         "cards": ["potatoe", "mango", "ananas"],
-         "difficulty": "hard"
+         "difficulty": "big"
     },
     {
         "cards": ["potatoeOrigin", "mangoOrigin", "ananasOrigin"],
-                "difficulty": "triples"
+                "difficulty": "countries"
     }
 ]
