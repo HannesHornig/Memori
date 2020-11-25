@@ -11,10 +11,7 @@ const GameHeader = props => (
         <Link to="/">
             <i className="material-icons">arrow_back</i>
         </Link>
-        <div className="timer-container">
-            <Timer status={props.gameStatus} />
-        </div>
-        <img src={logo} width="10%"></img>
+        <img src={logo} width="20%"></img>
         <button onClick={() => props.onReset()}>
             <i className="material-icons">refresh</i>
         </button>

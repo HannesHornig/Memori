@@ -8,12 +8,33 @@ import games from "../../games.json";
 import names from "../../names.json"
 import "./Game.css";
 import Overlay from "../Overlay/Overlay";
+// Play environmental audio:
+// import React in our code
+import UIfx from 'uifx';
+
+import win from '../../winner.mp3';
+import wrong from '../../wrong.mp3';
+import finished from '../../finished.mp3';
+
 
 const AnimatedCard = Animated.createAnimatedComponent(Card);
 
 const data = [{ "name": "test1" }, { "name": "test2" }];
 
+
+const winSound = new UIfx(win);
+
+const finishedSound = new UIfx(finished);
+
+const wrongSound = new UIfx(wrong,
+    {
+      volume: 0.6, // number between 0.0 ~ 1.0
+    });
+
 class Game extends Component {
+
+
+
     constructor(props) {
         super(props);
 
@@ -35,6 +56,8 @@ class Game extends Component {
     }
 
     componentDidMount() {
+
+
         const difficulty = this.props.difficulty;
 
         // find all card-types of the selected level
@@ -85,11 +108,12 @@ class Game extends Component {
     }
 
     renderCards(cards) {
-        const randomCards = cards.sort(() => 0.5 - Math.random());
+       // const randomCards = cards.sort(() => 0.5 - Math.random());
 
         this.setState(
             {
-                cards: randomCards,
+                //cards: randomCards,
+                cards: cards,
                 dealCards: cards.map(() => new Animated.Value(0)),
                 scaleCards: cards.map(() => new Animated.Value(1)),
                 rotateCards: cards.map(() => new Animated.Value(0))
@@ -106,11 +130,16 @@ class Game extends Component {
             this.setState({ status: "started" });
         }
 
+
         const flippedCards = this.state.flippedCards.slice();
 
         if (this.state.locked || flippedCards.includes(cardIndex)) {
             return;
         }
+
+
+
+
 
         const numCardsToMatch = 3;
         const cards = this.state.cards.slice();
@@ -129,6 +158,8 @@ class Game extends Component {
                         cards[flippedCardIndex].matched = true;
                     });
 
+                    
+                    winSound.play();
                     this.state.found.push(names.find(element => element.name === cards[flippedCards[0]].type));
 
                     Animated.sequence([
@@ -142,8 +173,9 @@ class Game extends Component {
                         const countMatched = cards.reduce((count, card) => count + card.matched, 0);
 
                         if (cards.length === countMatched && cards.length > 0) {
+                            finishedSound.play();
                             this.setState({ status: "stopped" });
-                            this.props.history.push("/finished");
+                            this.props.history.push("/finished/" + this.props.difficulty);
                         } else {
                             this.setState({
                                 cards,
@@ -160,6 +192,8 @@ class Game extends Component {
                     });
                 }
             } else {
+                
+
                 Animated.sequence([
                     Animated.delay(1500),
                     Animated.parallel(flippedCards.map(flippedCardIndex => this.flipCard(flippedCardIndex, "back")))
@@ -169,18 +203,20 @@ class Game extends Component {
                         locked: false
                     });
                 });
+                setTimeout(function(){ wrongSound.play(); }, 0);
             }
         } else {
             this.setState({ flippedCards, locked: false });
         }
     }
 
+
     flipCard(cardIndex, direction) {
         const rotateValue = direction === "back" ? 0 : 1;
 
         return Animated.stagger(100, [
             Animated.timing(this.state.scaleCards[cardIndex], {
-                toValue: 1.2,
+                toValue: 1.3,
                 duration: 100
             }),
             Animated.timing(this.state.rotateCards[cardIndex], {
@@ -217,10 +253,14 @@ class Game extends Component {
         const cards = this.state.cards;
         const reference = this;
         return (
-            <div className="column">
+            <React.Fragment>
                 <Overlay display={this.state.overlay} explanation={this.state.explanation} image1={this.state.images[0]} image2={this.state.images[1]} image3={this.state.images[2]} stop={() => this.setOverlay(false,"",[])}></Overlay>
+                
+                <GameHeader gameStatus={this.state.status} onReset={() => this.resetGame()} />
+            <div>
+                <div style={{float: 'left', width: '70%'}}>
                 <div className="game">
-                    <GameHeader gameStatus={this.state.status} onReset={() => this.resetGame()} />
+                    
                     <div className="content">
                         <div className={this.props.difficulty}>
                             <div className="grid-wrapper">
@@ -256,19 +296,28 @@ class Game extends Component {
                             </div>
                         </div>
                     </div>
+                    </div>
                 </div>
-                <div className="pictureFruits">
-                    <h1>Gefunden!</h1>
-                    <h4> klicke auf deine gesammelten Früchte und Gemüse um mehr zu erfahren :-)</h4>
+                <div style={{float: 'left', width: '20%', minWidth: '200px'}}>
+                    <h3>Gefunden!</h3>
+                    <h5> klicke auf deine gesammelten Früchte und Gemüse um mehr zu erfahren :-)</h5>
+                    <div className="content">
+                    <div className="big">
+                    <div className="grid-wrapper">
+                        <div className="grid">
                     {
                         this.state.found.map(function (d, idx) {
-                            return (<li key={idx}>{d.name}
-                                <img src={window.location.origin + d.image_paths[0]} alt={d.name} width="100" height="100" onClick={() => reference.setOverlay(true, d.text, d.image_paths)}></img>
-                            </li>)
+                            return (<div key={idx}>
+                                <img src={window.location.origin + d.image_paths[0]} alt={d.name} width="70" height="70" onClick={() => reference.setOverlay(true, d.text, d.image_paths)}></img>
+                            </div>)
                         })}
-
-                </div>
-            </div>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                </div>  
+            </React.Fragment>
         );
     }
 }

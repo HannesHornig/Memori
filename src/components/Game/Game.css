@@ -1,7 +1,4 @@
-.pictureFruits{
-    text-align: center;
-    padding-top: 20em;
-}
+
 
 .column {
     column-count: 2
@@ -36,42 +33,42 @@
     font-size: 4vmax;
 }
 
-.easy {
+.small {
     width: 60vmax;
     padding: 3rem;
 }
 
-.easy .grid-wrapper {
+.small .grid-wrapper {
     padding-top: 50%;
 }
 
-.easy .grid {
+.small .grid {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
 }
 
-.hard {
+.big {
     width: 35vmax;
 }
 
-.hard .grid-wrapper {
+.big .grid-wrapper {
     padding-top: 100%;
 }
 
-.hard .grid {
+.big .grid {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
 }
 
-.triples {
+.countries {
     width: 55vmax;
 }
 
-.triples .grid-wrapper {
+.countries .grid-wrapper {
     padding-top: 66%;
 }
 
-.triples .grid {
+.countries .grid {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(4, 1fr);
 }
