@@ -108,11 +108,11 @@ class Game extends Component {
     }
 
     renderCards(cards) {
-       // const randomCards = cards.sort(() => 0.5 - Math.random());
+        const randomCards = cards.sort(() => 0.5 - Math.random());
 
         this.setState(
             {
-                //cards: randomCards,
+                cards: randomCards,
                 cards: cards,
                 dealCards: cards.map(() => new Animated.Value(0)),
                 scaleCards: cards.map(() => new Animated.Value(1)),
