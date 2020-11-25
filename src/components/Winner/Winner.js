@@ -17,9 +17,9 @@ class Winner extends Component {
 
         this.setOverlay = this.setOverlay.bind(this);
         this.state = {
-            overlay: true,
-            images: [logo,logo,logo],
-            explanation: ["Hallo ich bi ndie richtige Erklärung dazu sadfjlksad fasdlfkj asdlökfj asdlköfj asdlkfj asdöflkj asdf sakdöflj asdlöfjkasdf asdlökfj asdf lkasdjfölkjadsf ","asdfsadf","jasdflökjjlaskdjf"]
+            overlay: false,
+            images: [],
+            explanation: []
         };
     }
 
