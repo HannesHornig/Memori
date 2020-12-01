@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { formatTime } from "../Timer/Timer";
-import "./Winner.css";
+import "./Explanation.css";
 import logo from "../../pictures/Grenzgaenger_Logo.PNG";
 import Overlay from "../Overlay/Overlay";
 
@@ -11,7 +10,7 @@ import games from "../../games.json";
 import names from "../../names.json";
 
 
-class Winner extends Component {
+class Explanation extends Component {
     constructor(props) {
         super(props);
 
@@ -37,7 +36,10 @@ setOverlay(toDisplay, explanation, images) {
     });
 }
 
+
     render() {
+        const difficulty=this.props.difficulty;
+        const finished=this.props.finished;
         const reference = this;
         const selectedLevel =games.find(game => game.difficulty === this.props.difficulty);
 
@@ -53,8 +55,8 @@ setOverlay(toDisplay, explanation, images) {
             <Overlay display={this.state.overlay} explanation={this.state.explanation} image1={this.state.images[0]} image2={this.state.images[1]} image3={this.state.images[2]} stop={() => this.setOverlay(false,"",[])}></Overlay>
                 
                 <img src={logo}></img>
-                <p className="congrats-text">Super!!! Du hast das Global Memory gelöst!</p>
-                    <h4> klicke auf deine gesammelten Früchte und Gemüse um mehr zu erfahren :-)</h4>
+                <p className="congrats-text">{finished?'Super!!! Du hast das Global Memory gelöst!':'Spiele das Global Memory und erfahre über die Herkunft der Früchte'}</p>
+                    <h4> klicke auf {finished?'deine gesammelten':'die zusammelnden '} Früchte und Gemüse um mehr zu erfahren :-)</h4>
                     <ul>
                     {   
                     cards.map(function (d, idx) {
@@ -67,19 +69,16 @@ setOverlay(toDisplay, explanation, images) {
 </ul> 
                 
                 <div className="winnerLinkClass">
-                <Link to="/">Zurück zum Hauptmenü</Link>
+                {finished?(<Link to="/">Zurück zum Hauptmenü</Link>):( <Link to={`/game/${difficulty}`}>Zum Spiel</Link>)}
                 </div>
             </div>
         );
     }
 }
 
-Winner.propTypes = {
-    time: PropTypes.number
-};
 
 const mapStateToProps = state => ({ time: state.timer });
 
-const ConnectedWinner = connect(mapStateToProps)(Winner);
+const ConnectedWinner = connect(mapStateToProps)(Explanation);
 
 export default ConnectedWinner;

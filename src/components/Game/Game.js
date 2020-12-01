@@ -175,7 +175,7 @@ class Game extends Component {
                         if (cards.length === countMatched && cards.length > 0) {
                             finishedSound.play();
                             this.setState({ status: "stopped" });
-                            this.props.history.push("/finished/" + this.props.difficulty);
+                            this.props.history.push(`/finished/${this.props.difficulty}`);
                         } else {
                             this.setState({
                                 cards,

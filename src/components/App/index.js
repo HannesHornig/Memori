@@ -2,7 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import Home from "../Home/Home";
 import Game from "../Game/Game";
-import Winner from "../Winner/Winner";
+import Explanation from "../Explanation/Explanation";
 import "./App.css";
 
 const App = () => (
@@ -16,7 +16,12 @@ const App = () => (
         <Route 
         exact
         path="/finished/:difficulty" 
-        render={props => <Winner difficulty={props.match.params.difficulty}/>
+        render={props => <Explanation difficulty={props.match.params.difficulty} finished={true}/>
+        } />
+        <Route 
+        exact
+        path="/explanation/:difficulty" 
+        render={props => <Explanation difficulty={props.match.params.difficulty} finished={false}/>
         } />
     </div>
 );
