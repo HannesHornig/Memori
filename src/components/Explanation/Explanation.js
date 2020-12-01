@@ -61,7 +61,7 @@ setOverlay(toDisplay, explanation, images) {
                     {   
                     cards.map(function (d, idx) {
                         return (<li key={idx}>{d.name}
-                            <img src={window.location.origin + d.image_paths[0]} alt={d.name} width="100" height="100" onClick={() => reference.setOverlay(true, d.text, d.image_paths)}></img>
+                            <img src={window.location.origin + d.image_paths[0]} alt={d.name} width="100" height="100" onClick={() => reference.setOverlay(true, finished?d.text1:d.text, d.image_paths)}></img>
                         </li>)
                     })
                     

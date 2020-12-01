@@ -14,5 +14,18 @@
 }
 
 .winnerLinkClass {
-    margin: 100px;
+    margin: 30px;
+}
+
+.winnerLinkClass a {
+    color: white;
+    border-radius: 15px;
+    background: #7a9d0a;
+    padding: 20px;
+}
+
+.winnerLinkClass a:hover {
+    color:#7a9d0a;
+    background: #cacacc;
+    padding: 18px;
 }
