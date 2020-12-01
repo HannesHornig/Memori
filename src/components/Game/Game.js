@@ -299,7 +299,7 @@ class Game extends Component {
                     </div>
                 </div>
                 <div style={{float: 'left', width: '20%', minWidth: '200px'}}>
-                    <h3>Gefunden!</h3>
+                    <h3>Dein Pärchen-Stapel: </h3>
                     <h5> klicke auf deine gesammelten Früchte und Gemüse um mehr zu erfahren :-)</h5>
                     <div className="content">
                     <div className="big">
