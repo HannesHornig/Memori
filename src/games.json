@@ -1,10 +1,10 @@
 [
     {
-        "cards": ["potatoe", "mango"],
+        "cards": ["Kartoffel", "Mango"],
         "difficulty": "small"
     },
     {
-        "cards": ["potatoe", "mango", "ananas"],
+        "cards": ["Kartoffel", "Mango", "ananas"],
          "difficulty": "big"
     },
     {

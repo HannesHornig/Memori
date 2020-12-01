@@ -1,6 +1,6 @@
 [
     {
-        "name": "potatoe",
+        "name": "Kartoffel",
         "image_paths": [
             "/pictures/Kartoffel.jpg",
             "/pictures/Kartoffel_Pflanze.jpeg",
@@ -10,7 +10,7 @@
         "text1": "Wo komme ich ursprünglich her? Ursprünglich komme ich aus der Region Tawantinsuyo in Südamerika aus dem Gebirge der Anden. Heute gehört die Region zu dem Land Peru. Dort haben mich Menschen schon vor 7000 Jahren angepflanzt und gekocht gegessen. Außerdem haben sie Wege gefunden, mich über 10 Jahre haltbar zu machen."
     },
     {
-        "name": "mango",
+        "name": "Mango",
         "image_paths": [
             "/pictures/Mango.jpeg",
             "/pictures/Mango_Produkt.jpg",
