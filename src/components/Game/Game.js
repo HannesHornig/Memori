@@ -302,13 +302,13 @@ class Game extends Component {
                     <h3>Dein Pärchen-Stapel: </h3>
                     <h5> klicke auf deine gesammelten Früchte und Gemüse um mehr zu erfahren :-)</h5>
                     <div className="content">
-                    <div className="big">
+                    <div className="side">
                     <div className="grid-wrapper">
                         <div className="grid">
                     {
                         this.state.found.map(function (d, idx) {
                             return (<div key={idx}>
-                                <img src={window.location.origin + d.image_paths[0]} alt={d.name} width="70" height="70" onClick={() => reference.setOverlay(true, d.text, d.image_paths)}></img>
+                                <img class="sideImage" src={window.location.origin + d.image_paths[0]} alt={d.name} width="70" height="70" onClick={() => reference.setOverlay(true, d.text, d.image_paths)}></img>
                             </div>)
                         })}
                         </div>

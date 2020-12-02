@@ -9,17 +9,20 @@ class Overlay extends React.Component {
             {this.props.display  &&
             <div className="overlay">
                 <div className="text">
+                <div class="row">
+                <div class="column">  
                 <img src={window.location.origin + this.props.image1} className="picStyle" alt="icon"/>
                 <br/>
                 <img src={window.location.origin+this.props.image2} className="picStyle" alt="icon"/>
                 <br/>
                 <img src={window.location.origin+this.props.image3} className="picStyle" alt="icon"/>
-                <br/>
+                </div>
+                <div class="column">  
                 {this.props.explanation}
-                <br/>
+                </div>
+                </div>
                 <button onClick={this.props.stop}>Zurück zum Spiel</button>
                 </div>
-
             </div>
         }
         </div>

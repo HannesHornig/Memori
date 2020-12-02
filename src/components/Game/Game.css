@@ -72,3 +72,26 @@
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(4, 1fr);
 }
+
+.side {
+    width: 50vmax;
+}
+
+.side .grid-wrapper {
+    padding-top: 100%;
+}
+
+.side .grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.side img {
+    width: 7vmax;
+    height: 7vmax;   
+    border: 2px  #7a9d0a solid;
+}
+
+.side img:hover {
+    border: 5px #d5e5a0 solid;
+}
