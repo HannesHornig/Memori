@@ -55,7 +55,7 @@ setOverlay(toDisplay, explanation, images) {
             <Overlay display={this.state.overlay} explanation={this.state.explanation} image1={this.state.images[0]} image2={this.state.images[1]} image3={this.state.images[2]} stop={() => this.setOverlay(false,"",[])}></Overlay>
                 
                 <img src={logo}></img>
-                <h2>{finished?'Super!!! Du hast das Spiel gelöst!':'Schau dir die Bilder genau an: Gleich musst du die passenden Bilder im Memory wiederfinden :D'}</h2>
+                <h2>{finished?`Super!!! Du hast das Spiel mit ${this.props.counter} Versuchen gelöst!`:'Schau dir die Bilder genau an: Gleich musst du die passenden Bilder im Memory wiederfinden :D'}</h2>
                     <ul class="cardOverview">
                     {   
                     cards.map(function (d, idx) {
@@ -80,8 +80,8 @@ setOverlay(toDisplay, explanation, images) {
 }
 
 
-const mapStateToProps = state => ({ time: state.timer });
+const mapStateToProps = state => ({ counter: state.counter });
 
-const ConnectedWinner = connect(mapStateToProps)(Explanation);
+const ExplanationConnected = connect(mapStateToProps)(Explanation);
 
-export default ConnectedWinner;
+export default ExplanationConnected;

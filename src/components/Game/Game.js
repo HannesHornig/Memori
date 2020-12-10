@@ -2,12 +2,15 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import * as Animated from "animated/lib/targets/react-dom";
 import shortid from "shortid";
+import { connect } from "react-redux";
 import GameHeader from "../GameHeader/GameHeader";
 import Card from "../Card/Card";
 import games from "../../games.json";
 import names from "../../names.json"
 import "./Game.css";
 import Overlay from "../Overlay/Overlay";
+import incrementCounter from "../../actions/incrementCounter";
+import resetCounter from "../../actions/resetCounter";
 // Play environmental audio:
 // import React in our code
 import UIfx from 'uifx';
@@ -18,9 +21,6 @@ import finished from '../../finished.mp3';
 
 
 const AnimatedCard = Animated.createAnimatedComponent(Card);
-
-const data = [{ "name": "test1" }, { "name": "test2" }];
-
 
 const winSound = new UIfx(win);
 
@@ -49,7 +49,6 @@ class Game extends Component {
             overlay: false,
             images: [],
             explanation: "",
-            counter: 0
         };
     }
 
@@ -85,6 +84,8 @@ class Game extends Component {
             symbol,
             matched: false
         }));
+
+        this.resetGame();
 
         this.renderCards(cards);
     }
@@ -159,7 +160,7 @@ class Game extends Component {
                     
                     winSound.play();
                     this.state.found.push(names.find(element => element.name === cards[flippedCards[0]].type));
-                    this.state.counter++;
+                    this.props.incrementCounter();
                     Animated.sequence([
                         Animated.delay(1000),
                         Animated.parallel(
@@ -199,8 +200,8 @@ class Game extends Component {
                     this.setState({
                         flippedCards: [],
                         locked: false,
-                        counter: this.state.counter+1
                     });
+                    this.props.incrementCounter();
                 });
                 setTimeout(function(){ wrongSound.play(); }, 0);
             }
@@ -242,8 +243,9 @@ class Game extends Component {
             flippedCards: [],
             locked: false,
             status: "reset",
-            counter: 0
         });
+
+        this.props.resetCounter();
 
         this.renderCards(cardsReset);
     }
@@ -256,7 +258,7 @@ class Game extends Component {
             <React.Fragment>
                 <Overlay display={this.state.overlay} explanation={this.state.explanation} image1={this.state.images[0]} image2={this.state.images[1]} image3={this.state.images[2]} stop={() => this.setOverlay(false,"",[])}></Overlay>
                 
-                <GameHeader gameStatus={this.state.status} counter={this.state.counter} onReset={() => this.resetGame()} />
+                <GameHeader gameStatus={this.state.status} counter={this.props.counter} onReset={() => this.resetGame()} />
             <div>
                 <div style={{float: 'left', width: '70%'}}>
                 <div className="game">
@@ -322,7 +324,25 @@ class Game extends Component {
 }
 
 Game.propTypes = {
-    difficulty: PropTypes.string.isRequired
+    difficulty: PropTypes.string.isRequired,
+    counter: PropTypes.number.isRequired,
+    incrementCounter: PropTypes.func,
+    resetCounter: PropTypes.func
 };
 
-export default Game;
+const mapStateToProps = state => ({ counter: state.counter });
+
+const mapDispatchToProps = dispatch => ({
+    incrementCounter: () => dispatch(incrementCounter()),
+    resetCounter: () => dispatch(resetCounter())
+});
+
+const GameContainer = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Game);
+
+export default GameContainer;
+
+
+
