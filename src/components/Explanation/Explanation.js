@@ -51,28 +51,27 @@ setOverlay(toDisplay, explanation, images) {
         }
 
         return (
-            <div className="winner">
+            <div className="explanation">
             <Overlay display={this.state.overlay} explanation={this.state.explanation} image1={this.state.images[0]} image2={this.state.images[1]} image3={this.state.images[2]} stop={() => this.setOverlay(false,"",[])}></Overlay>
                 
                 <img src={logo}></img>
-                <p className="congrats-text">{finished?'Super!!! Du hast das Global Memory gelöst!':'Spiele das Global Memory und erfahre über die Herkunft der Früchte'}</p>
-                    <h4> klicke auf {finished?'deine gesammelten':'die zusammelnden '} Früchte und Gemüse um mehr zu erfahren :-)</h4>
-                    <ul>
+                <h2>{finished?'Super!!! Du hast das Spiel gelöst!':'Schau dir die Bilder genau an: Gleich musst du die passenden Bilder im Memory wiederfinden :D'}</h2>
+                    <ul class="cardOverview">
                     {   
                     cards.map(function (d, idx) {
 
-                        return (<li key={idx} onClick={() => reference.setOverlay(true, finished?d.text1:d.text, d.image_paths)}><div class="centerText">{d.name}</div>
-                            <img src={window.location.origin + d.image_paths[0]} alt={d.name} width="100" height="100" ></img>
-                            <img src={window.location.origin + d.image_paths[1]} alt={d.name} width="100" height="100" ></img>
-                            <img src={window.location.origin + d.image_paths[2]} alt={d.name} width="100" height="100" ></img>
+                        return (<li class="cardItem" key={idx} onClick={() => reference.setOverlay(true, finished?d.text1:d.text, d.image_paths)}><div class="centerText">{d.name}</div>
+                            <img src={window.location.origin + d.image_paths[0]} alt={d.name} ></img>
+                            <img src={window.location.origin + d.image_paths[1]} alt={d.name} ></img>
+                            <img src={window.location.origin + d.image_paths[2]} alt={d.name} ></img>
 
                         </li>)
                     })
                     
                         }
-</ul> 
+                </ul> 
                 
-                <div className="winnerLinkClass">
+                <div className="explanationLink">
                 {finished?(<Link to="/">Zurück zum Hauptmenü</Link>):( <Link to={`/game/${difficulty}`}>Zum Spiel</Link>)}
                 </div>
             </div>

@@ -1,4 +1,4 @@
-.winner {
+.explanation {
     height: 100%;
     width: 100%;
     display: flex;
@@ -6,25 +6,41 @@
     align-items: center;
     justify-content: center;
     background-color: white;
+    padding:3%;
 }
 
-.congrats-text {
-    font-size: 2rem;
-    margin-bottom: 2rem;
+.cardItem {
+    margin-right: 3%;
+    margin-top: 3%;
 }
 
-.winnerLinkClass {
+.cardItem img{
+    width: 7vw;
+    height: 7vw;
+}
+
+.cardOverview {
+    width: 100%;
+    display: flex;
+    flex-flow: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    align-content: flex-start;
+}
+
+
+.explanationLink {
     margin: 30px;
 }
 
-.winnerLinkClass a {
+.explanationLink a {
     color: white;
     border-radius: 15px;
     background: #7a9d0a;
     padding: 20px;
 }
 
-.winnerLinkClass a:hover {
+.explanationLink a:hover {
     color:#7a9d0a;
     background: #cacacc;
     padding: 18px;

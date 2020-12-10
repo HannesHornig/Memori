@@ -32,9 +32,6 @@ const wrongSound = new UIfx(wrong,
     });
 
 class Game extends Component {
-
-
-
     constructor(props) {
         super(props);
 
@@ -51,7 +48,8 @@ class Game extends Component {
             status: "stopped",
             overlay: false,
             images: [],
-            explanation: ""
+            explanation: "",
+            counter: 0
         };
     }
 
@@ -161,7 +159,7 @@ class Game extends Component {
                     
                     winSound.play();
                     this.state.found.push(names.find(element => element.name === cards[flippedCards[0]].type));
-
+                    this.state.counter++;
                     Animated.sequence([
                         Animated.delay(1000),
                         Animated.parallel(
@@ -200,7 +198,8 @@ class Game extends Component {
                 ]).start(() => {
                     this.setState({
                         flippedCards: [],
-                        locked: false
+                        locked: false,
+                        counter: this.state.counter+1
                     });
                 });
                 setTimeout(function(){ wrongSound.play(); }, 0);
@@ -242,7 +241,8 @@ class Game extends Component {
             found: [],
             flippedCards: [],
             locked: false,
-            status: "reset"
+            status: "reset",
+            counter: 0
         });
 
         this.renderCards(cardsReset);
@@ -256,7 +256,7 @@ class Game extends Component {
             <React.Fragment>
                 <Overlay display={this.state.overlay} explanation={this.state.explanation} image1={this.state.images[0]} image2={this.state.images[1]} image3={this.state.images[2]} stop={() => this.setOverlay(false,"",[])}></Overlay>
                 
-                <GameHeader gameStatus={this.state.status} onReset={() => this.resetGame()} />
+                <GameHeader gameStatus={this.state.status} counter={this.state.counter} onReset={() => this.resetGame()} />
             <div>
                 <div style={{float: 'left', width: '70%'}}>
                 <div className="game">
@@ -299,8 +299,7 @@ class Game extends Component {
                     </div>
                 </div>
                 <div style={{float: 'left', width: '20%', minWidth: '200px'}}>
-                    <h3>Dein Pärchen-Stapel: </h3>
-                    <h5> klicke auf deine gesammelten Früchte und Gemüse um mehr zu erfahren :-)</h5>
+                    <h3>Toll, diese Pärchen hast du gefunden! </h3>
                     <div className="content">
                     <div className="side">
                     <div className="grid-wrapper">

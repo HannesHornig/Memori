@@ -5,6 +5,7 @@
 }
 
 .game {
+    padding-top: 3%;
     height: 100%;
     width: 100%;
     display: flex;
@@ -94,4 +95,5 @@
 
 .side img:hover {
     border: 5px #d5e5a0 solid;
+    cursor: pointer;
 }

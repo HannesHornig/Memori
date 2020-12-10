@@ -8,17 +8,18 @@ import doubleMemory from "../../pictures/Quadrate_doppelt.png";
 const height='20px';
 const Home = () => (
     <div className="home">
-        <h1 className="header">Globales Memory<img src={logo}></img></h1>
-        <div className = "description-container"><p>Wie viel weißt du eigentlich über die Lebensmittel, die du jeden Tag vor deiner Nase hast? Kannst du erraten, an was für einer Pflanze Früchte und Gemüse wachsen? Versuche es mal in dem Memory-Spiel.</p><p>Für uns ist es ganz normal jeden Tag Kartoffeln, Nudeln oder Bananen zu essen. Aber diese Lebensmittel gibt es noch gar nicht so lange in Deutschland. Alle diese Lebensmittel haben einen langen Weg hinter sich. Wo kommen sie ursprünglich her und wie kamen sie nach Deutschland? All’ das kannst du erfahren, wenn du das Memory erfolgreich geschafft hast!</p></div>
+        <h1 className="header">Wandernde Früchte<img src={logo}></img></h1>
+        <h2>Ein Lernspiel zu den verwobenen Wegen von Obst und Gemüse</h2>
+        <div className = "description-container"><p>Jeden Tag essen wir Kartoffeln, Tomaten oder Bananen.</p><p>
+Schon gewusst?  Diese Obst- und Gemüsesorten gibt es noch nicht so lange in Deutschland. </p><p>
+All’ diese Früchte haben einen langen Weg hinter sich. 
+Sie haben viele Geschichten zu erzählen. </p><p>
+Wie wachsen sie?
+Wo kommen sie ursprünglich her? 
+Wie haben sie sich in der Welt verbreitet?</p><p>
+All’ das kannst du in diesem Spiel erfahren!</p></div>
         <div className="difficulty-container">
-            <div className="homeLinkClass"> <Link to="/explanation/small" ><img src={memory} height ={height}></img>Kleines Memory</Link>
-             - mit 5 verschiedenen Gemüse- und Obstsorten (Obst - Pflanze - Produkt)
-            </div>
-            <div className="homeLinkClass">  <Link to="/explanation/big"><img src={doubleMemory} height ={height}></img>Großes Memory</Link>
-             - mit 10 verschiedenen Gemüse- und Obstsorten (Obst - Pflanze - Produkt)
-            </div>
-            <div className="homeLinkClass"> <Link to="/explanation/countries"><img src={"/pictures/Orange.jpeg"} height ={height}></img>Ländermemory</Link>
-             - mit 10 verschiedenen Gemüse- und Obstsorten (Obst - Pflanze - Ursprungsland)
+            <div className="homeLinkClass">  <Link to="/explanation/big"><img src={doubleMemory} height ={height}></img>Los geht's</Link>
             </div>
         </div>
     </div>
