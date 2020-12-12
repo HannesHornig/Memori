@@ -9,18 +9,22 @@ body {
     height: 100vh;
 }
 
+main {
+    display: grid;
+}
+
 body {
     font-family: 'Amatic SC', cursive;
-
+    font-size: 1.5em;
     color: rgba(0, 0, 0, 0.8);
     margin: 0;
 }
 
 a,
 button {
+    color: rgba(0, 0, 0, 0.6);
     font-family: 'Amatic SC', cursive;
-    color: #3e6f2d;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 600;
     text-decoration: none;
     cursor: pointer;
@@ -28,10 +32,11 @@ button {
 
 a:hover,
 button:hover {
-    color: #8da74d;
+    color: rgba(0, 0, 0, 0.8);
 }
 
 #root {
     height: 100%;
     overflow: hidden;
 }
+

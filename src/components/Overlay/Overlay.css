@@ -1,38 +1,42 @@
 .overlay {
+    width: 100px;
     position: fixed; /* Sit on top of the page content */
-    display: block; /* Hidden by default */
-    width: 100%; /* Full width (cover the whole page) */
-    height: 100%; /* Full height (cover the whole page) */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    display: inline; /* Hidden by default */
     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
+    top: 50%;
   }
 
   .text{
+      width: 550px;
+      padding: 40px;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    font-size: 15px;
-    color: white;
+      color: white;
+      font-weight: bold;
+      font-size: 1.5rem;
     transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
+      border: solid;
+      border-width: 1px;
+      background: rgba(141, 167, 77, 0.9);
+      border-radius: 6%;
   }
 
   .picStyle {
     width:100px;
+      border-radius: 8%;
   }
 
   .column {
-    float: left;
+    display: flex;
+      flex-flow: row;
     width: 100%;
+      align-content: space-evenly;
+      justify-content: space-around;
   }
-  
-  /* Clear floats after the columns */
+
+/* Clear floats after the columns */
   .row:after {
-    display: table;
+      width: 100%;
     clear: both;
   }
