@@ -1,5 +1,60 @@
 .app {
     height: 100%;
     width: 100%;
-    background-color: #f4f7f8;
+    background-color: white;
+}
+nav{
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+    flex-wrap: wrap;
+    border-top: 0.5px solid #8da74d;
+    border-bottom: 0.5px solid #8da74d;
+}
+
+ul{
+    margin: 2px;
+}
+ul li{
+    display: inline;
+}
+
+li{
+    margin-right: 20px;
+    margin-left: 20px;
+    border: 0.5px solid white;
+}
+li:hover {
+    cursor: pointer;
+    border: 0.5px solid #8da74d;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+html {
+    background-color: white;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+header {
+    height: 6rem;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+img {
+    width: 140px;
+    size: 1px;
 }

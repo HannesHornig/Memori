@@ -1,29 +1,27 @@
+
 .explanation {
+    background-color: white;
     height: 100%;
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background-color: white;
-    padding:3%;
 }
 
 .cardItem {
-    margin-right: 2%;
-    margin-top: 2%;
+    align-content: center;
+    width: fit-content;
 }
 
 .cardItem img{
-    width: 7vw;
-    height: 7vw;
+    width: 9vw;
+    height: 9vw;
 }
+
 
 .cardOverview {
     width: 700px;
     display: flex;
-    flex-flow: wrap row;
-    align-items: flex-start;
+    flex-flow: wrap ;
     justify-content: space-evenly;
 }
 
@@ -33,48 +31,44 @@
 }
 
 .explanationLink a {
-    color: white;
+    font-size: 2rem;
+    color: #3e6f2d;
     border-radius: 15px;
-    background: #8da74d;
     padding: 20px;
 }
 
 .explanationLink a:hover {
+    border: 0.5px solid #8da74d;
     color: #3e6f2d;
-    background: #8da74d;
-    padding: 18px;
 }
 
 li  {
     border-radius: 15px;
-    border: 4px solid #8da74d;
     margin-top: 5px;
 }
 
-li:hover .centerText {
-    cursor: pointer;
-    border-radius: 15px;
-    border: 4px solid #8da74d;
-    background-color: #8da74d;
-    color: #3e6f2d;
-}
 
 
 li:hover {
     cursor: pointer;
 }
 
-
 ul {
     list-style-type: none;
 }
     
 .centerText {
-    width: 100%;
-    text-align: center;
+    cursor: pointer;
+    font-size: 1.5rem;
     border-radius: 15px;
-    border: 4px solid #8da74d;
-    background-color: #8da74d;
-    color:white;
+    width: 100%;
+    color:#3e6f2d;
 }
 
+li:hover .centerText {
+    cursor: pointer;
+    border-radius: 15px;
+    background-color: rgba(187, 255, 207, 0.5);
+    width: 100%;
+    color: #3e6f2d;
+}

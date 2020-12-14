@@ -4,9 +4,12 @@ import Home from "../Home/Home";
 import Game from "../Game/Game";
 import Explanation from "../Explanation/Explanation";
 import "./App.css";
+import logo from "../../pictures/Grenzgaenger_Logo.PNG";
 
 const App = () => (
-    <div className="app">
+<div className="app">
+        <header><h1>Wandernde Früchte<img src={logo}></img></h1></header>
+        <nav><ul><li><a href={"/"}>Heim</a></li><li><a href={"/game/big"}>Zum Spiel</a></li><li><a href={"/explanation/big"}>Explanations</a></li></ul></nav>
         <Route exact path="/" component={Home} />
         <Route
             exact
