@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 import "./Explanation.css";
 import logo from "../../pictures/Grenzgaenger_Logo.PNG";
 import Overlay from "../Overlay/Overlay";
-
 import games from "../../games.json";
 import names from "../../names.json";
 
@@ -53,8 +52,7 @@ setOverlay(toDisplay, explanation, images) {
         return (
             <div className="explanation">
             <Overlay display={this.state.overlay} explanation={this.state.explanation} image1={this.state.images[0]} image2={this.state.images[1]} image3={this.state.images[2]} stop={() => this.setOverlay(false,"",[])}></Overlay>
-                
-                <img src={logo}></img>
+
                 <h2>{finished?`Super!!! Du hast das Spiel mit ${this.props.counter} Versuchen gelöst!`:'Schau dir die Bilder genau an: Gleich musst du die passenden Bilder im Memory wiederfinden :D'}</h2>
                     <ul class="cardOverview">
                     {   
@@ -83,5 +81,4 @@ setOverlay(toDisplay, explanation, images) {
 const mapStateToProps = state => ({ counter: state.counter });
 
 const ExplanationConnected = connect(mapStateToProps)(Explanation);
-
 export default ExplanationConnected;

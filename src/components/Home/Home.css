@@ -4,7 +4,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-   
+    background-color: white;
+
    /* justify-content: center;*/
   /* background-image: url('/public/Gurke.jpg');
       background-image: url('/pictures/Weltkarte.jpg');
@@ -13,14 +14,15 @@
     background: cover;*/
 }
 
-.header {
+
+h1 {
     font-size: 3rem;
 }
-
 .description-container {
-    padding: 1.5rem; 
+    padding: 1.0rem;
     text-align: center;
-
+    font-weight: 700;
+    font-size: 1.5em;
 }
 
 .difficulty-container {

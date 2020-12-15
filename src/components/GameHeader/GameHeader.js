@@ -11,11 +11,10 @@ const GameHeader = props => (
         <Link to="/">
             <i className="material-icons">arrow_back</i>
         </Link>
-        <img src={logo}></img>
+        <div className="counter-container"> {props.counter} {props.counter === 1 ? 'Versuch' : 'Versuche'}</div>
         <button onClick={() => props.onReset()}>
             <i className="material-icons">refresh</i>
         </button>
-        <div class="counter-container"> {props.counter} {props.counter===1?'Versuch':'Versuche'}</div>
     </div>
 );
 

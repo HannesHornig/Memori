@@ -1,14 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
-import logo from "../../pictures/Grenzgaenger_Logo.PNG";
 import memory from "../../pictures/Quadrate.png";
 import doubleMemory from "../../pictures/Quadrate_doppelt.png";
 
 const height='20px';
 const Home = () => (
     <div className="home">
-        <h1 className="header">Wandernde Früchte<img src={logo}></img></h1>
         <h2>Ein Lernspiel zu den verwobenen Wegen von Obst und Gemüse</h2>
         <div className = "description-container"><p>Jeden Tag essen wir Kartoffeln, Tomaten oder Bananen.</p><p>
 Schon gewusst?  Diese Obst- und Gemüsesorten gibt es noch nicht so lange in Deutschland. </p><p>
