@@ -8,7 +8,6 @@ nav{
     display: flex;
     justify-content: space-evenly;
     margin: 0;
-    flex-wrap: wrap;
     border-top: 0.5px solid #8da74d;
     border-bottom: 0.5px solid #8da74d;
 }
