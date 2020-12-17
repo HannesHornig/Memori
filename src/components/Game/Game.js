@@ -256,9 +256,9 @@ class Game extends Component {
         const reference = this;
         return (
             <React.Fragment>
-                <Overlay display={this.state.overlay} explanation={this.state.explanation} image1={this.state.images[0]} image2={this.state.images[1]} image3={this.state.images[2]} stop={() => this.setOverlay(false,"",[])}></Overlay>
+                <Overlay display={this.state.overlay} explanation={this.state.explanation} image={this.state.images[0]} stop={() => this.setOverlay(false,"",[])}></Overlay>
                 
-                <GameHeader gameStatus={this.state.status} counter={this.props.counter} onReset={() => this.resetGame()} />
+                <GameHeader difficulty={this.props.difficulty} gameStatus={this.state.status} counter={this.props.counter} onReset={() => this.resetGame()} />
             <div>
                 <div style={{float: 'left', width: '70%'}}>
                 <div className="game">

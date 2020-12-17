@@ -11,11 +11,7 @@ class Overlay extends React.Component {
                 <div className="text">
                 <div class="row">
                 <div class="column">  
-                <img src={window.location.origin + this.props.image1} className="picStyle" alt="icon"/>
-                <br/>
-                <img src={window.location.origin+this.props.image2} className="picStyle" alt="icon"/>
-                <br/>
-                <img src={window.location.origin+this.props.image3} className="picStyle" alt="icon"/>
+                <img src={window.location.origin + this.props.image} className="picStyle" alt="icon"/>
                 </div>
                 <div class="column">  
                 {this.props.explanation}
