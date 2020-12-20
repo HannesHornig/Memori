@@ -55,7 +55,7 @@ setOverlay(toDisplay, explanation, image) {
             <div className="explanation">
             <Overlay display={this.state.overlay} explanation={this.state.explanation} image={this.state.image} stop={() => this.setOverlay(false,[],[])}></Overlay>
 
-                <h2>{finished?`Super!!! Du hast das Spiel mit ${this.props.counter} Versuchen gelöst!`:'Schau dir die Bilder genau an: Gleich musst du die passenden Bilder im Memory wiederfinden :D'}</h2>
+                <h2>{finished?`Super!!! Du hast das Spiel mit ${this.props.counter} Versuchen gelöst!`:'<p>Schokolade, Popcorn und Guacamole. Mhhh...lecker.</p><p> Aber was für Obst und Gemüse steckt dahinter? </p><p> An was für einer Pflanze wächst es?  </p><p>Klicke auf die Früchte. </p><p> So kannst du mehr über sie erfahren. </p><p> Aber aufgepasst! </p><p> Schau dir die Bilder genau an.</p><p> Gleich musst du die passenden Bilder im Memory wiederfinden.</p><p> '}</h2>
                     <ul class="cardOverview">
                     {   
                     cards.map(function (d, idx) {
@@ -72,7 +72,8 @@ setOverlay(toDisplay, explanation, image) {
                 </ul> 
                 
                 <div className="explanationLink">
-                {finished?(<Link to="/">Zurück zum Hauptmenü</Link>):( <Link to={`/game/${difficulty}`}>Zum Spiel</Link>)}
+                <p>Na, weißt du jetzt, welche Frucht wie wächst? Dann auf ...</p>
+                {finished?(<Link to="/">Zurück zum Hauptmenü</Link>):( <Link to={`/game/${difficulty}`}>...zum Spiel</Link>)}
                 </div>
             </div>
             </React.Fragment>

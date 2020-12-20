@@ -48,7 +48,7 @@ class Game extends Component {
             status: "stopped",
             overlay: true,
             images: [],
-            explanation: [{title:'how to play',text:'asdklfjlaskdfj'}],
+            explanation: [{title:'Spielregeln',text:'Klicke auf die Karten um sie anzusehen. Finde heraus, welche drei Karten zusammengehören.'}],
         };
     }
 
