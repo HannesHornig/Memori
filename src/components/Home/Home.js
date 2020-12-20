@@ -17,7 +17,7 @@ Wo kommen sie ursprünglich her?
 Wie haben sie sich in der Welt verbreitet?</p><p>
 All’ das kannst du in diesem Spiel erfahren!</p></div>
         <div className="difficulty-container">
-            <div className="homeLinkClass">  <Link to="/explanation/big"><img src={doubleMemory} height ={height}></img>Los geht's</Link>
+            <div className="homeLinkClass">  <Link to="/explanation/big"><i className="material-icons">send</i>Los geht's</Link>
             </div>
         </div>
     </div>
