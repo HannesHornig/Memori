@@ -53,14 +53,14 @@ setOverlay(toDisplay, explanation, image) {
             <React.Fragment>
                 <nav className="header"><a href={"/"}><i className="material-icons">arrow_back</i></a>{finished?'Wo komme ich ursprünglich her?':'Wer bin ich, und wo wachse ich?'}</nav>
             <div className="explanation">
-            <Overlay display={this.state.overlay} explanation={this.state.explanation} image={this.state.image} stop={() => this.setOverlay(false,"",[])}></Overlay>
+            <Overlay display={this.state.overlay} explanation={this.state.explanation} image={this.state.image} stop={() => this.setOverlay(false,[],[])}></Overlay>
 
                 <h2>{finished?`Super!!! Du hast das Spiel mit ${this.props.counter} Versuchen gelöst!`:'Schau dir die Bilder genau an: Gleich musst du die passenden Bilder im Memory wiederfinden :D'}</h2>
                     <ul class="cardOverview">
                     {   
                     cards.map(function (d, idx) {
 
-                        return (<li class="cardItem" key={idx} onClick={() => reference.setOverlay(true, finished?d.text1:d.text, d.image_paths[finished?1:0])}><div class="centerText">{d.name}</div>
+                        return (<li class="cardItem" key={idx} onClick={() => reference.setOverlay(true, finished?[{title:'Wo komme ich her',text:d.text1},{title:'Mein Weg in die Welt hinaus',text:d.text2}]:[{title:'kjk',text:d.text}], d.image_paths[finished?1:0])}><div class="centerText">{d.name}</div>
                             <img src={window.location.origin + d.image_paths[0]} alt={d.name} ></img>
                             <img src={window.location.origin + d.image_paths[1]} alt={d.name} ></img>
                             <img src={window.location.origin + d.image_paths[2]} alt={d.name} ></img>
