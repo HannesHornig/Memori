@@ -46,9 +46,9 @@ class Game extends Component {
             rotateCards: [],
             locked: false,
             status: "stopped",
-            overlay: false,
+            overlay: true,
             images: [],
-            explanation: "",
+            explanation: [{title:'how to play',text:'asdklfjlaskdfj'}],
         };
     }
 
@@ -256,7 +256,7 @@ class Game extends Component {
         const reference = this;
         return (
             <React.Fragment>
-                <Overlay display={this.state.overlay} explanation={this.state.explanation} image={this.state.images[0]} stop={() => this.setOverlay(false,"",[])}></Overlay>
+                <Overlay display={this.state.overlay} explanation={this.state.explanation} image={this.state.images[0]} stop={() => this.setOverlay(false,[],[])}></Overlay>
                 
                 <GameHeader difficulty={this.props.difficulty} gameStatus={this.state.status} counter={this.props.counter} onReset={() => this.resetGame()} />
             <div>
@@ -309,7 +309,7 @@ class Game extends Component {
                     {
                         this.state.found.map(function (d, idx) {
                             return (<div key={idx}>
-                                <img class="sideImage" src={window.location.origin + d.image_paths[0]} alt={d.name} width="70" height="70" onClick={() => reference.setOverlay(true, d.text, d.image_paths)}></img>
+                                <img class="sideImage" src={window.location.origin + d.image_paths[0]} alt={d.name} width="70" height="70" onClick={() => reference.setOverlay(true, [{title:'aaa',text:d.text}], d.image_paths)}></img>
                             </div>)
                         })}
                         </div>
