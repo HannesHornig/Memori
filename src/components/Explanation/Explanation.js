@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import PropTypes from "prop-types";
 import "./Explanation.css";
-import logo from "../../pictures/Grenzgaenger_Logo.PNG";
 import Overlay from "../Overlay/Overlay";
 import games from "../../games.json";
 import names from "../../names.json";
@@ -54,23 +52,42 @@ setOverlay(toDisplay, explanation, image) {
                 <nav className="header"><a href={"/"}><i className="material-icons">arrow_back</i></a>{finished?'Wo komme ich ursprünglich her?':'Wer bin ich, und wo wachse ich?'}</nav>
             <div className="explanation">
             <Overlay display={this.state.overlay} explanation={this.state.explanation} image={this.state.image} stop={() => this.setOverlay(false,[],[])}></Overlay>
+                {finished?
+                <div>
+                    <h2>Super!!! Du hast das Spiel mit {this.props.counter} Versuchen gelöst!</h2>
+                    <h3>Jetzt bist du ein*e Pflanzenexpert*in.
+Klickt auf die gefundenen Pflanzen.
+Sie erzählen dir ihre Geschichten.</h3>
+                    </div>
+                    :<div>
+                        Kakao, Popcorn und Guacamole. Mhhh...lecker. 
+Aber was für Obst und Gemüse steckt dahinter? 
+An was für einer Pflanze wächst es?  
 
-                <h2>{finished?`Super!!! Du hast das Spiel mit ${this.props.counter} Versuchen gelöst!`:'Schau dir die Bilder genau an: Gleich musst du die passenden Bilder im Memory wiederfinden :D'}</h2>
+Klicke auf die Früchte. 
+So kannst mehr über sie erfahren. 
+Aber Vorsicht! 
+Schau dir die Bilder genau an.
+Gleich musst du die passenden Bilder im Memory wiederfinden.
+                    </div>
+                }
                     <ul class="cardOverview">
                     {   
                     cards.map(function (d, idx) {
 
-                        return (<li class="cardItem" key={idx} onClick={() => reference.setOverlay(true, finished?[{title:'Wo komme ich her',text:d.text1},{title:'Mein Weg in die Welt hinaus',text:d.text2}]:[{title:'kjk',text:d.text}], d.image_paths[finished?1:0])}><div class="centerText">{d.name}</div>
+                        return (<li class="cardItem" key={idx} onClick={() => reference.setOverlay(true, finished?[{title:'Wo komme ich her',text:d.texts[1]},{title:'Mein Weg in die Welt hinaus',text:d.texts[2]}]:[{title:'kjk',text:d.texts[0]}], d.image_paths[finished?1:0])}>
+                            <div class="centerText">{d.name}</div>
                             <img src={window.location.origin + d.image_paths[0]} alt={d.name} ></img>
                             <img src={window.location.origin + d.image_paths[1]} alt={d.name} ></img>
                             <img src={window.location.origin + d.image_paths[2]} alt={d.name} ></img>
-
-                        </li>)
+                        </li>
+                        )
                     })
                     
                         }
                 </ul> 
-                
+                {finished?'':<h2>Na, weißt du jetzt, welche Frucht wie wächst?</h2>}
+
                 <div className="explanationLink">
                 {finished?(<Link to="/">Zurück zum Hauptmenü</Link>):( <Link to={`/game/${difficulty}`}>Zum Spiel</Link>)}
                 </div>
