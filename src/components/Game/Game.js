@@ -48,7 +48,7 @@ class Game extends Component {
             status: "stopped",
             overlay: true,
             images: [],
-            explanation: [{title:'how to play',text:'asdklfjlaskdfj'}],
+            explanation: [{title:'Spielregeln',text:'Klicke auf die Karten um sie anzusehen. Finde heraus, welche drei Karten zusammengehören.'}],
         };
     }
 
@@ -309,7 +309,7 @@ class Game extends Component {
                     {
                         this.state.found.map(function (d, idx) {
                             return (<div key={idx}>
-                                <img class="sideImage" src={window.location.origin + d.image_paths[0]} alt={d.name} width="70" height="70" onClick={() => reference.setOverlay(true, [{title:'aaa',text:d.texts[0]}], d.image_paths)}></img>
+                                <img class="sideImage" src={window.location.origin + d.image_paths[0]} alt={d.name} width="70" height="70" onClick={() => reference.setOverlay(true, [{title:'Wer bin ich?',text:d.text}], d.image_paths)}></img>
                             </div>)
                         })}
                         </div>

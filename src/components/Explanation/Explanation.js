@@ -59,24 +59,22 @@ setOverlay(toDisplay, explanation, image) {
 Klickt auf die gefundenen Pflanzen.
 Sie erzählen dir ihre Geschichten.</h3>
                     </div>
-                    :<div>
+                    :<div><p><h3>
                         Kakao, Popcorn und Guacamole. Mhhh...lecker. 
 Aber was für Obst und Gemüse steckt dahinter? 
-An was für einer Pflanze wächst es?  
-
-Klicke auf die Früchte. 
+An was für einer Pflanze wächst es?</h3> 
+</p>
+<p><h3>Klicke auf die Früchte. 
 So kannst mehr über sie erfahren. 
 Aber Vorsicht! 
 Schau dir die Bilder genau an.
-Gleich musst du die passenden Bilder im Memory wiederfinden.
-                    </div>
-                }
+Gleich musst du die passenden Bilder im Memory wiederfinden.</h3></p>
+</div>}
                     <ul class="cardOverview">
                     {   
                     cards.map(function (d, idx) {
 
-                        return (<li class="cardItem" key={idx} onClick={() => reference.setOverlay(true, finished?[{title:'Wo komme ich her',text:d.texts[1]},{title:'Mein Weg in die Welt hinaus',text:d.texts[2]}]:[{title:'kjk',text:d.texts[0]}], d.image_paths[finished?1:0])}>
-                            <div class="centerText">{d.name}</div>
+                        return (<li class="cardItem" key={idx} onClick={() => reference.setOverlay(true, finished?[{title:'Wo komme ich her',texts:d.texts[1]},{title:'Mein Weg in die Welt hinaus',text:d.texts[2]}]:[{title:'Wer bin ich?',text:d.texts[0]}], d.image_paths[finished?1:0])}><div class="centerText">{d.name}</div>
                             <img src={window.location.origin + d.image_paths[0]} alt={d.name} ></img>
                             <img src={window.location.origin + d.image_paths[1]} alt={d.name} ></img>
                             <img src={window.location.origin + d.image_paths[2]} alt={d.name} ></img>
@@ -89,7 +87,7 @@ Gleich musst du die passenden Bilder im Memory wiederfinden.
                 {finished?'':<h2>Na, weißt du jetzt, welche Frucht wie wächst?</h2>}
 
                 <div className="explanationLink">
-                {finished?(<Link to="/">Zurück zum Hauptmenü</Link>):( <Link to={`/game/${difficulty}`}>Zum Spiel</Link>)}
+                {finished?(<Link to="/">Zurück zum Hauptmenü</Link>):( <Link to={`/game/${difficulty}`}>...zum Spiel</Link>)}
                 </div>
             </div>
             </React.Fragment>

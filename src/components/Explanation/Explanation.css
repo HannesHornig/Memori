@@ -39,14 +39,15 @@
 
 .explanationLink a:hover {
     border: 0.5px solid #8da74d;
+    background-color: hsla(77, 62%, 63%, 0.8);
     color: #3e6f2d;
 }
 
 li  {
     border-radius: 15px;
     margin-top: 5px;
+    border: 2px solid #8da74d;
 }
-
 
 
 li:hover {
@@ -58,17 +59,14 @@ ul {
 }
     
 .centerText {
-    cursor: pointer;
     font-size: 1.5rem;
     border-radius: 15px;
-    width: 100%;
     color:#3e6f2d;
+    text-align: center;
 }
 
 li:hover .centerText {
-    cursor: pointer;
-    border-radius: 15px;
-    background-color: rgba(187, 255, 207, 0.5);
+    background-color: hsla(77, 62%, 63%, 0.8);
     width: 100%;
     color: #3e6f2d;
 }
