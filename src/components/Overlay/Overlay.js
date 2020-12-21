@@ -30,9 +30,12 @@ class Overlay extends React.Component {
                     <div className="overlay">
                         <div className="text">
                             <div class="row">
+                                {this.props.image&&
                                 <div class="column">
                                     <img src={window.location.origin + this.props.image} className="picStyle" alt="icon" />
                                 </div>
+                                }
+
                                 <div class="column">
                                     {this.props.explanation[this.state.page].title}
                                     <br></br>
@@ -42,8 +45,8 @@ class Overlay extends React.Component {
                             <button onClick={this.props.stop}>Zurück zum Spiel</button>
                             {this.props.explanation.length > 1 ?
                                 <div>
-                                    {this.state.page > 0 ? <a onClick={() => this.decreasePage()}><i className="material-icons">arrow_back</i></a> : ''}
-                                    {this.state.page < this.props.explanation.length - 1 ? <a onClick={() => this.increasePage()}><i className="material-icons">arrow_forward</i></a> : ''}
+                                    {this.state.page > 0 ? <a  onClick={() => this.decreasePage()}><i className="material-icons" >arrow_back</i></a> : ''}
+                                    {this.state.page < this.props.explanation.length - 1 ? <a style={{fontSize:"50px"}} onClick={() => this.increasePage()}><i className="material-icons">arrow_forward</i></a> : ''}
                                 </div> : ''
                             }
                         </div>

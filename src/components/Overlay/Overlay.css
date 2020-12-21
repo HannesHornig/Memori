@@ -34,3 +34,7 @@
       width: 100%;
     clear: both;
   }
+
+.material-icons {
+    font-size: 50px;
+  }

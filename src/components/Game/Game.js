@@ -47,7 +47,7 @@ class Game extends Component {
             locked: false,
             status: "stopped",
             overlay: true,
-            images: [],
+            image: null,
             explanation: [{title:'Spielregeln',text:'Klicke auf die Karten um sie anzusehen. Finde heraus, welche drei Karten zusammengehören.'}],
         };
     }
@@ -98,11 +98,11 @@ class Game extends Component {
  * @param {string} explanation  - explanationText
  * @param {URL} img - image which is shown over the text (can be null)
  */
-    setOverlay(toDisplay, explanation, images) {
+    setOverlay(toDisplay, explanation, img) {
         this.setState({
             overlay: toDisplay,
             explanation: explanation,
-            images: images,
+            image: img,
         });
     }
 
@@ -259,7 +259,7 @@ class Game extends Component {
 
                 <GameHeader difficulty={this.props.difficulty} gameStatus={this.state.status} counter={this.props.counter} onReset={() => this.resetGame()} />
                 <div className="help">
-                <Overlay display={this.state.overlay} explanation={this.state.explanation} image={this.state.images[0]} stop={() => this.setOverlay(false,[],[])}></Overlay>
+                <Overlay display={this.state.overlay} explanation={this.state.explanation} image={this.state.image} stop={() => this.setOverlay(false,[],null)}></Overlay>
             <div>
                 <div style={{float: 'left', width: '70%'}}>
                 <div className="game">
@@ -310,7 +310,7 @@ class Game extends Component {
                     {
                         this.state.found.map(function (d, idx) {
                             return (<div key={idx}>
-                                <img class="sideImage" src={window.location.origin + d.image_paths[0]} alt={d.name} width="70" height="70" onClick={() => reference.setOverlay(true, [{title:'Wer bin ich?',text:d.text}], d.image_paths)}></img>
+                                <img class="sideImage" src={window.location.origin + d.image_paths[0]} alt={d.name} width="70" height="70" onClick={() => reference.setOverlay(true, [{title:'Wer bin ich?',text:d.texts[0]}], d.image_paths[0])}></img>
                             </div>)
                         })}
                         </div>
