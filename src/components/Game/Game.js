@@ -256,9 +256,10 @@ class Game extends Component {
         const reference = this;
         return (
             <React.Fragment>
-                <Overlay display={this.state.overlay} explanation={this.state.explanation} image={this.state.images[0]} stop={() => this.setOverlay(false,[],[])}></Overlay>
-                
+
                 <GameHeader difficulty={this.props.difficulty} gameStatus={this.state.status} counter={this.props.counter} onReset={() => this.resetGame()} />
+                <div className="help">
+                <Overlay display={this.state.overlay} explanation={this.state.explanation} image={this.state.images[0]} stop={() => this.setOverlay(false,[],[])}></Overlay>
             <div>
                 <div style={{float: 'left', width: '70%'}}>
                 <div className="game">
@@ -317,7 +318,8 @@ class Game extends Component {
                         </div>
                         </div>
                         </div>
-                </div>  
+                </div>
+                </div>
             </React.Fragment>
         );
     }

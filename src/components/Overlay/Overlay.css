@@ -1,25 +1,19 @@
 .overlay {
-    width: 100px;
-    position: fixed; /* Sit on top of the page content */
-    display: inline; /* Hidden by default */
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-    cursor: pointer; /* Add a pointer on hover */
-    top: 50%;
-  }
+    margin-left: 33%;
+}
 
-  .text{
+.text{
+    position: absolute;
       width: 550px;
       padding: 40px;
-    position: absolute;
       color: white;
       font-weight: bold;
       font-size: 1.5rem;
-    transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
       border: solid;
       border-width: 1px;
       background: rgba(141, 167, 77, 0.9);
       border-radius: 6%;
+      z-index: 99;
   }
 
   .picStyle {

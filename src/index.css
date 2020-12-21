@@ -9,13 +9,14 @@ body {
 }
 
 body {
-    font-family: 'Amatic SC', cursive;
+    font-family: 'Spartan', sans-serif;
     color: rgba(0, 0, 0, 0.8);
     margin: 0;
     background: white;
 }
 
-.header {
+header {
+    font-family: 'Amatic SC', cursive;
     height: 5rem;
     display: flex;
     align-items: center;
