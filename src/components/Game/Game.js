@@ -215,10 +215,6 @@ class Game extends Component {
         const rotateValue = direction === "back" ? 0 : 1;
 
         return Animated.stagger(100, [
-            Animated.timing(this.state.scaleCards[cardIndex], {
-                toValue: 1.3,
-                duration: 100
-            }),
             Animated.timing(this.state.rotateCards[cardIndex], {
                 toValue: rotateValue,
                 duration: 200
@@ -261,7 +257,7 @@ class Game extends Component {
                 <div className="help">
                 <Overlay display={this.state.overlay} explanation={this.state.explanation} image={this.state.image} stop={() => this.setOverlay(false,[],null)}></Overlay>
             <div>
-                <div style={{float: 'left', width: '70%'}}>
+                <div style={{float: 'left', width: '90%', height: '100%'}}>
                 <div className="game">
                     
                     <div className="content">
@@ -279,7 +275,7 @@ class Game extends Component {
                                                     {
                                                         translateY: this.state.dealCards[cardIndex].interpolate({
                                                             inputRange: [0, 1],
-                                                            outputRange: ["100px", "0px"]
+                                                            outputRange: ["10px", "0px"]
                                                         })
                                                     },
                                                     {

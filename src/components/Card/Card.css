@@ -1,7 +1,7 @@
 .card-wrapper {
     position: relative;
-    height: 20px;
-    width: 20px;
+    height: 100%;
+    width: 100%;
     min-width: 60px;
     min-height: 60px;
     perspective: 800px;
