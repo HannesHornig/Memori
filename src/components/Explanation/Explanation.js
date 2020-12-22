@@ -53,29 +53,29 @@ setOverlay(toDisplay, explanation, image) {
                 <Overlay display={this.state.overlay} explanation={this.state.explanation} image={this.state.image} stop={() => this.setOverlay(false,[],[])}></Overlay>
             <div className="explanation">
                 {finished?
-                <div>
-                    <h2>Super!!! Du hast alle Pärchen mit  {this.props.counter} Versuchen gefunden!</h2>
-                    <h3>Jetzt bist du ein*e Pflanzenexpert*in.
-Klickt auf die gefundenen Pflanzen.
-Sie erzählen dir ihre Geschichten.</h3>
+                        <div>
+                        <h2><p>Super!! Du hast alle Pärchen mit  {this.props.counter} Versuchen gefunden!</p></h2>
+                        <p>Jetzt bist du ein*e Pflanzenexpert*in.</p>
+                        <p>Klickt auf die gefundenen Pflanzen.</p>
+                        <p>Sie erzählen dir ihre Geschichten.</p>
+                        </div>
+                    :<div>
+                    <p>Kakao, Popcorn und Guacamole. Mhhh...lecker.</p>
+                        <p>Aber was für Obst und Gemüse steckt dahinter?</p>
+                    <p>An was für einer Pflanze wächst es?</p>
+                    <p>Klicke auf die Früchte.</p>
+                    <p>So kannst mehr über sie erfahren.</p>
+                    <p>Aber Vorsicht!</p>
+                    <p>Schau dir die Bilder genau an.</p>
+                    <p>Gleich musst du die passenden Bilder im Memory wiederfinden.</p>
                     </div>
-                    :<div><p><h3>
-                        Kakao, Popcorn und Guacamole. Mhhh...lecker. 
-Aber was für Obst und Gemüse steckt dahinter? 
-An was für einer Pflanze wächst es?</h3> 
-</p>
-<p><h3>Klicke auf die Früchte. 
-So kannst mehr über sie erfahren. 
-Aber Vorsicht! 
-Schau dir die Bilder genau an.
-Gleich musst du die passenden Bilder im Memory wiederfinden.</h3></p>
-</div>}
+                }
                     <ul class="cardOverview">
                     {   
                     cards.map(function (d, idx) {
 
-                        return (<li class="cardItem" key={idx} onClick={() => reference.setOverlay(true, finished?[{title:'Wo komme ich her',text:d.texts[1]},{title:'Mein Weg in die Welt hinaus',text:d.texts[2]}]:[{title:'Wer bin ich?',text:d.texts[0]}], d.image_paths[finished?0:1])}><div class="centerText">{d.name}</div>
-                            <img src={window.location.origin + d.image_paths[0]} alt={d.name} ></img>
+                        return (<li class="cardItem" key={idx} onClick={() => reference.setOverlay(true, finished?[{title:<p>'Wo komme ich her'</p>,text:d.texts[1]},{title:'Mein Weg in die Welt hinaus',text:d.texts[2]}]:[{title:<p>'Wer bin ich?'</p>, text:d.texts[0]} ], d.image_paths[finished?0:1])}><div class="centerText">{d.name}</div>
+                                <img src={window.location.origin + d.image_paths[0]} alt={d.name} ></img>
                             <img src={window.location.origin + d.image_paths[1]} alt={d.name} ></img>
                             <img src={window.location.origin + d.image_paths[2]} alt={d.name} ></img>
                         </li>
@@ -83,8 +83,8 @@ Gleich musst du die passenden Bilder im Memory wiederfinden.</h3></p>
                     })
                     
                         }
-                </ul> 
-                {finished?'':<h2>Na, weißt du jetzt, welche Frucht wie wächst? Dann auf...</h2>}
+                    </ul>
+                {finished?'':<p>Na, weißt du jetzt, welche Frucht wie wäcNa, weißt du jetzt, welche Frucht wie wächst? Dann auf...hst? Dann auf...</p>}
 
                 <div className="explanationLink">
                 {finished?(<Link to="/">Zurück zum Hauptmenü</Link>):( <Link to={`/game/${difficulty}`}>...zum Spiel</Link>)}

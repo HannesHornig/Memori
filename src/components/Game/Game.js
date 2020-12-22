@@ -302,7 +302,7 @@ class Game extends Component {
                     </div>
                 </div>
                 <div style={{float: 'left', width: '20%', minWidth: '200px'}}>
-                    <h3>Toll, diese Pärchen hast du gefunden! </h3>
+                    <p>Toll, diese Pärchen hast du gefunden!</p>
                     <div className="content">
                     <div className="side">
                     <div className="grid-wrapper">

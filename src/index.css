@@ -11,7 +11,7 @@ body {
 body {
     font-family: 'Spartan', sans-serif;
     color: rgba(0, 0, 0, 0.8);
-    margin: 0;
+gin: 0;
     background: white;
 }
 
@@ -29,7 +29,6 @@ header {
 .header img {
     width: 15%;
 }
-
 a,
 button {
     font-family: 'Amatic SC', cursive;
