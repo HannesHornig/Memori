@@ -1,7 +1,7 @@
 .card-wrapper {
     position: relative;
-    height: 100%;
-    width: 100%;
+    height: 20px;
+    width: 20px;
     min-width: 60px;
     min-height: 60px;
     perspective: 800px;
@@ -10,10 +10,9 @@
 .card {
     height: 100%;
     width: 100%;
-    position: absolute;
+    position: relative;
     border-radius: 10px;
     transform-style: preserve-3d;
-    font-size: 100%;
     font-family: inherit;
     border: 0;
     padding: 0;
@@ -38,10 +37,16 @@
 
 .back {
     position: absolute;
+    width: 60px;
+    height: 60px;
     top: 0;
     left: 0;
     transform: rotateY(180deg);
     color: #2196f3;
     background: #fff;
     backface-visibility: hidden;
+}
+.back img {
+    width: 60px;
+    height: 60px;
 }
