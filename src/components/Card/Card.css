@@ -47,6 +47,6 @@
     backface-visibility: hidden;
 }
 .back img {
-    width: 60px;
-    height: 60px;
+    width: 4rem;
+    height: 4rem;
 }
