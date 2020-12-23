@@ -41,9 +41,9 @@ class Overlay extends React.Component {
                                         {this.props.explanation[this.state.page].title}</p>
                                     <br></br>
                                     <p> {this.props.explanation[this.state.page].text}</p>
+                                    <button onClick={this.props.stop}>Zurück zum Spiel</button>
                                 </div>
                             </div>
-                            <button onClick={this.props.stop}>Zurück zum Spiel</button>
                             {this.props.explanation.length > 1 ?
                                 <div>
                                     {this.state.page > 0 ? <a  onClick={() => this.decreasePage()}><i className="material-icons" >arrow_back</i></a> : ''}
