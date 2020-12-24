@@ -18,6 +18,7 @@
 }
 
 .grid-wrapper {
+    display: flex;
     position: relative;
 }
 
