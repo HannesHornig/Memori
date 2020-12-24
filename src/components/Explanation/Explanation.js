@@ -74,7 +74,7 @@ setOverlay(toDisplay, explanation, image) {
                     {   
                     cards.map(function (d, idx) {
 
-                        return (<li class="cardItem" key={idx} onClick={() => reference.setOverlay(true, finished?[{title:<p>'Wo komme ich her'</p>,text:d.texts[1]},{title:'Mein Weg in die Welt hinaus',text:d.texts[2]}]:[{title:<p>'Wer bin ich?'</p>, text:d.texts[0]} ], d.image_paths[finished?0:1])}><div class="centerText">{d.name}</div>
+                        return (<li class="cardItem" key={idx} onClick={() => reference.setOverlay(true, finished?[{title:<p>Wo komme ich her</p>,text:d.texts[1]},{title:'Mein Weg in die Welt hinaus',text:d.texts[2]}]:[{title:<p>Wer bin ich?</p>, text:d.texts[0]} ], d.image_paths[finished?0:1])}><div class="centerText">{d.name}</div>
                                 <img src={window.location.origin + d.image_paths[0]} alt={d.name} ></img>
                             <img src={window.location.origin + d.image_paths[1]} alt={d.name} ></img>
                             <img src={window.location.origin + d.image_paths[2]} alt={d.name} ></img>
