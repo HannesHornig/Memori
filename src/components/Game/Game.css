@@ -11,6 +11,7 @@
     flex-flow: wrap row;
     padding: 10px;
     flex-grow: 6;
+    min-width: 60px;
 }
 
 
@@ -31,23 +32,30 @@
 .big{
     margin: 2px;
     width: 80%;
-    flex-shrink: 1;
+    flex: 1 1 20em;
 }
 
+
+.aside{
+    flex: 2 2 10em;
+}
 .grid-wrapper {
     position: relative;
     justify-content: space-evenly;
 }
 
 .grid {
+    display: grid;
     position: absolute;
+    max-height: content-box;
+    max-width: content-box;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    display: grid;
     grid-gap: 2rem;
     font-size: 4vmax;
+    overflow: hidden;
 }
 
 .big .grid-wrapper {
@@ -103,6 +111,6 @@
     cursor: pointer;
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:700px) {
     .game { flex-flow: column;   }
 }
