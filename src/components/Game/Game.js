@@ -53,7 +53,7 @@ class Game extends Component {
     }
 
     componentDidMount() {
-
+        window.scrollTo(0, 0);
 
         const difficulty = this.props.difficulty;
 
