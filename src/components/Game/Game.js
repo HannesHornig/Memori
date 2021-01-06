@@ -254,67 +254,56 @@ class Game extends Component {
             <React.Fragment>
 
                 <GameHeader difficulty={this.props.difficulty} gameStatus={this.state.status} counter={this.props.counter} onReset={() => this.resetGame()} />
-                <div className="help">
-                <Overlay display={this.state.overlay} explanation={this.state.explanation} image={this.state.image} stop={() => this.setOverlay(false,[],null)}></Overlay>
-            <div>
-                <div style={{float: 'left', width: '90%', height: '100%'}}>
-                <div className="game">
-                    
+                    <Overlay display={this.state.overlay} explanation={this.state.explanation} image={this.state.image} stop={() => this.setOverlay(false,[],null)}></Overlay>
                     <div className="content">
-                        <div className={this.props.difficulty}>
-                            <div className="grid-wrapper">
-                                <div className="grid">
-                                    {cards.map((card, cardIndex) => (
-                                        <AnimatedCard
-                                            key={card.id}
-                                            symbol={card.symbol}
-                                            onClick={() => this.checkMatches(cardIndex)}
-                                            style={{
-                                                opacity: this.state.dealCards[cardIndex],
-                                                transform: [
-                                                    {
-                                                        translateY: this.state.dealCards[cardIndex].interpolate({
-                                                            inputRange: [0, 1],
-                                                            outputRange: ["10px", "0px"]
-                                                        })
-                                                    },
-                                                    {
-                                                        scale: this.state.scaleCards[cardIndex]
-                                                    },
-                                                    {
-                                                        rotateY: this.state.rotateCards[cardIndex].interpolate({
-                                                            inputRange: [-1, 0, 1],
-                                                            outputRange: ["-180deg", "0deg", "180deg"]
-                                                        })
-                                                    }
-                                                ]
-                                            }}
-                                        />
-                                    ))}
+                        <div className="game">
+                                <div className={this.props.difficulty}>
+                                    <div className="grid-wrapper">
+                                        <div className="grid">
+                                            {cards.map((card, cardIndex) => (
+                                                <AnimatedCard
+                                                    key={card.id}
+                                                    symbol={card.symbol}
+                                                    onClick={() => this.checkMatches(cardIndex)}
+                                                    style={{
+                                                        opacity: this.state.dealCards[cardIndex],
+                                                        transform: [
+                                                            {
+                                                                translateY: this.state.dealCards[cardIndex].interpolate({
+                                                                    inputRange: [0, 1],
+                                                                    outputRange: ["10px", "0px"]
+                                                                })
+                                                            },
+                                                            {
+                                                                scale: this.state.scaleCards[cardIndex]
+                                                            },
+                                                            {
+                                                                rotateY: this.state.rotateCards[cardIndex].interpolate({
+                                                                    inputRange: [-1, 0, 1],
+                                                                    outputRange: ["-180deg", "0deg", "180deg"]
+                                                                })
+                                                            }
+                                                        ]
+                                                    }}
+                                                />
+                                            ))}
+                                    </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                <div style={{float: 'left', width: '20%', minWidth: '200px'}}>
-                    <p>Toll, diese Pärchen hast du gefunden!</p>
-                    <div className="content">
-                    <div className="side">
-                    <div className="grid-wrapper">
-                        <div className="grid">
-                    {
-                        this.state.found.map(function (d, idx) {
-                            return (<div key={idx}>
-                                <img class="sideImage" src={window.location.origin + d.image_paths[0]} alt={d.name} width="70" height="70" onClick={() => reference.setOverlay(true, [{title:'Wer bin ich?',text:d.texts[0]}], d.image_paths[0])}></img>
-                            </div>)
-                        })}
-                        </div>
-                        </div>
-                        </div>
-                        </div>
-                        </div>
-                </div>
+                                    <div className="aside">
+                                        <p>Toll, diese Pärchen hast du gefunden!</p>
+                                        <div className="grid-wrapper">
+                                            <div className="grid">
+                                        {
+                                            this.state.found.map(function (d, idx) {
+                                                return (<div key={idx}>
+                                                    <img class="sideImage" src={window.location.origin + d.image_paths[0]} alt={d.name} width="70" height="70" onClick={() => reference.setOverlay(true, [{title:'Wer bin ich?',text:d.texts[0]}], d.image_paths[0])}></img>
+                                                </div>)
+                                            })}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                 </div>
             </React.Fragment>
         );

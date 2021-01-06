@@ -1,45 +1,26 @@
-.column {
-    column-count: 2
+.column{
+   column-count: 2;
 }
 
 .game {
+    display: flex;
     padding-top: 3%;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
 }
 
-.content {
-    flex: 1 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.game > * {
+    flex-flow: wrap row;
+    padding: 10px;
+    flex-grow: 6;
+    min-width: 60px;
 }
 
-.grid-wrapper {
-    display: flex;
-    position: relative;
-}
-
-.grid {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    display: grid;
-    grid-gap: 2rem;
-    font-size: 4vmax;
-}
 
 .small {
-    width: 60vmax;
     padding: 3rem;
 }
 
 .small .grid-wrapper {
-    padding-top: 50%;
+    padding-top: 10%;
 }
 
 .small .grid {
@@ -47,8 +28,34 @@
     grid-template-rows: repeat(2, 1fr);
 }
 
-.big {
-    width: 35vmax;
+
+.big{
+    margin: 2px;
+    width: 80%;
+    flex: 1 1 20em;
+}
+
+
+.aside{
+    flex: 2 2 10em;
+}
+.grid-wrapper {
+    position: relative;
+    justify-content: space-evenly;
+}
+
+.grid {
+    display: grid;
+    position: absolute;
+    max-height: content-box;
+    max-width: content-box;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    grid-gap: 2rem;
+    font-size: 4vmax;
+    overflow: hidden;
 }
 
 .big .grid-wrapper {
@@ -73,26 +80,37 @@
     grid-template-rows: repeat(4, 1fr);
 }
 
-.side {
-    width: 50vmax;
-}
 
-.side .grid-wrapper {
+.aside .grid-wrapper {
     padding-top: 100%;
 }
 
-.side .grid {
+.aside .grid {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
 }
 
-.side img {
-    width: 7vmax;
-    height: 7vmax;   
+.aside img {
+    width: 100%;
+    height: 100%;
     border: 2px  #7a9d0a solid;
 }
 
-.side img:hover {
+.big img {
+    width: 100%;
+    height: 100%;
+    border: 2px  #7a9d0a solid;
+}
+.sideImage{
+    height: 100%;
+    width: 100%;
+}
+
+.aside img:hover {
     border: 5px #d5e5a0 solid;
     cursor: pointer;
+}
+
+@media screen and (max-width:700px) {
+    .game { flex-flow: column;   }
 }
