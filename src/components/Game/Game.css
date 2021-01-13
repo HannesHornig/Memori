@@ -1,17 +1,18 @@
 .column{
    column-count: 2;
 }
-
+.content{
+    height: fit-content;
+}
 .game {
     display: flex;
     padding-top: 3%;
+    margin-left: 20%;
+    margin-right: 10%;
 }
 
 .game > * {
     flex-flow: wrap row;
-    padding: 10px;
-    flex-grow: 6;
-    min-width: 60px;
 }
 
 
@@ -31,13 +32,15 @@
 
 .big{
     margin: 2px;
-    width: 80%;
-    flex: 1 1 20em;
+    padding: 10px;
+    width: 100%;
 }
 
 
 .aside{
-    flex: 2 2 10em;
+    flex: 1 1 10em;
+    font-size: 4vmax;
+
 }
 .grid-wrapper {
     position: relative;
@@ -49,12 +52,12 @@
     position: absolute;
     max-height: content-box;
     max-width: content-box;
+    padding: 4px;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     grid-gap: 2rem;
-    font-size: 4vmax;
     overflow: hidden;
 }
 
@@ -111,6 +114,9 @@
     cursor: pointer;
 }
 
-@media screen and (max-width:700px) {
+@media screen and (max-width:900px) {
     .game { flex-flow: column;   }
+}
+@media screen and (max-width:700px) {
+    .big img {   width: 50%; height: 50% }
 }
