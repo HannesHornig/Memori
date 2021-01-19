@@ -11,6 +11,7 @@ import "./Game.css";
 import Overlay from "../Overlay/Overlay";
 import incrementCounter from "../../actions/incrementCounter";
 import resetCounter from "../../actions/resetCounter";
+import parse from "html-react-parser";
 // Play environmental audio:
 // import React in our code
 import UIfx from 'uifx';
@@ -297,7 +298,7 @@ class Game extends Component {
                                         {
                                             this.state.found.map(function (d, idx) {
                                                 return (<div key={idx}>
-                                                    <img class="sideImage" src={window.location.origin + d.image_paths[0]} alt={d.name} width="70" height="70" onClick={() => reference.setOverlay(true, [{title:'Wer bin ich?',text:d.texts[0]}], d.image_paths[0])}></img>
+                                                    <img class="sideImage" src={window.location.origin + d.image_paths[0]} alt={d.name} width="70" height="70" onClick={() => reference.setOverlay(true, [{title:'Wer bin ich?',text:parse(d.texts[0])}], d.image_paths[0])}></img>
                                                 </div>)
                                             })}
                                             </div>

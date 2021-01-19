@@ -37,17 +37,15 @@ class Overlay extends React.Component {
                                 }
 
                                 <div class="column">
-                                    <p>
-                                        {this.props.explanation[this.state.page].title}</p>
-                                    <br></br>
-                                    <p> {this.props.explanation[this.state.page].text}</p>
-                                    <button onClick={this.props.stop}>Zurück zum Spiel</button>
+                                    <h2>{this.props.explanation[this.state.page].title}</h2>
+                                    {this.props.explanation[this.state.page].text}
                                 </div>
                             </div>
+                            <button onClick={this.props.stop}>Zurück zum Spiel</button>
                             {this.props.explanation.length > 1 ?
                                 <div>
                                     {this.state.page > 0 ? <a  onClick={() => this.decreasePage()}><i className="material-icons" >arrow_back</i></a> : ''}
-                                    {this.state.page < this.props.explanation.length - 1 ? <a style={{fontSize:"50px"}} onClick={() => this.increasePage()}><i className="material-icons">arrow_forward</i></a> : ''}
+                                    {this.state.page < this.props.explanation.length - 1 ? <a onClick={() => this.increasePage()}><i className="material-icons">arrow_forward</i></a> : ''}
                                 </div> : ''
                             }
                         </div>
