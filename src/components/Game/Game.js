@@ -48,6 +48,7 @@ class Game extends Component {
             locked: false,
             status: "stopped",
             overlay: true,
+            buttonName: "Los gehts!",
             image: null,
             explanation: [{title:'Spielregeln',text:'Klicke auf die Karten um sie anzusehen. Finde heraus, welche drei Karten zusammengehören.'}],
         };
@@ -99,11 +100,12 @@ class Game extends Component {
  * @param {string} explanation  - explanationText
  * @param {URL} img - image which is shown over the text (can be null)
  */
-    setOverlay(toDisplay, explanation, img) {
+    setOverlay(toDisplay, explanation, img, buttonName) {
         this.setState({
             overlay: toDisplay,
             explanation: explanation,
             image: img,
+            buttonName: buttonName,
         });
     }
 
@@ -255,7 +257,7 @@ class Game extends Component {
             <React.Fragment>
 
                 <GameHeader difficulty={this.props.difficulty} gameStatus={this.state.status} counter={this.props.counter} onReset={() => this.resetGame()} />
-                    <Overlay display={this.state.overlay} explanation={this.state.explanation} image={this.state.image} stop={() => this.setOverlay(false,[],null)}></Overlay>
+                    <Overlay display={this.state.overlay} explanation={this.state.explanation} image={this.state.image} buttonName={this.state.buttonName} stop={() => this.setOverlay(false,[],null,"")}></Overlay>
                     <div className="content">
                         <div className="game">
                                 <div className={this.props.difficulty}>
@@ -298,7 +300,7 @@ class Game extends Component {
                                         {
                                             this.state.found.map(function (d, idx) {
                                                 return (<div key={idx}>
-                                                    <img class="sideImage" src={window.location.origin + d.image_paths[0]} alt={d.name} width="70" height="70" onClick={() => reference.setOverlay(true, [{title:'Wer bin ich?',text:parse(d.texts[0])}], d.image_paths[0])}></img>
+                                                    <img class="sideImage" src={window.location.origin + d.image_paths[0]} alt={d.name} width="70" height="70" onClick={() => reference.setOverlay(true, [{title:'Wer bin ich?',text:parse(d.texts[0])}], d.image_paths[0],"Zurück zum Spiel")}></img>
                                                 </div>)
                                             })}
                                             </div>

@@ -54,7 +54,7 @@ componentDidMount() {
         return (
             <React.Fragment>
                 <nav className="header"><a href={"/"}><i className="material-icons">arrow_back</i></a>{finished?'Wo komme ich ursprünglich her?':'Wer bin ich, und wo wachse ich?'}</nav>
-                <Overlay display={this.state.overlay} explanation={this.state.explanation} image={this.state.image} stop={() => this.setOverlay(false,[],[])}></Overlay>
+                <Overlay display={this.state.overlay} explanation={this.state.explanation} image={this.state.image} buttonName="Zurück" stop={() => this.setOverlay(false,[],[])}></Overlay>
             <div className="explanation">
                 {finished?
                         <div>
