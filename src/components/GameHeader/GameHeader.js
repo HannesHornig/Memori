@@ -6,7 +6,7 @@ import "./GameHeader.css";
 
 const GameHeader = props => (
     <nav className="header">
-        <Link to={"/explanation/"+props.difficulty}>
+        <Link to={"/start/"+props.difficulty}>
             <i className="material-icons">arrow_back</i>
         </Link>
         <div className="counter-container"> {props.counter} {props.counter === 1 ? 'Versuch' : 'Versuche'}</div>

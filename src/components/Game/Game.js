@@ -49,6 +49,7 @@ class Game extends Component {
             status: "stopped",
             overlay: true,
             buttonName: "Los gehts!",
+            sound: null,
             image: null,
             explanation: [{title:'Spielregeln',text:'Klicke auf die Karten um sie anzusehen. Finde heraus, welche drei Karten zusammengehören.'}],
         };
@@ -100,12 +101,13 @@ class Game extends Component {
  * @param {string} explanation  - explanationText
  * @param {URL} img - image which is shown over the text (can be null)
  */
-    setOverlay(toDisplay, explanation, img, buttonName) {
+    setOverlay(toDisplay, explanation, img, buttonName, sound) {
         this.setState({
             overlay: toDisplay,
             explanation: explanation,
             image: img,
             buttonName: buttonName,
+            sound: sound,
         });
     }
 
@@ -177,7 +179,7 @@ class Game extends Component {
                         if (cards.length === countMatched && cards.length > 0) {
                             finishedSound.play();
                             this.setState({ status: "stopped" });
-                            this.props.history.push(`/finished/${this.props.difficulty}`);
+                            this.props.history.push(`/finished/${this.props.difficulty}/explanation`);
                         } else {
                             this.setState({
                                 cards,
@@ -300,7 +302,7 @@ class Game extends Component {
                                         {
                                             this.state.found.map(function (d, idx) {
                                                 return (<div key={idx}>
-                                                    <img class="sideImage" src={window.location.origin + d.image_paths[0]} alt={d.name} width="70" height="70" onClick={() => reference.setOverlay(true, [{title:'Wer bin ich?',text:parse(d.texts[0])}], d.image_paths[0],"Zurück zum Spiel")}></img>
+                                                    <img class="sideImage" src={window.location.origin + d.image_paths[0]} alt={d.name} width="70" height="70" onClick={() => reference.setOverlay(true, [{title:'Wer bin ich?',text:parse(d.texts[0])}], d.image_paths[0],"Zurück zum Spiel"),"asdf"}></img>
                                                 </div>)
                                             })}
                                             </div>

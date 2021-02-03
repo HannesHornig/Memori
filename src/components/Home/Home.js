@@ -18,7 +18,7 @@ const Home = () => (
                 <p>Wie haben sie sich in der Welt verbreitet?</p>
                 <p>All’ das kannst du in diesem Spiel erfahren!</p>
                 <div className="difficulty-container">
-                    <div className="homeLinkClass">  <Link to="/explanation/big"><i className="material-icons">send</i>Los geht's</Link>
+                    <div className="homeLinkClass">  <Link to="/start/big/explanation"><i className="material-icons">send</i>Los geht's</Link>
                 </div>
             </div>
         </div>

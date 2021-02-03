@@ -17,13 +17,23 @@ const App = () => (
         />
         <Route 
         exact
-        path="/finished/:difficulty" 
-        render={props => <Explanation difficulty={props.match.params.difficulty} finished={true}/>
+        path="/finished/:difficulty/explanation" 
+        render={props => <Explanation difficulty={props.match.params.difficulty} finished={true} textPage={true} fruitPage={false}/>
         } />
         <Route 
         exact
-        path="/explanation/:difficulty" 
-        render={props => <Explanation difficulty={props.match.params.difficulty} finished={false}/>
+        path="/finished/:difficulty/fruits" 
+        render={props => <Explanation difficulty={props.match.params.difficulty} finished={true} textPage={false} fruitPage={true}/>
+        } />
+        <Route 
+        exact
+        path="/start/:difficulty/explanation" 
+        render={props => <Explanation difficulty={props.match.params.difficulty} finished={false} textPage={true} fruitPage={false}/>
+        } />
+        <Route 
+        exact
+        path="/start/:difficulty/fruits" 
+        render={props => <Explanation difficulty={props.match.params.difficulty} finished={false} textPage={false} fruitPage={true}/>
         } />
     </div>
 );
