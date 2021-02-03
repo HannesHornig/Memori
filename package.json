@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "animated": "^0.2.2",
+    "howler": "^2.2.1",
     "html-react-parser": "^1.0.0",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",

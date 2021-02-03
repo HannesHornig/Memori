@@ -35,6 +35,10 @@ setOverlay(toDisplay, explanation, image, sound) {
         sound: sound,
     });
     this._child.current.reset();
+
+    if(sound){
+        this._child.current.play(window.location.origin + sound[0]);
+    }
 }
 
 componentDidMount() {
@@ -88,7 +92,7 @@ componentDidMount() {
                     {   
                     cards.map(function (d, idx) {
 
-                        return (<li class="cardItem" key={idx} onClick={() => reference.setOverlay(true, finished?[{title:'Wo komme ich her',text:parse(d.texts[1])},{title:'Mein Weg in die Welt hinaus',text:parse(d.texts[2])}]:[ {title:'Wer bin ich?', text:parse(d.texts[0]) }], d.image_paths[finished?0:1],d.sounds[0])}><div class="centerText">{d.name}</div>
+                        return (<li class="cardItem" key={idx} onClick={() => reference.setOverlay(true, finished?[{title:'Wo komme ich her',text:parse(d.texts[1])},{title:'Mein Weg in die Welt hinaus',text:parse(d.texts[2])}]:[ {title:'Wer bin ich?', text:parse(d.texts[0]) }], d.image_paths[finished?0:1],finished?d.sounds:null)}><div class="centerText">{d.name}</div>
                                 <img src={window.location.origin + d.image_paths[0]} alt={d.name} ></img>
                             <img src={window.location.origin + d.image_paths[1]} alt={d.name} ></img>
                             <img src={window.location.origin + d.image_paths[2]} alt={d.name} ></img>
