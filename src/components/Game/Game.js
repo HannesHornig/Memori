@@ -302,7 +302,7 @@ class Game extends Component {
                                         {
                                             this.state.found.map(function (d, idx) {
                                                 return (<div key={idx}>
-                                                    <img class="sideImage" src={window.location.origin + d.image_paths[0]} alt={d.name} width="70" height="70" onClick={() => reference.setOverlay(true, [{title:'Wer bin ich?',text:parse(d.texts[0])}], d.image_paths[0],"Zurück zum Spiel"),"asdf"}></img>
+                                                    <img class="sideImage" src={window.location.origin + d.image_paths[0]} alt={d.name} width="70" height="70" onClick={() => reference.setOverlay(true, [{title:'Wer bin ich?',text:parse(d.texts[0])}], d.image_paths[0],"Zurück zum Spiel",null)}></img>
                                                 </div>)
                                             })}
                                             </div>

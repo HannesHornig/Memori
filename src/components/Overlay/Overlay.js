@@ -73,7 +73,9 @@ class Overlay extends React.Component {
     }
 
     stopSound() {
+        if(sound){
         sound.stop();
+        }
         this.setState({
             playing: false
         });
@@ -108,7 +110,7 @@ class Overlay extends React.Component {
                                     {this.state.page < this.props.explanation.length - 1 ? <a onClick={() => this.increasePage()}><i className="material-icons">arrow_forward</i></a> : ''}
                                 </div> : ''
                             }
-                            <button onClick={this.props.stop}>{this.props.buttonName}</button>
+                            <button onClick={()=> {this.props.stop(); this.stopSound();}}>{this.props.buttonName}</button>
 
                         </div>
                     </div>
