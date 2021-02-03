@@ -20,7 +20,7 @@ Wir befinden uns vorraussichtlich bis Ende April im Homeoffice und sind via Mail
 <p>mail@grenzgaenger-berlin.de</p>
 <p>www.grenzgaenger-berlin.de</p>
 <p>in Zusammenarbeit mit</p>
-</br>
+
 <h2>ThinkTheTank</h2>
 <p>freundschaftlicher Innovationshub, beteiligt an diesem Projekt: Martin Würflein, Gisela Grabe</p>
 <h2>Adam ...</h2>
