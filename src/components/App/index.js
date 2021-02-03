@@ -5,6 +5,8 @@ import Game from "../Game/Game";
 import Explanation from "../Explanation/Explanation";
 import "./App.css";
 import logo from "../../pictures/Grenzgaenger_Logo.PNG";
+import { Link } from "react-router-dom";
+import Impressum from "../Impressum/impressum";
 
 const App = () => (
 <div className="app">
@@ -35,7 +37,12 @@ const App = () => (
         path="/start/:difficulty/fruits" 
         render={props => <Explanation difficulty={props.match.params.difficulty} finished={false} textPage={false} fruitPage={true}/>
         } />
+        <Route exact path="/impressum" component={Impressum} />
+
+        
+    <div><Link to="/impressum">Impressum</Link></div> 
     </div>
+    
 );
 
 export default App;

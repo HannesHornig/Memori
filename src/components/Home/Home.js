@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
-import memory from "../../pictures/Quadrate.png";
-import doubleMemory from "../../pictures/Quadrate_doppelt.png";
+
 
 const height='20px';
 const Home = () => (
