@@ -8,6 +8,7 @@
     "html-react-parser": "^1.2.4",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
+    "react-draggable": "^4.4.3",
     "react-redux": "^5.0.7",
     "react-render-html": "^0.6.0",
     "react-router-dom": "^4.3.1",

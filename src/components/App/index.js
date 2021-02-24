@@ -2,6 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import Home from "../Home/Home";
 import Game from "../Game/Game";
+import Map from "../Map/Map";
 import Explanation from "../Explanation/Explanation";
 import "./App.css";
 import logo from "../../pictures/Grenzgaenger_Logo.PNG";
@@ -16,6 +17,11 @@ const App = () => (
             exact
             path="/game/:difficulty"
             render={props => <Game difficulty={props.match.params.difficulty} history={props.history} />}
+        />
+        <Route
+            exact
+            path="/map/:difficulty"
+            render={props => <Map difficulty={props.match.params.difficulty} history={props.history} />}
         />
         <Route 
         exact
