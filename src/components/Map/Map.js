@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import GameHeader from "../GameHeader/GameHeader";
 import Card from "../Card/Card";
 import games from "../../games.json";
+import names from "../../names.json";
 import "./Map.css";
 import Overlay from "../Overlay/Overlay";
 import incrementCounter from "../../actions/incrementCounter";
@@ -32,21 +33,22 @@ const wrongSound = new UIfx(wrong,
         volume: 0.6, // number between 0.0 ~ 1.0
     });
 
+    const widthValue=screen.width*0.5;
+    const fruitSize=screen.width*0.03;
+    const mapWidth={
+        'width': widthValue
+        //define other properties here, use camel case(remember we are using Javascript)
+    }
 
 class Map extends Component {
     constructor(props) {
         super(props);
+        this.mapSize = React.createRef();
 
         this.setOverlay = this.setOverlay.bind(this);
         this.state = {
             activeDrags: 0,
-            position: [{
-                x: 0, y: 0, draggable: true, left: 600, top: 400, picture: '/pictures/Tomate.jpeg',
-            },
-            {
-                x: 0, y: 0, draggable: true, left: 900, top: 800, picture: '/pictures/Mango.jpeg',
-            }
-            ],
+            position: [],
             cards: [],
             found: [],
             explanatorycards: [],
@@ -73,6 +75,25 @@ class Map extends Component {
 
         // find all card-types of the selected level
         const selectedLevel = games.find(game => game.difficulty === difficulty);
+        const retrievedWidth=this.mapSize.current.offsetWidth;
+        const retrievedX=this.mapSize.current.offsetLeft;
+        const retrievedY=this.mapSize.current.offsetTop;
+        const retrievedHeight=this.mapSize.current.offsetHeight;
+        console.log(retrievedWidth,retrievedHeight,retrievedX,widthValue);
+        let positions=[];
+        let counter=0;
+        for (let card in selectedLevel.cards) {
+            counter++;
+            let cardValue = selectedLevel.cards[card];
+
+            const currentValue = names.find(element => element.name === cardValue);
+            positions.push({x: 0, y: 0, draggable: true, left: retrievedX+retrievedWidth*counter/10, top: retrievedY+retrievedHeight*counter/10, picture: currentValue.image_paths[0]});
+        }
+
+        this.setState({
+            position: positions,
+
+        });
     }
 
 
@@ -140,8 +161,8 @@ class Map extends Component {
     };
 
     checkBorder = (size, left, top, x, y) => {
-        if ((x > left && x < left + size) && (y > top && y < top + size))
-            return true;
+        if(x >= left && x <= left+size && y >= top && y <= top+size)
+             return true;
         else
             return false;
     }
@@ -149,7 +170,7 @@ class Map extends Component {
     onStop = (e, ui, i) => {
         this.setState({ activeDrags: --this.state.activeDrags });
 
-        if (this.checkBorder(50, this.state.position[i].left, this.state.position[i].top, this.state.position[i].x, this.state.position[i].y)) {
+        if (this.checkBorder(fruitSize, this.state.position[i].left, this.state.position[i].top, this.state.position[i].x, this.state.position[i].y)) {
         // 1. Make a shallow copy of the items
         let positions = [...this.state.position];
         // 2. Make a shallow copy of the item you want to mutate
@@ -161,7 +182,7 @@ class Map extends Component {
         position.top = position.top,
         position.left = position.left,
             // 4. Put it back into our array. N.B. we *are* mutating the array here, but that's why we made a copy first
-         positions[i] = position;
+        positions[i] = position;
         // 5. Set the state to our new copy
         this.setState({
             position: positions,
@@ -186,20 +207,19 @@ class Map extends Component {
                     {
                         this.state.position.map(function (d, idx) {
                             return (
-                                <div key={idx} className="fruit" style={{ backgroundColor: "white", position: "absolute", top: position[idx].top, left: position[idx].left }}></div>
+                                <div key={idx} className="fruit" style={{ display: position[idx].draggable?"block":"none", width: fruitSize, height: fruitSize, backgroundColor: "white", position: "absolute", top: position[idx].top, left: position[idx].left }}></div>
                             )
-                        })}
+                        })} 
 
 
                     <div className="game">
-                        <img src={worldmap} className="map"></img>
+                        <img src={worldmap} ref={this.mapSize} style={mapWidth}></img>
                         {
                             this.state.position.map(function (d, idx) {
                                 return (
                                     <Draggable key={idx} onDrag={(e, ui) => reference.handleDrag(e, ui, idx)} onStart={() => position[idx].draggable ? reference.onStart : false} onStop={(e, ui) => reference.onStop(e, ui, idx)}>
-                                        <div className="box">
-                                            <img src={window.location.origin + position[idx].picture} className="fruit"></img>
-                                            <div>x: {position[idx].x}, y: {position[idx].y}</div>
+                                        <div className="box" style={{ position: "absolute", top: position[idx].top, left: position[idx].left+80 }}>
+                                            <img src={window.location.origin + position[idx].picture} style={{width:fruitSize, height: fruitSize}}></img>  
                                         </div>
                                     </Draggable>
                                 )

@@ -90,16 +90,16 @@ class Overlay extends React.Component {
                     <div className="overlay">
                         <div className="text">
 
-                            <div class="row">
+                            <div className="row">
                                 {this.props.image &&
-                                    <div class="column">
+                                    <div className="column">
                                         <img src={window.location.origin + this.props.image} className="picStyle" alt="icon" />
                                     </div>
                                 }
                                 {this.props.sound &&
                                     <button onClick={!this.state.playing ? this.playPageSound : this.stopSound}>{!this.state.playing ? 'Play' : 'Stop'}</button>
                                 }
-                                <div class="column">
+                                <div className="column">
                                     <h2>{this.props.explanation[this.state.page].title}</h2>
                                     {this.props.explanation[this.state.page].text}
                                 </div>
