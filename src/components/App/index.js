@@ -11,7 +11,7 @@ import Impressum from "../Impressum/impressum";
 
 const App = () => (
 <div className="app">
-        <header><h1>Wandernde Früchte<img src={logo}></img></h1></header>
+        <header><h1>Wandernde Früchte<img src={logo}></img></h1><Link to="/impressum" class="impressumClass">Impressum</Link></header>
         <Route exact path="/" component={Home} />
         <Route
             exact
@@ -46,7 +46,7 @@ const App = () => (
         <Route exact path="/impressum" component={Impressum} />
 
         
-    <div><Link to="/impressum">Impressum</Link></div> 
+   
     </div>
     
 );

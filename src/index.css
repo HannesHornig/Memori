@@ -11,7 +11,7 @@ body {
 body {
     font-family: 'Spartan', sans-serif;
     color: rgba(0, 0, 0, 0.8);
-gin: 0;
+    margin: 0;
     background: white;
 }
 
@@ -47,4 +47,8 @@ button:hover {
 #root {
     height: 100%;
     overflow: hidden;
+}
+
+.impressumClass {
+   margin-left: 10%;
 }
