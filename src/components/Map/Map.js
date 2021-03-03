@@ -87,7 +87,7 @@ class Map extends Component {
             let cardValue = selectedLevel.cards[card];
 
             const currentValue = names.find(element => element.name === cardValue);
-            positions.push({x: 0, y: 0, draggable: true, left: retrievedX+retrievedWidth*counter/10, top: retrievedY+retrievedHeight*counter/10, picture: currentValue.image_paths[0]});
+            positions.push({x: 0, y: 0, draggable: true, left: retrievedX+retrievedWidth*counter/10, top: retrievedY+retrievedWidth*counter/10, picture: currentValue.image_paths[0]});
         }
 
         this.setState({
@@ -197,6 +197,7 @@ class Map extends Component {
         // 5. Set the state to our new copy
         this.setState({
             position: positions,
+
         });
             winSound.play();
 
