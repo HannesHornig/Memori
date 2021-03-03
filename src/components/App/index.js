@@ -12,7 +12,7 @@ import Lexicon from "../Lexicon/lexicon";
 
 const App = () => (
 <div className="app">
-        <header><h1>Wandernde Früchte<img src={logo}></img></h1><Link to="/impressum" class="impressumClass">Impressum</Link><Link to="/lexicon" class="lexiconClass">Lexicon</Link></header>
+        <header><h1>Wandernde Früchte<img src={logo}></img></h1><Link to="/lexicon" class="lexiconClass">Lexicon</Link><Link to="/impressum" class="impressumClass">Impressum</Link></header>
         <Route exact path="/" component={Home} />
         <Route
             exact
