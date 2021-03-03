@@ -92,7 +92,6 @@ class Map extends Component {
 
         this.setState({
             position: positions,
-
         });
     }
 
@@ -167,6 +166,18 @@ class Map extends Component {
             return false;
     }
 
+    checkFinished(positions) {
+        if(positions.filter(e => e.draggable === true).length>0){
+            console.log(positions.filter(e => e.draggable === true));
+            console.log(positions.filter(e => e.draggable === true).length)
+            return false;
+        }
+        else {
+            console.log(positions.filter(e => e.draggable === true));
+            return true;
+        }
+    }
+
     onStop = (e, ui, i) => {
         this.setState({ activeDrags: --this.state.activeDrags });
 
@@ -188,6 +199,11 @@ class Map extends Component {
             position: positions,
         });
             winSound.play();
+
+        if(this.checkFinished(positions)){
+            finishedSound.play();
+            this.props.history.push(`/finished/${this.props.difficulty}/explanation`);
+        }
         } else {
             wrongSound.play();
         }
