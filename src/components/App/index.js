@@ -8,10 +8,11 @@ import "./App.css";
 import logo from "../../pictures/Grenzgaenger_Logo.PNG";
 import { Link } from "react-router-dom";
 import Impressum from "../Impressum/impressum";
+import Lexicon from "../Lexicon/lexicon";
 
 const App = () => (
 <div className="app">
-        <header><h1>Wandernde Früchte<img src={logo}></img></h1><Link to="/impressum" class="impressumClass">Impressum</Link></header>
+        <header><h1>Wandernde Früchte<img src={logo}></img></h1><Link to="/lexicon" class="lexiconClass">Lexicon</Link><Link to="/impressum" class="impressumClass">Impressum</Link></header>
         <Route exact path="/" component={Home} />
         <Route
             exact
@@ -44,7 +45,7 @@ const App = () => (
         render={props => <Explanation difficulty={props.match.params.difficulty} finished={false} textPage={false} fruitPage={true}/>
         } />
         <Route exact path="/impressum" component={Impressum} />
-
+        <Route exact path="/lexicon" component={Lexicon} />
         
    
     </div>
