@@ -18,6 +18,7 @@ import Draggable from 'react-draggable'; // The default
 import win from '../../winner.mp3';
 import wrong from '../../wrong.mp3';
 import finished from '../../finished.mp3';
+import drop from '../../ablegen.mp3';
 
 import worldmap from "../../pictures/weltkarte.png";
 
@@ -27,6 +28,10 @@ const AnimatedCard = Animated.createAnimatedComponent(Card);
 const winSound = new UIfx(win);
 
 const finishedSound = new UIfx(finished);
+
+const dropSound = new UIfx(drop,{
+    volume: 0.05, // number between 0.0 ~ 1.0
+});
 
 const wrongSound = new UIfx(wrong,
     {
@@ -69,6 +74,10 @@ class Map extends Component {
 
 
     componentDidMount() {
+        this.resetGame();
+    }
+
+    resetGame() {
         window.scrollTo(0, 0);
 
         const difficulty = this.props.difficulty;
@@ -93,6 +102,9 @@ class Map extends Component {
         this.setState({
             position: positions,
         });
+
+        
+        this.props.resetCounter();
     }
 
 
@@ -134,27 +146,6 @@ class Map extends Component {
     }
 
 
-
-    resetGame() {
-        const cards = this.state.cards.slice();
-        const cardsReset = cards.map(card => {
-            card.matched = false;
-            return card;
-        });
-
-        this.setState({
-            cards: cardsReset,
-            found: [],
-            flippedCards: [],
-            locked: false,
-            status: "reset",
-        });
-
-        this.props.resetCounter();
-
-        this.renderCards(cardsReset);
-    }
-
     onStart = () => {
         this.setState({ activeDrags: ++this.state.activeDrags });
     };
@@ -163,9 +154,10 @@ class Map extends Component {
         const position = this.state.position;
         for (let i=0; i < position.length; i++) {
             let insight = this.checkBorder(fruitSize, position[i].left, position[i].top, position[id].x, position[id].y);
+
             if (insight && id == i)
                 return 1;
-            else
+            else if(insight)
                 return -1;
         }
         return 0;
@@ -212,15 +204,17 @@ class Map extends Component {
 
             });
             winSound.play();
+            this.props.incrementCounter();
 
             if (this.checkFinished(positions)) {
                 finishedSound.play();
                 this.props.history.push(`/finished/${this.props.difficulty}/explanation`);
             }
         } else if (this.checkBorders(i) == -1) {
+            this.props.incrementCounter();
             wrongSound.play();
         } else {
-
+            dropSound.play();
         }
     };
 
@@ -231,7 +225,7 @@ class Map extends Component {
         return (
             <React.Fragment>
 
-                <GameHeader difficulty={this.props.difficulty} gameStatus={this.state.status} counter={this.props.counter} onReset={() => this.resetGame()} />
+                <GameHeader difficulty={this.props.difficulty} gameStatus={this.state.status} counter={this.props.counter} onReset={() => location.reload() } />
                 <Overlay display={this.state.overlay} explanation={this.state.explanation} image={this.state.image} buttonName={this.state.buttonName} stop={() => this.setOverlay(false, [], null, "")}></Overlay>
 
                 <div className="content">
