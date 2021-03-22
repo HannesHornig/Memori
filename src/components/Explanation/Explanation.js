@@ -41,6 +41,41 @@ setOverlay(toDisplay, explanation, image, sound) {
     }
 }
 
+memoryFinished = () => {
+    return (
+        <div>
+        <h2><p>Super!! Du hast alle Pärchen mit {this.props.counter} Versuchen gefunden!</p></h2>
+        <p>Jetzt bist du ein*e Pflanzenexpert*in.</p>
+        <p>Auf der nächsten Seite findest du nochmal alle gefundenen Pflanzen.</p>
+        <p>Klicke auf die Früchte! Sie erzählen dir ihre Geschichten.</p>
+        </div>
+    )
+}
+
+mapFinished = () => {
+    return (
+        <div>
+        <h2><p>Super!! Du hast alle Karten mit {this.props.counter} Versuchen richtig auf der Karte zugeordnet!</p></h2>
+        <p>Jetzt bist du wahrhaftig ein*e Pflanzenexpert*in.</p>
+        </div>
+    )
+}
+
+memoryIntroduction = () => {
+    return (
+    <div>
+                    <p>Kakao, Popcorn und Guacamole. Mhhh...lecker.</p>
+                        <p>Aber was für Obst und Gemüse steckt dahinter?</p>
+                    <p>An was für einer Pflanze wächst es?</p>
+                    <p>Klicke auf die Früchte.</p>
+                    <p>So kannst mehr über sie erfahren.</p>
+                    <p>Aber Vorsicht!</p>
+                    <p>Schau dir die Bilder genau an.</p>
+                    <p>Gleich musst du die passenden Bilder im Memory wiederfinden.</p>
+                    </div>
+                        )
+}
+
 componentDidMount() {
     window.scrollTo(0, 0)
 } 
@@ -68,22 +103,9 @@ componentDidMount() {
             <div className="explanation">
             {textPage&&(
                 finished?
-                        <div>
-                        <h2><p>Super!! Du hast alle Pärchen mit {this.props.counter} Versuchen gefunden!</p></h2>
-                        <p>Jetzt bist du ein*e Pflanzenexpert*in.</p>
-                        <p>Auf der nächsten Seite findest du nochmal alle gefundenen Pflanzen.</p>
-                        <p>Klicke auf die Früchte! Sie erzählen dir ihre Geschichten.</p>
-                        </div>
-                    :<div>
-                    <p>Kakao, Popcorn und Guacamole. Mhhh...lecker.</p>
-                        <p>Aber was für Obst und Gemüse steckt dahinter?</p>
-                    <p>An was für einer Pflanze wächst es?</p>
-                    <p>Klicke auf die Früchte.</p>
-                    <p>So kannst mehr über sie erfahren.</p>
-                    <p>Aber Vorsicht!</p>
-                    <p>Schau dir die Bilder genau an.</p>
-                    <p>Gleich musst du die passenden Bilder im Memory wiederfinden.</p>
-                    </div>
+                reference.memoryFinished()
+                    :
+                    reference.memoryIntroduction()
                 )}
                 
                 {fruitPage&&(

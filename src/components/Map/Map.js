@@ -38,7 +38,7 @@ const wrongSound = new UIfx(wrong,
         volume: 0.6, // number between 0.0 ~ 1.0
     });
 
-const widthValue = screen.width * 0.8;
+const widthValue = screen.width * 0.6;
 const fruitSize = screen.width * 0.03;
 const mapWidth = {
     'width': widthValue
@@ -96,7 +96,7 @@ class Map extends Component {
             let cardValue = selectedLevel.cards[card];
 
             const currentValue = names.find(element => element.name === cardValue);
-            positions.push({ x: 0, y: 0, draggable: true, left: retrievedX + retrievedWidth * counter / 10, top: retrievedY + retrievedWidth * counter / 10, picture: currentValue.image_paths[0] });
+            positions.push({ x: 0, y: 0, draggable: true, left: retrievedX + retrievedWidth * currentValue.mapX /100, top: retrievedY + retrievedHeight * currentValue.mapY /100, picture: currentValue.image_paths[0] });
         }
 
         this.setState({
@@ -238,12 +238,12 @@ class Map extends Component {
 
 
                     <div className="game">
-                        <img src={worldmap} ref={this.mapSize} style={mapWidth}></img>
+                        <img src={worldmap} ref={reference.mapSize} style={mapWidth}></img>
                         {
                             this.state.position.map(function (d, idx) {
                                 return (
                                     <Draggable key={idx} onDrag={(e, ui) => reference.handleDrag(e, ui, idx)} onStart={() => position[idx].draggable ? reference.onStart : false} onStop={(e, ui) => reference.onStop(e, ui, idx)}>
-                                        <div className="box" style={{ position: "absolute", top: position[idx].top, left: position[idx].left + 80 }}>
+                                        <div className="box" style={{ position: "absolute", top:reference.mapSize.current.offsetTop+ 80*idx, left: reference.mapSize.current.offsetLeft -100 }}>
                                             <img src={window.location.origin + position[idx].picture} style={{ width: fruitSize, height: fruitSize }}></img>
                                         </div>
                                     </Draggable>
