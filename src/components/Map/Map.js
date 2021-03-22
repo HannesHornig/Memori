@@ -41,7 +41,8 @@ const wrongSound = new UIfx(wrong,
 const widthValue = screen.width * 0.6;
 const fruitSize = screen.width * 0.03;
 const mapWidth = {
-    'width': widthValue
+    'width': widthValue,
+    'height': widthValue*0.6
     //define other properties here, use camel case(remember we are using Javascript)
 }
 
