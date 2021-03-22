@@ -244,7 +244,7 @@ class Map extends Component {
                             this.state.position.map(function (d, idx) {
                                 return (
                                     <Draggable key={idx} onDrag={(e, ui) => reference.handleDrag(e, ui, idx)} onStart={() => position[idx].draggable ? reference.onStart : false} onStop={(e, ui) => reference.onStop(e, ui, idx)}>
-                                        <div className="box" style={{ position: "absolute", top:reference.mapSize.current.offsetTop+ 80*idx, left: reference.mapSize.current.offsetLeft -100 }}>
+                                        <div className="fruit" style={{ position: "absolute", top:reference.mapSize.current.offsetTop+ 80*idx, left: reference.mapSize.current.offsetLeft -100 }}>
                                             <img src={window.location.origin + position[idx].picture} style={{ width: fruitSize, height: fruitSize }}></img>
                                         </div>
                                     </Draggable>
