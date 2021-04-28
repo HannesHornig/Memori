@@ -6,8 +6,8 @@
             "/pictures/Kartoffel_Pflanze.jpeg",
             "/pictures/Kartoffel_Produkt.jpg"
         ],
-        "mapX":23,
-        "mapY":55,
+        "mapX":30,
+        "mapY":53,
         "sounds": [
             "/sounds/Kartoffel1.m4a",
             "/sounds/Kartoffel2.m4a"
@@ -25,7 +25,7 @@
             "/pictures/Mango_Pflanze.jpeg"
 
         ],
-        "mapX":67,
+        "mapX":64,
         "mapY":28,
         "sounds": [
             "/sounds/Mango1.m4a",
@@ -43,8 +43,8 @@
             "/pictures/Banane_Produkt.jpeg",
             "/pictures/Banane_Pflanze.jpeg"
         ],
-        "mapX":72,
-        "mapY":42,
+        "mapX":69,
+        "mapY":41,
         "sounds": [
             "/sounds/Banane1.m4a",
             "/sounds/Banane1.m4a"
@@ -61,8 +61,8 @@
             "/pictures/Orange_Produkt.jpeg",
             "/pictures/Orange_Pflanze.jpeg"
         ],
-        "mapX":73,
-        "mapY":18,
+        "mapX":70,
+        "mapY":25,
         "sounds": [
             "/sounds/Orange1.mp4",
             "/sounds/Orange2.m4a"
@@ -79,8 +79,8 @@
             "/pictures/Mais_Produkt.jpeg",
             "/pictures/Mais_Pflanze.jpeg"
         ],
-        "mapX":23,
-        "mapY":40,
+        "mapX":29,
+        "mapY":39,
         "sounds": [
             "/sounds/Mais1.m4a",
             "/sounds/Mais2.m4a"
