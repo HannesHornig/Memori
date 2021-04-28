@@ -20,7 +20,7 @@ import wrong from '../../wrong.mp3';
 import finished from '../../finished.mp3';
 import drop from '../../ablegen.mp3';
 
-import worldmap from "../../pictures/weltkarte.png";
+import worldmap from "../../pictures/Weltkarte.jpg";
 
 
 const AnimatedCard = Animated.createAnimatedComponent(Card);
@@ -209,7 +209,7 @@ class Map extends Component {
 
             if (this.checkFinished(positions)) {
                 finishedSound.play();
-                this.props.history.push(`/finished/${this.props.difficulty}/explanation`);
+                this.props.history.push(`/map/${this.props.difficulty}/finished`);
             }
         } else if (this.checkBorders(i) == -1) {
             this.props.incrementCounter();
@@ -244,8 +244,8 @@ class Map extends Component {
                             this.state.position.map(function (d, idx) {
                                 return (
                                     <Draggable key={idx} onDrag={(e, ui) => reference.handleDrag(e, ui, idx)} onStart={() => position[idx].draggable ? reference.onStart : false} onStop={(e, ui) => reference.onStop(e, ui, idx)}>
-                                        <div className="fruit" style={{ position: "absolute", top:reference.mapSize.current.offsetTop+ 80*idx, left: reference.mapSize.current.offsetLeft -100 }}>
-                                            <img src={window.location.origin + position[idx].picture} style={{ width: fruitSize, height: fruitSize }}></img>
+                                        <div style={{ position: "absolute", top:reference.mapSize.current.offsetTop+ 80*idx, left: reference.mapSize.current.offsetLeft -100 }}>
+                                            <img className="fruit" src={window.location.origin + position[idx].picture} style={{ width: fruitSize, height: fruitSize }}></img>
                                         </div>
                                     </Draggable>
                                 )

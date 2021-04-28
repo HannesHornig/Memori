@@ -6,7 +6,7 @@ const Lexicon = () => (
 <div className="lexicon">
         <div>
 
-        <h2>Lexikon</h2>
+        <h2>Erklärungen</h2>
 <p>Auf dieser Seite könnt ihr schwierige Wörter nachschlagen</p>
 
 <h3>Sklaverei</h3>

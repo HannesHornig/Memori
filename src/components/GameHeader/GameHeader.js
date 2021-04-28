@@ -1,12 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./GameHeader.css";
 
 
 const GameHeader = props => (
     <nav className="header">
-        <Link to={"/start/"+props.difficulty}>
+        <Link to ="asdlkfj" onClick={()=>useHistory().goBack()}>
             <i className="material-icons">arrow_back</i>
         </Link>
         <div className="counter-container"> {props.counter} {props.counter === 1 ? 'Versuch' : 'Versuche'}</div>

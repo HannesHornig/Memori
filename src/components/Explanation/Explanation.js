@@ -61,6 +61,18 @@ mapFinished = () => {
     )
 }
 
+entryText =(status) => {
+    if(status==0)
+    return (this.memoryIntroduction())
+
+    if(status==1)
+    return (this.memoryFinished())
+
+    if(status==2)
+    return (this.mapFinished())
+}
+
+
 memoryIntroduction = () => {
     return (
     <div>
@@ -76,13 +88,32 @@ memoryIntroduction = () => {
                         )
 }
 
+button = (difficulty,status,textPage) => {
+
+        if(textPage) {
+            if(status==0)
+            return (<Link to={`/start/${difficulty}/fruits`}>Zu den Früchten</Link>)
+            if(status==1)
+            return (<Link to={`/finished/${difficulty}/fruits`}>Zu den Früchten</Link>)
+            if(status==2)
+            return (<Link to="/">Zurück zum Hauptmenü</Link>)
+        } else {
+            if(status==0)
+             return (<Link to={`/game/${difficulty}`}>...zum Spiel</Link>)
+            if(status==1)
+            return (<Link to={`/map/${difficulty}`}>Zum Weltkartenspiel</Link>)
+        }
+        
+
+}
+
 componentDidMount() {
     window.scrollTo(0, 0)
 } 
 
     render() {
         const difficulty=this.props.difficulty;
-        const finished=this.props.finished;
+        const status=this.props.status;
         const reference = this;
         const selectedLevel =games.find(game => game.difficulty === this.props.difficulty);
         const textPage=this.props.textPage;
@@ -97,27 +128,23 @@ componentDidMount() {
 
         return (
             <React.Fragment>
-                <nav className="header"><a href={"/"}><i className="material-icons">arrow_back</i></a>{finished?'Wo komme ich ursprünglich her?':'Wer bin ich, und wo wachse ich?'}</nav>
+                <nav className="header"><a href={"/"}><i className="material-icons">arrow_back</i></a>{status?'Wo komme ich ursprünglich her?':'Wer bin ich, und wo wachse ich?'}</nav>
                 <Overlay ref={this._child} display={this.state.overlay} explanation={this.state.explanation} image={this.state.image} buttonName="Zurück" sound={this.state.sound} stop={() => this.setOverlay(false,[],[],null)}></Overlay>
                 
             <div className="explanation">
-            {textPage&&(
-                finished?
-                reference.memoryFinished()
-                    :
-                    reference.memoryIntroduction()
-                )}
-                
+            {textPage&&(reference.entryText(status))}
+
                 {fruitPage&&(
 
                     <ul class="cardOverview">
                     {   
                     cards.map(function (d, idx) {
 
-                        return (<li class="cardItem" key={idx} onClick={() => reference.setOverlay(true, finished?[{title:'Wo komme ich her',text:parse(d.texts[1])},{title:'Mein Weg in die Welt hinaus',text:parse(d.texts[2])}]:[ {title:'Wer bin ich?', text:parse(d.texts[0]) }], d.image_paths[finished?0:1],finished?d.sounds:null)}><div class="centerText">{d.name}</div>
+                        return (<li class="cardItem" key={idx} onClick={() => reference.setOverlay(true, status?[{title:'Wo komme ich her',text:parse(d.texts[1])},{title:'Mein Weg in die Welt hinaus',text:parse(d.texts[2])}]:[ {title:'Wer bin ich?', text:parse(d.texts[0]) }], d.image_paths[status?0:1],status?d.sounds:null)}><div class="centerText">{d.name}</div>
+                                
                                 <img src={window.location.origin + d.image_paths[0]} alt={d.name} ></img>
-                            <img src={window.location.origin + d.image_paths[1]} alt={d.name} ></img>
-                            <img src={window.location.origin + d.image_paths[2]} alt={d.name} ></img>
+                                {status==0&&<img src={window.location.origin + d.image_paths[1]} alt={d.name} ></img>}
+                            {status==0&&<img src={window.location.origin + d.image_paths[2]} alt={d.name} ></img>}
                         </li>
                         )
                     })
@@ -127,10 +154,10 @@ componentDidMount() {
                     )
                 }
 
-                {!finished&&<p>Na, weißt du jetzt, welche Frucht wie wächst? Dann auf zum Spiel.</p>}
+                {!status&&<p>Na, weißt du jetzt, welche Frucht wie wächst? Dann auf zum Spiel.</p>}
 
                 <div className="explanationLink">
-                {finished?(!textPage?(<Link to="/">Zurück zum Hauptmenü</Link>):(<Link to={`/finished/${difficulty}/fruits`}>Zu den Früchten</Link>)):(!textPage?( <Link to={`/game/${difficulty}`}>...zum Spiel</Link>):(<Link to={`/start/${difficulty}/fruits`}>Zu den Früchten</Link>))}
+                {reference.button(difficulty,status,textPage)}    
                 </div>
             </div>
             </React.Fragment>

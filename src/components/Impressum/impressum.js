@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 const Impressum = () => (
 <div className="impressum">
         <div>
-
 <h2>grenzgänger | forschung & training</h2>
 <p>im Netzwerk Migration in Europa e.V.</p>
 
