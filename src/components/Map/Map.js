@@ -233,7 +233,7 @@ class Map extends Component {
                     {
                         this.state.position.map(function (d, idx) {
                             return (
-                                <div key={idx} className="fruit" style={{ display: position[idx].draggable ? "block" : "none", width: fruitSize, height: fruitSize, backgroundColor: "white", position: "absolute", top: position[idx].top, left: position[idx].left }}></div>
+                                <div key={idx} className="fruit" style={{ display: position[idx].draggable ? "block" : "none", width: fruitSize, height: fruitSize, backgroundColor: "rgb(255, 255, 255, 0.4)", position: "absolute", top: position[idx].top, left: position[idx].left }}></div>
                             )
                         })}
 
