@@ -4,17 +4,21 @@ import PropTypes from "prop-types";
 import "./GameHeader.css";
 
 
-const GameHeader = props => (
+const GameHeader = props => {
+
+    const history = useHistory();
+    return (
     <nav className="header">
-        <Link to ="asdlkfj" onClick={()=>useHistory().goBack()}>
+        <button  onClick={()=>history.goBack()}>
             <i className="material-icons">arrow_back</i>
-        </Link>
+        </button>
         <div className="counter-container"> {props.counter} {props.counter === 1 ? 'Versuch' : 'Versuche'}</div>
         <button onClick={() => props.onReset()}>
             <i className="material-icons">refresh</i>
         </button>
     </nav>
-);
+    )
+};
 
 GameHeader.propTypes = {
     gameStatus: PropTypes.string,
