@@ -9,7 +9,7 @@ const Lexicon = () => (
         <h2>Erklärungen</h2>
 <p>Auf dieser Seite könnt ihr schwierige Wörter nachschlagen</p>
 
-<h3>Sklaverei</h3>
+<h3>Sklaverei 123</h3>
 <p>Ein Sklave ist ein Mensch, der von einem anderen Menschen wie eine Sache/Ware behandelt hat.
 Er hat keine Freiheit und keine Rechte. Er gehört einer anderen Person.
 Deshalb denkt diese Person, dass sie mit dem Sklave machen kann, was sie will.
