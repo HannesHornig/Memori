@@ -9,6 +9,7 @@ const Home = () => (
         <h2><p>Wandernde Früchte - Ein Lernspiel zu den verwobenen Wegen von Obst und Gemüse</p></h2>
         <div className = "description-container">
                 <p>Jeden Tag essen wir Kartoffeln, Tomaten oder Bananen.</p>
+                <img src="/pictures/kartoffel_startpage.png"></img>
                 <p>Schon gewusst?  Diese Obst- und Gemüsesorten gibt es noch nicht so lange in Deutschland.</p>
                 <p>All diese Früchte haben einen langen Weg hinter sich. </p>
                 <p>Sie haben viele Geschichten zu erzählen. </p>
