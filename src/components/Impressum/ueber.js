@@ -1,12 +1,11 @@
 import React from "react";
-import logo from "../../pictures/Grenzgaenger_Logo.PNG";
-import foerderer from "../../pictures/Foerderer_Logos.png";
-import { Link } from "react-router-dom";
+import ReturnBar from "../GameHeader/ReturnBar";
 
 const Impressum = () => (
+        <div>
+                        <ReturnBar title="Über das Spiel"></ReturnBar>
 <div className="impressum">
         <div>
-                <h2>Über das Spiel</h2>
                 <p>
         Über die Geschichten von Früchten und Gemüse können nicht nur globale Verflechtungen sichtbar gemacht, sondern auch Migration als schon immer dagewesenes Phänomen thematisiert werden. Darüber hinaus sind die Wege von Obst und Gemüse auch Zeugen der kolonialen Vergangenheit (und Gegenwart).
         </p><p>
@@ -20,7 +19,7 @@ Das Lernspiel wurde entwickelt von grenzgänge und ist im Rahmen des Projektes L
 </p>
         </div>
     </div>
-    
+    </div>
 );
 
 export default Impressum;

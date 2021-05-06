@@ -6,6 +6,7 @@ import "./Explanation.css";
 import Overlay from "../Overlay/Overlay";
 import games from "../../games.json";
 import names from "../../names.json";
+import ReturnBar from "../GameHeader/ReturnBar";
 
 
 class Explanation extends Component {
@@ -107,6 +108,13 @@ button = (difficulty,status,textPage) => {
 
 }
 
+endText = (difficulty,status,textPage) => {
+
+        if(textPage&&status==1)
+        return (<p>Na, weißt du jetzt, welche Frucht wie wächst? Dann auf zum Spiel.</p>)
+
+}
+
 componentDidMount() {
     window.scrollTo(0, 0)
 } 
@@ -128,7 +136,7 @@ componentDidMount() {
 
         return (
             <React.Fragment>
-                <nav className="header"><a onClick={()=>history.go(-1)}><i className="material-icons">arrow_back</i></a>{status?'Wo komme ich ursprünglich her?':'Wer bin ich, und wo wachse ich?'}</nav>
+                <ReturnBar title={status?'Wo komme ich ursprünglich her?':'Wer bin ich, und wo wachse ich?'}></ReturnBar>
                 <Overlay ref={this._child} display={this.state.overlay} explanation={this.state.explanation} image={this.state.image} buttonName="Zurück" sound={this.state.sound} stop={() => this.setOverlay(false,[],[],null)}></Overlay>
                 
             <div className="explanation">
@@ -154,7 +162,7 @@ componentDidMount() {
                     )
                 }
 
-                {!status&&<p>Na, weißt du jetzt, welche Frucht wie wächst? Dann auf zum Spiel.</p>}
+                {reference.endText(difficulty,status,textPage)}  
 
                 <div className="explanationLink">
                 {reference.button(difficulty,status,textPage)}    

@@ -1,8 +1,10 @@
 import React from "react";
-import logo from "../../pictures/Grenzgaenger_Logo.PNG";
-import { Link } from "react-router-dom";
+import ReturnBar from "../GameHeader/ReturnBar";
+
 
 const Lexicon = () => (
+        <div>
+                <ReturnBar title="Erklärungen" home="true"></ReturnBar>
 <div className="lexicon">
         <div>
 
@@ -48,7 +50,7 @@ zum Beispiel Nachrichten oder Essen.</p>
 
         </div>
     </div>
-    
+    </div>
 );
 
 export default Lexicon;
