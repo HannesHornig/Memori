@@ -6,8 +6,8 @@
             "/pictures/Kartoffel_Pflanze.jpeg",
             "/pictures/Kartoffel_Produkt.jpg"
         ],
-        "mapX":30,
-        "mapY":53,
+        "mapX":29,
+        "mapY":47,
         "sounds": [
             "/sounds/Kartoffel1.m4a",
             "/sounds/Kartoffel2.m4a"
@@ -44,7 +44,7 @@
             "/pictures/Banane_Pflanze.jpeg"
         ],
         "mapX":69,
-        "mapY":41,
+        "mapY":45,
         "sounds": [
             "/sounds/Banane1.m4a",
             "/sounds/Banane1.m4a"
@@ -79,8 +79,8 @@
             "/pictures/Mais_Produkt.jpeg",
             "/pictures/Mais_Pflanze.jpeg"
         ],
-        "mapX":29,
-        "mapY":39,
+        "mapX":26,
+        "mapY":37,
         "sounds": [
             "/sounds/Mais1.m4a",
             "/sounds/Mais2.m4a"
