@@ -44,10 +44,10 @@ setOverlay(toDisplay, explanation, image, sound) {
 memoryFinished = () => {
     return (
         <div>
-        <h2><p>Super!! Du hast alle Pärchen mit {this.props.counter} Versuchen gefunden!</p></h2>
-        <p>Jetzt bist du ein*e Pflanzenexpert*in.</p>
-        <p>Auf der nächsten Seite findest du nochmal alle gefundenen Pflanzen.</p>
-        <p>Klicke auf die Früchte! Sie erzählen dir ihre Geschichten.</p>
+        <h2><p>Super!! Du hast alle Drillinge mit {this.props.counter} Versuchen gefunden!</p></h2>
+        <p>Jetzt weißt du Bescheid!</p>
+        <p>Auf der nächsten Seite findest du nochmal alle Früchte.</p>
+        <p>Dort kannst du erfahren, wo sie ursprünglich herkommen.</p>
         </div>
     )
 }
@@ -55,8 +55,11 @@ memoryFinished = () => {
 mapFinished = () => {
     return (
         <div>
-        <h2><p>Super!! Du hast alle Karten mit {this.props.counter} Versuchen richtig auf der Karte zugeordnet!</p></h2>
-        <p>Jetzt bist du wahrhaftig ein*e Pflanzenexpert*in.</p>
+        <h2><p>Du hast es geschafft! Du bist super! </p></h2>
+        <p>Erzähl unsere Geschichten gerne deinen Freund*innen oder deiner Familie.</p>
+        <p>Wir sehen uns bestimmt bald im Supermarkt.</p>
+        <p>Achte doch mal darauf, woher ich komme und wer mich anbaut.</p>
+        <p>Bis bald!</p>
         </div>
     )
 }
@@ -91,7 +94,7 @@ button = (difficulty,status,textPage) => {
             if(status==0)
             return (<Link to={`/start/${difficulty}/fruits`}>Zu den Früchten</Link>)
             if(status==1)
-            return (<Link to={`/finished/${difficulty}/fruits`}>Zu den Früchten</Link>)
+            return (<Link to={`/finished/${difficulty}/fruits`}>Zu den Geschichten</Link>)
             if(status==2)
             return (<Link to="/">Zurück zum Hauptmenü</Link>)
         } else {

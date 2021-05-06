@@ -68,7 +68,7 @@ class Map extends Component {
             buttonName: "Los gehts!",
             sound: null,
             image: null,
-            explanation: [{ title: 'Spielregeln', text: 'Erinnerst du dich, wo die Früchte herstammen? Bewege die Frucht auf ihr Ursprungsland!' }],
+            explanation: [{text: 'Erinnerst du dich, woher die Früchte Früchte kommen? Ziehe die Frucht in die Region, aus der sie ursprünglich kommt.' }],
         };
     }
 
