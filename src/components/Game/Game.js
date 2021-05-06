@@ -51,7 +51,7 @@ class Game extends Component {
             buttonName: "Los gehts!",
             sound: null,
             image: null,
-            explanation: [{title:'Spielregeln',text:'Klicke auf die Karten um sie anzusehen. Finde heraus, welche drei Karten zusammengehören.'}],
+            explanation: [{title:'Memory',text:'Klicke auf die Karten um sie anzusehen. Finde heraus, welche drei Karten zusammengehören.'}],
         };
     }
 

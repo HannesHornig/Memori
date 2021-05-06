@@ -76,12 +76,9 @@ entryText =(status) => {
 memoryIntroduction = () => {
     return (
     <div>
-                    <p>Kakao, Popcorn und Guacamole. Mhhh...lecker.</p>
-                        <p>Aber was für Obst und Gemüse steckt dahinter?</p>
-                    <p>An was für einer Pflanze wächst es?</p>
                     <p>Klicke auf die Früchte.</p>
                     <p>So kannst mehr über sie erfahren.</p>
-                    <p>Aber Vorsicht!</p>
+                    <p>Aber aufgepasst!</p>
                     <p>Schau dir die Bilder genau an.</p>
                     <p>Gleich musst du die passenden Bilder im Memory wiederfinden.</p>
                     </div>
@@ -99,7 +96,7 @@ button = (difficulty,status,textPage) => {
             return (<Link to="/">Zurück zum Hauptmenü</Link>)
         } else {
             if(status==0)
-             return (<Link to={`/game/${difficulty}`}>...zum Spiel</Link>)
+             return (<Link to={`/game/${difficulty}`}>...zum Memory</Link>)
             if(status==1)
             return (<Link to={`/map/${difficulty}`}>Zum Weltkartenspiel</Link>)
         }
@@ -128,7 +125,7 @@ componentDidMount() {
 
         return (
             <React.Fragment>
-                <nav className="header"><a onClick={()=>history.go(-1)}><i className="material-icons">arrow_back</i></a>{status?'Wo komme ich ursprünglich her?':'Wer bin ich, und wo wachse ich?'}</nav>
+                <nav className="header"><a onClick={()=>history.go(-1)}><i className="material-icons">arrow_back</i></a>{status?'Wo komme ich ursprünglich her?':'Wer bin ich und wie wachse ich?'}</nav>
                 <Overlay ref={this._child} display={this.state.overlay} explanation={this.state.explanation} image={this.state.image} buttonName="Zurück" sound={this.state.sound} stop={() => this.setOverlay(false,[],[],null)}></Overlay>
                 
             <div className="explanation">
@@ -154,7 +151,7 @@ componentDidMount() {
                     )
                 }
 
-                {!status&&<p>Na, weißt du jetzt, welche Frucht wie wächst? Dann auf zum Spiel.</p>}
+                {!status&&<p>Na, weißt du jetzt, welche Frucht wie wächst? Dann auf ...</p>}
 
                 <div className="explanationLink">
                 {reference.button(difficulty,status,textPage)}    
