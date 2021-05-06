@@ -1,9 +1,10 @@
 import React from "react";
-import logo from "../../pictures/Grenzgaenger_Logo.PNG";
 import foerderer from "../../pictures/Foerderer_Logos.png";
-import { Link } from "react-router-dom";
+import ReturnBar from "../GameHeader/ReturnBar";
 
 const Impressum = () => (
+        <div>
+                <ReturnBar title="Impressum"></ReturnBar>
 <div className="impressum">
         <div>
 <h2>grenzgänger | forschung & training</h2>
@@ -27,6 +28,7 @@ const Impressum = () => (
 <div className="imgClass"><img src={foerderer} style={{ width: "70%", height: "70%" }}></img></div>
        
         </div>
+    </div>
     </div>
     
 );

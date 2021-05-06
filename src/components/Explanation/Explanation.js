@@ -6,6 +6,7 @@ import "./Explanation.css";
 import Overlay from "../Overlay/Overlay";
 import games from "../../games.json";
 import names from "../../names.json";
+import ReturnBar from "../GameHeader/ReturnBar";
 
 
 class Explanation extends Component {
@@ -58,6 +59,7 @@ mapFinished = () => {
         <h2><p>Du hast es geschafft! Du bist super! </p></h2>
         <p>Erzähl unsere Geschichten gerne deinen Freund*innen oder deiner Familie.</p>
         <p>Wir sehen uns bestimmt bald im Supermarkt.</p>
+        <img src="/pictures/mango_schlusspage.png"></img>
         <p>Achte doch mal darauf, woher ich komme und wer mich anbaut.</p>
         <p>Bis bald!</p>
         </div>
@@ -88,22 +90,31 @@ memoryIntroduction = () => {
                         )
 }
 
-button = (difficulty,status,textPage) => {
+button = (difficulty,stage,textPage) => {
 
         if(textPage) {
-            if(status==0)
+            if(stage==0)
             return (<Link to={`/start/${difficulty}/fruits`}>Zu den Früchten</Link>)
-            if(status==1)
+            if(stage==1)
             return (<Link to={`/finished/${difficulty}/fruits`}>Zu den Geschichten</Link>)
-            if(status==2)
+            if(stage==2)
             return (<Link to="/">Zurück zum Hauptmenü</Link>)
         } else {
-            if(status==0)
+            if(stage==0)
              return (<Link to={`/game/${difficulty}`}>...zum Memory</Link>)
-            if(status==1)
+            if(stage==1)
             return (<Link to={`/map/${difficulty}`}>Zum Weltkartenspiel</Link>)
         }
         
+
+}
+
+endText = (difficulty,stage,textPage) => {
+
+        if(!textPage&&stage==0)
+        return (<p>Na, weißt du jetzt, welche Frucht wie wächst? Dann auf zum Spiel.</p>)
+        if(!textPage&&stage==1)
+        return (<p>Hier kommt der neue Text</p>)
 
 }
 
@@ -128,7 +139,7 @@ componentDidMount() {
 
         return (
             <React.Fragment>
-                <nav className="header"><a onClick={()=>history.go(-1)}><i className="material-icons">arrow_back</i></a>{status?'Wo komme ich ursprünglich her?':'Wer bin ich und wie wachse ich?'}</nav>
+                <ReturnBar title={status?'Wo komme ich ursprünglich her?':'Wer bin ich, und wo wachse ich?'}></ReturnBar>
                 <Overlay ref={this._child} display={this.state.overlay} explanation={this.state.explanation} image={this.state.image} buttonName="Zurück" sound={this.state.sound} stop={() => this.setOverlay(false,[],[],null)}></Overlay>
                 
             <div className="explanation">
@@ -153,9 +164,7 @@ componentDidMount() {
                     </ul>
                     )
                 }
-
-                {!status&&<p>Na, weißt du jetzt, welche Frucht wie wächst? Dann auf ...</p>}
-
+                {reference.endText(difficulty,status,textPage)}
                 <div className="explanationLink">
                 {reference.button(difficulty,status,textPage)}    
                 </div>
