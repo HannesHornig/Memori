@@ -296,7 +296,7 @@ class Game extends Component {
                                     </div>
                                 </div>
                                     <div className="aside">
-                                        <p>Toll, diese Pärchen hast du gefunden!</p>
+                                        <p>Toll, diese Drillinge hast du schon gefunden!</p>
                                         <div className="grid-wrapper">
                                             <div className="grid">
                                         {

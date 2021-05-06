@@ -114,7 +114,7 @@ endText = (difficulty,stage,textPage) => {
         if(!textPage&&stage==0)
         return (<p>Na, weißt du jetzt, welche Frucht wie wächst? Dann auf zum Spiel.</p>)
         if(!textPage&&stage==1)
-        return (<p>Hier kommt der neue Text</p>)
+        return (<p>Klicke auf die Früchte! Sie erzählen dir ihre Geschichte. Na, hast du dir alle Geschichten gemerkt? Dann auf ...</p>)
 
 }
 
