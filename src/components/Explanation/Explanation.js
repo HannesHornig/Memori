@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link,  } from "react-router-dom";
 import { connect } from "react-redux";
 import parse from "html-react-parser";
 import "./Explanation.css";
@@ -128,7 +128,7 @@ componentDidMount() {
 
         return (
             <React.Fragment>
-                <nav className="header"><a href={"/"}><i className="material-icons">arrow_back</i></a>{status?'Wo komme ich ursprünglich her?':'Wer bin ich, und wo wachse ich?'}</nav>
+                <nav className="header"><a onClick={()=>history.go(-1)}><i className="material-icons">arrow_back</i></a>{status?'Wo komme ich ursprünglich her?':'Wer bin ich, und wo wachse ich?'}</nav>
                 <Overlay ref={this._child} display={this.state.overlay} explanation={this.state.explanation} image={this.state.image} buttonName="Zurück" sound={this.state.sound} stop={() => this.setOverlay(false,[],[],null)}></Overlay>
                 
             <div className="explanation">
