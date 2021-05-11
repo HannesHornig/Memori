@@ -12,6 +12,7 @@ const Impressum = () => (
                 <p>Das Lernspiel wurde entwickelt von grenzgänge e.V. und ist im Rahmen des Projektes LebenGlobalAktiv entstanden. Im Prozess des (Ver-)lernens verorten wir uns selbst und sind daher offen für Kritik und Anmerkungen jeglicher Art.</p>
                 <p>Für Anfragen und Interesse an der Teilnahme an einem Workshop sind wir hier zu erreichen: <a href="mailto:memory@grenzgaenger-berlin.de">memory@grenzgaenger-berlin.de</a></p>
                 <p>(c).Krüger</p>
+                <img src="/pictures/Picture for the site _Über das Spiel.jpg"></img>
         </div>
     </div>
     </div>
