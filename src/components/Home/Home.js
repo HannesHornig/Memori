@@ -3,21 +3,32 @@ import { Link } from "react-router-dom";
 import "./Home.css";
 
 
-const height='20px';
 const Home = () => (
-    <div className="home">
-        <h2><p>Wandernde Früchte - Ein Lernspiel zu den verwobenen Wegen von Obst und Gemüse</p></h2>
-        <div className = "description-container">
-                <p>Jeden Tag essen wir Kartoffeln, Tomaten oder Bananen.</p>
-                <img src="/pictures/kartoffel_startpage.png"></img>
-                <p>Schon gewusst?  Diese Obst- und Gemüsesorten gibt es noch nicht so lange in Deutschland.</p>
-                <p>All diese Früchte haben einen langen Weg hinter sich. </p>
-                <p>Sie haben viele Geschichten zu erzählen. </p>
-                <p>Davon kannst du in diesem Spiel erfahren!</p>
-                <div className="difficulty-container">
-                    <div className="homeLinkClass">  <Link to="/start/big/explanation"><i className="material-icons">send</i>Zum Spiel</Link>
+    <div className={"explanation background-set"}>
+        <div className={"description-container"}>
+            <div className={"parent"}>
+        <div className={"row"}>
+                    <div className={"column"}>
+                        <h1>Wandernde Früchte</h1>
+                        <h2>Ein Lernspiel zu den verwobenen Wegen von Obst und Gemüse</h2>
+                        <p>Jeden Tag essen wir Kartoffeln, Tomaten oder Bananen.</p>
+                    </div>
                 </div>
-            </div>
+
+        <div className={"row"}>
+                         <div className={"column"}>
+                        <p>
+                            Schon gewusst?  Diese Obst- und Gemüsesorten gibt es noch nicht so lange in Deutschland.<br/>
+                            All diese Früchte haben einen langen Weg hinter sich. <br/>
+                            Sie haben viele Geschichten zu erzählen. <br/>
+                            Davon kannst du in diesem Spiel erfahren!<br/>
+                        </p>
+                             <div className={"explanationLink homeButton"}>
+                                 <Link to="/start/big/explanation">Zum Spiel<i className="material-icons">send</i></Link>
+                             </div>
+                    </div>
+        </div>
+        </div>
         </div>
     </div>
 );

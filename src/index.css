@@ -9,32 +9,113 @@ body {
 }
 
 body {
-    font-family: 'Spartan', sans-serif;
+    font-family:sans-serif;
     color: rgba(0, 0, 0, 0.8);
     margin: 0;
     background: white;
+    text-align: justify;
+    text-justify: inter-word;
+
 }
 
 header {
-    font-family: 'Amatic SC', cursive;
-    height: 5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /*font-family: 'Amatic SC', cursive;*/
+    font-family:RocknRoll One, sans-serif;
     background-color: white;
     width: 100%;
-
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
 }
 
-.header img {
-    width: 15%;
+header {
+    display: inline-block;
 }
+
+
+.left {
+    width: 40%;
+    float: left;
+}
+
+.right {
+    width: 60%;
+    float: right;
+}
+ul{
+    margin: 2px;
+}
+ul li{
+    display: inline;
+}
+
+li{
+    margin-right: 20px;
+    margin-left: 20px;
+    border: 0.5px solid white;
+}
+li:hover {
+    cursor: pointer;
+    border: 0.5px solid #8da74d;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+/* Shakes on mouseover */
+nav a:hover {
+    animation:  shake 0.8s;
+}
+
+@keyframes shake{
+    0%{
+        transform: translateX(0)
+    }
+    25%{
+        transform: translateX(15px);
+    }
+    50%{
+        transform: translateX(-15px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+
+.text-column {
+    column-gap: 100px;
+    column-count: 2;
+    column-span: 2;
+    margin-bottom: 40px;
+}
+
+
+.row:after {
+    display: table;
+    clear: both;
+}
+
+nav{
+    font-size: 2em;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav.header{
+    border-top: 0.5px solid #8da74d;
+    border-bottom: 0.5px solid #8da74d;
+}
+
+
+a h1{
+    font-size: 4em;
+}
+
 a,
 button {
     font-family: 'Amatic SC', cursive;
     color: #3e6f2d;
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 800;
     text-decoration: none;
     cursor: pointer;
 }
@@ -44,17 +125,10 @@ button:hover {
     color: #8da74d;
 }
 
-#root {
-    height: 100%;
-    overflow: hidden;
-}
 
-.impressumClass {
-   margin-left: 10%;
-   font-size: 1.1rem;
-}
 
-.lexiconClass {
-    margin-left: 10%;
-    font-size: 1.8rem;
- }
+@media screen and (max-width: 952px) {
+    header h1{
+        font-size: smaller;
+    }
+}

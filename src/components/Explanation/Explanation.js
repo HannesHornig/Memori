@@ -80,13 +80,20 @@ entryText =(status) => {
 
 memoryIntroduction = () => {
     return (
-    <div>
-                    <p>Klicke auf die Früchte.</p>
-                    <p>So kannst mehr über sie erfahren.</p>
-                    <p>Aber aufgepasst!</p>
-                    <p>Schau dir die Bilder genau an.</p>
-                    <p>Gleich musst du die passenden Bilder im Memory wiederfinden.</p>
-                    </div>
+    <div className={"description-container"}>
+            <div className={"row"}>
+
+                <h2>Klicke auf die Früchte.</h2>
+            </div>
+            <div className={"row"}>
+                <p>
+                    So kannst mehr über sie erfahren.<br/>
+                    Aber aufgepasst!<br/>
+                    Schau dir die Bilder genau an.<br/>
+                    Gleich musst du die passenden Bilder im Memory wiederfinden.<br/>
+            </p>
+            </div>
+    </div>
                         )
 }
 
@@ -94,7 +101,7 @@ button = (difficulty,stage,textPage) => {
 
         if(textPage) {
             if(stage==0)
-            return (<Link to={`/start/${difficulty}/fruits`}>Zu den Früchten</Link>)
+                return (<div className={"row"}><Link to={`/start/${difficulty}/fruits`}>Zu den Früchten</Link></div>)
             if(stage==1)
             return (<Link to={`/finished/${difficulty}/fruits`}>Zu den Geschichten</Link>)
             if(stage==2)
@@ -120,7 +127,13 @@ endText = (difficulty,stage,textPage) => {
 
 componentDidMount() {
     window.scrollTo(0, 0)
-} 
+}
+
+    testBg(textPage, stage) {
+        if (textPage&&stage==0){
+            return <div className={"background-set"}></div>
+        }
+    }
 
     render() {
         const difficulty=this.props.difficulty;
@@ -137,12 +150,19 @@ componentDidMount() {
             cards.push(names.find(element => element.name === cardValue));
         }
 
+
         return (
             <React.Fragment>
-                <ReturnBar title={status?'Wo komme ich ursprünglich her?':'Wer bin ich, und wo wachse ich?'}></ReturnBar>
-                <Overlay ref={this._child} display={this.state.overlay} explanation={this.state.explanation} image={this.state.image} buttonName="Zurück" sound={this.state.sound} stop={() => this.setOverlay(false,[],[],null)}></Overlay>
-                
+                <Overlay ref={this._child}
+                         display={this.state.overlay}
+                         explanation={this.state.explanation}
+                         image={this.state.image}
+                         buttonName="x"
+                         sound={this.state.sound} stop={() => this.setOverlay(false,[],[],null)}></Overlay>
+
+
             <div className="explanation">
+                {this.testBg(textPage, status)}
             {textPage&&(reference.entryText(status))}
 
                 {fruitPage&&(
@@ -166,7 +186,7 @@ componentDidMount() {
                 }
                 {reference.endText(difficulty,status,textPage)}
                 <div className="explanationLink">
-                {reference.button(difficulty,status,textPage)}    
+                {reference.button(difficulty,status,textPage)}
                 </div>
             </div>
             </React.Fragment>

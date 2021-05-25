@@ -13,8 +13,26 @@ import Lexicon from "../Lexicon/lexicon";
 
 const App = () => (
 <div className="app">
-        <header><Link to="/"><h1>Wandernde Früchte<img src={logo}></img></h1></Link><Link to="/lexicon" class="lexiconClass">Erklärungen</Link><Link to="/ueber" class="impressumClass">Über das Spiel</Link><Link to="/impressum" class="impressumClass">Impressum</Link></header>
+        <header>
+                <div className={"parent"}>
+                <div className={"row"}>
+                        <div className={"column"}>
+                                <Link to="/">
+                                        <h1>Wandernde Früchte</h1>
+                                </Link>
+                        </div>
+                        <div className={"column"}>
+                                <nav>
+                                        <Link to="/lexicon">Erklärungen</Link>
+                                        <Link to="/ueber">Über das Spie</Link>
+                                        <Link to="/impressum" >Impressum</Link>
+                                </nav>
+                        </div>
+                </div>
+                </div>
+        </header>
         <Route exact path="/" component={Home} />
+        <img className={"bg"} src={"pictures/kartoffel_startpage.png"}/>
         <Route
             exact
             path="/game/:difficulty"
@@ -53,8 +71,9 @@ const App = () => (
         <Route exact path="/impressum" component={Impressum} />
         <Route exact path="/lexicon" component={Lexicon} />
         <Route exact path="/ueber" component={Ueber} />
-   
-    </div>
+
+</div>
+
     
 );
 

@@ -81,16 +81,20 @@ class Overlay extends React.Component {
         });
     }
 
+    removeClass(className){
+        console.log(document.getElementById(className))
+    }
 
 
     render() {
         return (
             <div>
                 {this.props.display &&
-                    <div className="overlay">
+                    <div className="overlay" id="overlay">
+
+                            <a className={"close"} id={"close"} onClick={()=> {this.props.stop(); this.stopSound();}}>{this.props.buttonName}</a>
                         <div className="text">
 
-                            <div className="row">
                                 {this.props.image &&
                                     <div className="column">
                                         <img src={window.location.origin + this.props.image} className="picStyle" alt="icon" />
@@ -107,20 +111,18 @@ class Overlay extends React.Component {
                             {this.props.explanation.length > 1 ?
                                 <div>
                                     {this.state.page > 0 ? <a onClick={() => this.decreasePage()}><i className="material-icons" >arrow_back</i></a> : ''}
-                                    {this.state.page < this.props.explanation.length - 1 ? <a onClick={() => this.increasePage()}><i className="material-icons">arrow_forward</i></a> : ''}
+                                    {this.state.page < this.props.explanation.length - 1 ? <a onClick={() => this.increasePage()}>
+                                        <i className="material-icons">arrow_forward</i></a> : ''}
                                 </div> : ''
                             }
-                            <button onClick={()=> {this.props.stop(); this.stopSound();}}>{this.props.buttonName}</button>
 
-                        </div>
                     </div>
                 }
             </div>
-
-
         );
     }
 }
+
 
 
 export default Overlay;

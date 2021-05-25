@@ -48,7 +48,7 @@ class Game extends Component {
             locked: false,
             status: "stopped",
             overlay: true,
-            buttonName: "Los gehts!",
+            buttonName: "x",
             sound: null,
             image: null,
             explanation: [{title:'Memory',text:'Klicke auf die Karten um sie anzusehen. Finde heraus, welche drei Karten zusammengehören.'}],
