@@ -29,6 +29,7 @@ class Explanation extends Component {
  * @param {URL} img - image which is shown over the text (can be null)
  */
 setOverlay(toDisplay, explanation, image, sound) {
+    this.overflow("body")
     this.setState({
         overlay: toDisplay,
         explanation: explanation,
@@ -76,11 +77,20 @@ entryText =(status) => {
     if(status==2)
     return (this.mapFinished())
 }
-
+/* Set css overflow property */
+overflow(id){
+    if(document.getElementById(id).style.overflow !== 'hidden')
+    {
+        document.getElementById(id).style.overflow = 'hidden';
+    } else{
+        document.getElementById(id).style.overflow = 'scroll';
+    }
+}
 
 memoryIntroduction = () => {
     return (
     <div className={"description-container"}>
+        <div className={"parent"}>
             <div className={"row"}>
 
                 <h2>Klicke auf die Früchte.</h2>
@@ -93,6 +103,7 @@ memoryIntroduction = () => {
                     Gleich musst du die passenden Bilder im Memory wiederfinden.<br/>
             </p>
             </div>
+    </div>
     </div>
                         )
 }
@@ -129,10 +140,11 @@ componentDidMount() {
     window.scrollTo(0, 0)
 }
 
-    testBg(textPage, stage) {
+testBg(textPage, stage) {
         if (textPage&&stage==0){
-            return <div className={"background-set"}></div>
+            return "explanation background-set border"
         }
+        return "explanation"
     }
 
     render() {
@@ -160,35 +172,35 @@ componentDidMount() {
                          buttonName="x"
                          sound={this.state.sound} stop={() => this.setOverlay(false,[],[],null)}></Overlay>
 
-
-            <div className="explanation">
-                {this.testBg(textPage, status)}
+                <div className={"background-set bg"}></div>
+                <div className={this.testBg(textPage, status)}>
             {textPage&&(reference.entryText(status))}
 
                 {fruitPage&&(
-
-                    <ul class="cardOverview">
+                        <div className={"row"}>
+                    <ul class="cardOverview" id={"cardOverview"}>
                     {   
                     cards.map(function (d, idx) {
 
-                        return (<li class="cardItem" key={idx} onClick={() => reference.setOverlay(true, status?[{title:'Wo komme ich her',text:parse(d.texts[1])},{title:'Mein Weg in die Welt hinaus',text:parse(d.texts[2])}]:[ {title:'Wer bin ich?', text:parse(d.texts[0]) }], d.image_paths[status?0:1],status?d.sounds:null)}><div class="centerText">{d.name}</div>
+                        return (<li class="cardItem" key={idx} onClick={() =>  reference.setOverlay(true, status?[{title:'Wo komme ich her',text:parse(d.texts[1])},{title:'Mein Weg in die Welt hinaus',text:parse(d.texts[2])}]:[ {title:'', text:parse(d.texts[0]) }], d.image_paths[status?0:1],status?d.sounds:null)}><div class="centerText">{d.name}</div>
                                 
-                                <img src={window.location.origin + d.image_paths[0]} alt={d.name} ></img>
-                                {status==0&&<img src={window.location.origin + d.image_paths[1]} alt={d.name} ></img>}
-                            {status==0&&<img src={window.location.origin + d.image_paths[2]} alt={d.name} ></img>}
+                                <img src={window.location.origin + d.image_paths[0]} alt={d.name} />
+                                {status==0&&<img src={window.location.origin + d.image_paths[1]} alt={d.name} />}
+                            {status==0&&<img src={window.location.origin + d.image_paths[2]} alt={d.name} />}
                         </li>
                         )
                     })
                     
                         }
                     </ul>
+                    </div>
                     )
                 }
                 {reference.endText(difficulty,status,textPage)}
                 <div className="explanationLink">
                 {reference.button(difficulty,status,textPage)}
                 </div>
-            </div>
+                </div>
             </React.Fragment>
         );
     }

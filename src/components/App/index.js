@@ -5,7 +5,7 @@ import Game from "../Game/Game";
 import Map from "../Map/Map";
 import Explanation from "../Explanation/Explanation";
 import "./App.css";
-import logo from "../../pictures/Grenzgaenger_Logo.PNG";
+import background from "../../pictures/kartoffel_startpage_cleaned.png";
 import { Link } from "react-router-dom";
 import Impressum from "../Impressum/impressum";
 import Ueber from "../Impressum/ueber";
@@ -32,7 +32,6 @@ const App = () => (
                 </div>
         </header>
         <Route exact path="/" component={Home} />
-        <img className={"bg"} src={"pictures/kartoffel_startpage.png"}/>
         <Route
             exact
             path="/game/:difficulty"
@@ -46,7 +45,7 @@ const App = () => (
         <Route 
         exact
         path="/finished/:difficulty/explanation" 
-        render={props => <Explanation difficulty={props.match.params.difficulty} status={1} textPage={true} fruitPage={false}/>
+        render={props => <Explanation difficulty={props.match.params.difficulty} status={1} textPage={true} fruitPage={false} />
         } />
         <Route 
         exact
@@ -71,10 +70,9 @@ const App = () => (
         <Route exact path="/impressum" component={Impressum} />
         <Route exact path="/lexicon" component={Lexicon} />
         <Route exact path="/ueber" component={Ueber} />
-
 </div>
 
-    
+
 );
 
 export default App;

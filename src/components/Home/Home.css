@@ -43,7 +43,6 @@ Root
  */
 #root {
     height: 100%;
-    overflow: hidden;
 }
 
 /*
@@ -225,7 +224,7 @@ lexicon
  */
 .parent {
     margin-left: 20%;
-    margin-to: 5%;
+    margin-top: 1%;
     padding-bottom: 50px;
     z-index: 1;
 }
@@ -243,30 +242,46 @@ lexicon
     flex-flow:wrap column;
     z-index: 1;
 }
+
+
 .bg::after {
-    position: fixed;
-    right: 0;
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 15%;
+    height: 1000px;
+    width: 1000px;
+    background-repeat: no-repeat;
+    background-image: url("../../images/kartoffel_startpage_small.png");
+    opacity: 0.3;
+    z-index: -100;
 }
 
-img.bg{
-    opacity:21%;
-    right: 50%;
-    max-width: 50%;
-    width: 60%;
-    height: auto;
-}
+
 div.explanationLink.homeButton a{
     display: inline;
     flex-shrink:1;
 }
-@media screen and (min-width: 1240px) {
+
+.parent.home {
+    height: 2000px;
+}
+@media screen and (min-width: 3100px) {
+
+    body{
+        padding-left: 28%;
+        padding-right: 30%;
+    }
+
+}
+@media screen and (min-width: 1080px) {
     .app{
 
         display: block;
     }
     .parent.home{
-        padding-left: 25%;
-        padding-right: 20%;
+        padding-left: 28%;
+        padding-right: 30%;
         margin-left: 18%;
         margin-top: 1%;
         align-content: center;
@@ -300,12 +315,13 @@ div.explanationLink.homeButton a{
 {
     padding-left: 10%;
     padding-right: 10%;
-    background: url("../../images/Klammer-Slider.png") top no-repeat;
-    position: absolute;
-    top: 15%;
+    position: relative;
     right: 0;
     left: 0;
     bottom: 0;
-    height: auto;
+    z-index: 0;
+}
+.border{
+    background: url("../../images/Klammer-Slider_transp.png") top no-repeat;
 }
 

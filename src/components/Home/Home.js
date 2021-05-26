@@ -4,7 +4,7 @@ import "./Home.css";
 
 
 const Home = () => (
-    <div className={"explanation background-set"}>
+    <div className={"explanation background-set border bg"}>
         <div className={"description-container"}>
             <div className={"parent"}>
         <div className={"row"}>
@@ -23,12 +23,12 @@ const Home = () => (
                             Sie haben viele Geschichten zu erzählen. <br/>
                             Davon kannst du in diesem Spiel erfahren!<br/>
                         </p>
-                             <div className={"explanationLink homeButton"}>
-                                 <Link to="/start/big/explanation">Zum Spiel<i className="material-icons">send</i></Link>
-                             </div>
                     </div>
         </div>
         </div>
+        </div>
+        <div className={"explanationLink"}>
+            <Link to="/start/big/explanation">Zum Spiel<i className="material-icons">send</i></Link>
         </div>
     </div>
 );
