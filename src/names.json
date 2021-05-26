@@ -9,8 +9,11 @@
         "mapX":29,
         "mapY":47,
         "sounds": [
-            "/sounds/Kartoffel1.m4a",
-            "/sounds/Kartoffel2.m4a"
+            "/sounds/Kartoffel 1.mp3",
+            "/sounds/Kartoffel 2.mp3",
+            "/sounds/Kartoffel 3.mp3",
+            "/sounds/Kartoffel Falsch.mp3",
+            "/sounds/Kartoffel Richtig.mp3"
         ],
         "texts": ["Hallo, ich bin die Kartoffel!</p> <p>Ich wachse an einer kleinen buschigen Pflanze.</p><p> Sie wird maximal 1m hoch. </p><p>Diese Pflanze heißt Kartoffelpflanze.</p><p>Ich wachse an Wurzeln der Kartoffelpflanze.</p> <p>Bis zu 50 Kartoffeln können an einer Pflanze wachsen.</p><p> Weltweit gibt es über 4 Tausend verschiedene Kartoffelsorten.</p>",
         "<p>Ich komme aus der Region Tahuantinsuyo aus den Anden.</p> <p>Die Anden sind ein großes Gebirge in Südamerika.</p><p>Tahuantinsuyo gehört heute zu dem Land Peru. </p> <p>Dort haben mich Menschen schon vor 7 Tausend Jahren angepflanzt und gegessen.</p> <p>Die Menschen haben auch Wege gefunden, mich über 10 Jahre haltbar zu machen.</p>",
@@ -28,8 +31,11 @@
         "mapX":64,
         "mapY":28,
         "sounds": [
-            "/sounds/Mango1.m4a",
-            "/sounds/Mango2.m4a"
+            "/sounds/Kartoffel 1.mp3",
+            "/sounds/Kartoffel 2.mp3",
+            "/sounds/Kartoffel 3.mp3",
+            "/sounds/Kartoffel Falsch.mp3",
+            "/sounds/Kartoffel Richtig.mp3"
         ],
         "texts": ["<p>Hi, ich bin die Mango.</p><p>Ich bin eine kugelige Frucht.</p><p> Wenn ich reif bin, bin von außen grün, gelb oder rot.</p><p>Oft sogar dreifarbig.</p><p>. Ich wachse an langen Stielen.</p> <p>Wenn ich reif bin, bin von außen grün, gelb oder rot.</p> <p>Oft auch dreifarbig.</p><p>Ich wachse an riesigen Bäumen, die das ganze Jahr über grün sind.</p><p>Sie können bis zu 40 Meter hoch werden.</p>",
         "<p>Ich komme ich aus der heutigen Region Assam.</p><p>Diese Region befindet sich heute in Indien.</p><p>Genauer gesagt im nordöstlichen Teil von Indien.</p><p>Die Menschen haben mich dort schon vor über 4 Tausend Jahren angebaut.</p><p>Sie haben in Büchern ihr Wissen über mich aufgeschrieben.</p>",
@@ -46,8 +52,11 @@
         "mapX":69,
         "mapY":45,
         "sounds": [
-            "/sounds/Banane1.m4a",
-            "/sounds/Banane1.m4a"
+            "/sounds/Banane 1.mp3",
+            "/sounds/Banane 2.mp3",
+            "/sounds/Banane 3.mp3",
+            "/sounds/Banane Falsch.mp3",
+            "/sounds/Banane Richtig.mp3"
         ],
         "texts": ["<p>Heyho, ich bin die Banane.</p><p>Ich wachse an einer Staude.</p><p>Die Staude kann 3 bis 6 Meter hoch werden.</p> <p>Also ungefähr drei Mal so groß wie du.</p> <p>Sie wird etwa 2 Jahre alt.</p><p>Und sie trägt nur ein Mal in ihrem Leben Früchte.</p><p>Im Alter von etwa acht Monaten wachsen Blüten.</p><p>Danach komme ich und ungefähr 20 andere Bananen.</p><p>Wir wachsen wie Finger nebeneinander.</p><p>Menschen nennen mich deshalb auch 'Finger' an einer 'Bananenhand'.</p><p>An einer Staude wachsen bis zu 300 von uns Bananen!</p><p>Wir wiegen insgesamt bis zu 40 kg.</p>",
         "<p>Ich komme aus Südostasien.</p><p>Aus der Gegend, in der sich heute die Länder Malaysia und Thailand befinden.</p><p>Schon vor Jahrtausenden war ich für die Menschen in Südostasien ein wichtiges Nahrungsmittel.</p>",
@@ -64,8 +73,11 @@
         "mapX":70,
         "mapY":25,
         "sounds": [
-            "/sounds/Orange1.mp4",
-            "/sounds/Orange2.m4a"
+            "/sounds/Orange 1.mp3",
+            "/sounds/Orange 2.mp3",
+            "/sounds/Orange 3.mp3",
+            "/sounds/Orange Falsch.mp3",
+            "/sounds/Orange Richtig.mp3"
         ],
         "texts": ["Huhu, ich bin die Orange. <p>Ich wachse an Bäumen, die bis zu 8 Meter hoch werden können.</p> <p>Ich brauche warmes Klima zum Wachsen.</p><p>Orangenbäume sind das ganze Jahr über grün.</p>",
         "Ich komme aus dem heutigen China.<p>Auf diesen Ursprung verweist auch mein ursprünglicher Name “Apfelsine”.</p><p>Er bedeutet “Apfel aus China”.</p><p>In China wurde ich schon vor 4 Tausend Jahren angebaut.</p>",
@@ -82,8 +94,11 @@
         "mapX":26,
         "mapY":37,
         "sounds": [
-            "/sounds/Mais1.m4a",
-            "/sounds/Mais2.m4a"
+            "/sounds/Mais 1.mp3",
+            "/sounds/Mais 2.mp3",
+            "/sounds/Mais 3.mp3",
+            "/sounds/Mais Falsch.mp3",
+            "/sounds/Mais Richtig.mp3"
         ],
         "texts":["<p>Mahlzeit, ich bin das Maiskorn.</p><p>Ich wachse an einer kräftigen, krautigen Pflanze.</p> <p>Sie kann bis zu 3 Meter groß werden und hat viele Blätter.</p> <p>An jeder Pflanze wachsen etwa zwei Kolben.</p><p>An jedem Kolben wachse ich mit etwa 400 – 600 anderen Maiskörnern.</p> <p>Ich bin auf der ganzen Welt berühmt.</p> <p>Ich bin nämlich das Getreide, das am meisten angebaut wird!</p><p>Ich werde von Menschen aber auch von gezüchteten Tieren gegessen.</p>",
         "<p>Ich komme aus Mittelamerika.</p><p>Genauer gesagt aus dem heutigen Mexiko.</p><p>Vor etwa 8 Tausend Jahren gab es mich dort schon.</p><p>Damals sah ich noch aus wie Gras mit kleinen Körnern.</p><p>Die Menschen nannten mich „Teosinte” oder „Teacentli“.</p><p>Das zeigt, wie wichtig ich damals für die Menschen war.</p><p>Denn „Teo“ bedeutet Gott und „centli“ Mais.</p><p>Also hieß ich Göttinnenmais oder Göttermais.</p><p>Im Laufe der letzten 5000 Jahre sind viele Sorten von mir entstanden.</p><p>Durch Auslese, also Auswahl und Weiterzüchtung von einzelnen Pflanzen.</p>",
