@@ -1,4 +1,8 @@
-
+.home{
+    content: "";
+}
+.app {
+}
 h1 {
     font-family:RocknRoll One, sans-serif;
     font-size: 1.8em;
@@ -32,10 +36,6 @@ article {
 
 
 
-/** Home **/
-
-
-
 /*
 =====================
 Root
@@ -44,12 +44,6 @@ Root
 #root {
     height: 100%;
 }
-
-/*
-=====================
-App
-=====================
-*/
 
 ul{
     margin: 2px;
@@ -117,7 +111,6 @@ nav a:hover {
     column-count: 2;
     column-span: 2;
     margin-bottom: 40px;
-    margin-left: 20%;
     margin-right: 20%;
 }
 
@@ -181,6 +174,9 @@ lexicon
     margin-right: 10%;
     font-size: 1.8em;
 }
+.lexicon article {
+    display: none;
+}
 .arrow{
     bottom: 20%;
     right: 10%;
@@ -243,37 +239,40 @@ lexicon
     z-index: 1;
 }
 
+.bg{
+}
 
 .bg::after {
     content: "";
-    display: inline-block;
+    opacity: 0.7;
     position: absolute;
-    left: 15%;
     height: 1000px;
-    width: 1000px;
+    width: 100%;
+    top: -10%;
+    background-position: center;
     background-repeat: no-repeat;
-    background-image: url("../../images/kartoffel_startpage_small.png");
-    opacity: 0.3;
+    background-image:  url("../../pictures/Hill_background.png");
     z-index: -100;
 }
 
 
-div.explanationLink.homeButton a{
-    display: inline;
-    flex-shrink:1;
-}
 
 .parent.home {
     height: 2000px;
 }
+
 @media screen and (min-width: 3100px) {
 
-    body{
-        padding-left: 28%;
-        padding-right: 30%;
+    .bg{
+
+        display: block;
+    }
+    .body {
+        overflow: scroll;
     }
 
 }
+
 @media screen and (min-width: 1080px) {
     .app{
 
@@ -322,6 +321,6 @@ div.explanationLink.homeButton a{
     z-index: 0;
 }
 .border{
-    background: url("../../images/Klammer-Slider_transp.png") top no-repeat;
+    background: url("../../images/Klammer-Slider_transp.png")  top no-repeat;
 }
 

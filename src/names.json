@@ -20,7 +20,7 @@
     {
         "name": "Mango",
         "image_paths": [
-            "/pictures/Mango.jpeg",
+            "/pictures/Mango_w.jpeg",
             "/pictures/Mango_Produkt.jpg",
             "/pictures/Mango_Pflanze.jpeg"
 
@@ -39,7 +39,7 @@
         {
         "name": "Banane",
         "image_paths": [
-            "/pictures/Banane.jpeg",
+            "/pictures/Banane_w.jpeg",
             "/pictures/Banane_Produkt.jpeg",
             "/pictures/Banane_Pflanze.jpeg"
         ],

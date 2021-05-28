@@ -92,9 +92,8 @@ class Overlay extends React.Component {
                 {this.props.display &&
                     <div className="overlay" id="overlay">
 
-
-                            <a className={"close"} id={"close"} onClick={()=> {this.props.stop(); this.stopSound();}}>{this.props.buttonName}</a>
-                            <div className="text">
+                        <a className={"close"} id={"close"} onClick={()=> {this.props.stop(); this.stopSound();}}>{this.props.buttonName}</a>
+                        <div className="text">
 
                             <div className="parent">
 
@@ -123,7 +122,7 @@ class Overlay extends React.Component {
 
                     </div>
                 }
-            </div>
+                </div>
         );
     }
 }

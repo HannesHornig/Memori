@@ -87,13 +87,14 @@ overflow(id){
     }
 }
 
+
 memoryIntroduction = () => {
     return (
     <div className={"description-container"}>
         <div className={"parent"}>
             <div className={"row"}>
 
-                <h2>Klicke auf die Früchte.</h2>
+                <h1>Klicke auf die Früchte.</h1>
             </div>
             <div className={"row"}>
                 <p>
@@ -112,7 +113,7 @@ button = (difficulty,stage,textPage) => {
 
         if(textPage) {
             if(stage==0)
-                return (<div className={"row"}><Link to={`/start/${difficulty}/fruits`}>Zu den Früchten</Link></div>)
+                return (<Link to={`/start/${difficulty}/fruits`}>Zu den Früchten</Link>)
             if(stage==1)
             return (<Link to={`/finished/${difficulty}/fruits`}>Zu den Geschichten</Link>)
             if(stage==2)
@@ -142,7 +143,7 @@ componentDidMount() {
 
 testBg(textPage, stage) {
         if (textPage&&stage==0){
-            return "explanation background-set border"
+            return "explanation background-set border bg"
         }
         return "explanation"
     }
@@ -172,7 +173,6 @@ testBg(textPage, stage) {
                          buttonName="x"
                          sound={this.state.sound} stop={() => this.setOverlay(false,[],[],null)}></Overlay>
 
-                <div className={"background-set bg"}></div>
                 <div className={this.testBg(textPage, status)}>
             {textPage&&(reference.entryText(status))}
 

@@ -4,7 +4,8 @@ import "./Home.css";
 
 
 const Home = () => (
-    <div className={"explanation background-set border bg"}>
+
+        <div className={"explanation background-set border bg"}>
         <div className={"description-container"}>
             <div className={"parent"}>
         <div className={"row"}>
@@ -30,7 +31,7 @@ const Home = () => (
         <div className={"explanationLink"}>
             <Link to="/start/big/explanation">Zum Spiel<i className="material-icons">send</i></Link>
         </div>
-    </div>
+        </div>
 );
 
 export default Home;
