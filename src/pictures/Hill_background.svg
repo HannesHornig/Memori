@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="2200mm"
+   height="750mm"
+   viewBox="0 0 2200 750"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c4e8f9e, 2021-05-24)"
+   sodipodi:docname="Hill_background.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#111111"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.036280718"
+     inkscape:cx="2149.9023"
+     inkscape:cy="6284.3299"
+     inkscape:window-width="1920"
+     inkscape:window-height="971"
+     inkscape:window-x="0"
+     inkscape:window-y="31"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     height="500mm"
+     width="1500mm" />
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4665">
+      <stop
+         style="stop-color:#00ab00;stop-opacity:1;"
+         offset="0"
+         id="stop4661" />
+      <stop
+         style="stop-color:#b27a0a;stop-opacity:1"
+         offset="1"
+         id="stop4663" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3758">
+      <stop
+         style="stop-color:#c8ab37;stop-opacity:1;"
+         offset="0"
+         id="stop3754" />
+      <stop
+         style="stop-color:#c8ab37;stop-opacity:0;"
+         offset="1"
+         id="stop3756" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3758"
+       id="linearGradient3762"
+       x1="66.973175"
+       y1="244.03461"
+       x2="350.95078"
+       y2="244.03461"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(4.5729877,0,0,5.273607,590.26992,-850.68307)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4665"
+       id="linearGradient4667"
+       x1="-127.26236"
+       y1="243.28612"
+       x2="228.95934"
+       y2="243.28612"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="repeat"
+       gradientTransform="matrix(4.5729877,0,0,5.273607,590.26992,-850.68307)" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <ellipse
+       style="fill:#00ce00;fill-opacity:1;fill-rule:evenodd;stroke-width:1.33667"
+       id="path31-6"
+       cx="1096.7811"
+       cy="326.21582"
+       rx="480.74573"
+       ry="278.68445"
+       inkscape:export-filename="/home/erode/git/Memori/src/pictures/hills.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       id="path31-3"
+       style="fill:#00ab00;fill-opacity:1;fill-rule:evenodd;stroke-width:1.29932"
+       d="m 1377.2838,153.01525 c -265.5076,-3e-4 -480.74464,145.34373 -480.74638,324.63543 0.0461,90.8978 56.52408,177.61905 155.70118,239.07745 h 650.088 c 143.2218,-6.3822 492.7907,32.0396 492.8368,-58.8583 -8e-4,-86.09865 -387.7863,-348.88995 -477.9432,-409.7709 -90.1569,-60.88078 -212.4356,-95.08338 -339.9364,-95.08368 z"
+       sodipodi:nodetypes="cccccsc"
+       inkscape:export-filename="/home/erode/git/Memori/src/pictures/hills.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       id="path31-3-7"
+       style="opacity:0.800903;fill:url(#linearGradient3762);fill-opacity:1;fill-rule:evenodd;stroke-width:1.29932"
+       d="m 1377.2838,153.01525 c -265.5076,-3e-4 -480.74462,145.34363 -480.74637,324.63543 0.0461,90.8978 56.52408,177.61905 155.70127,239.07735 h 650.0879 c 143.2218,-6.3821 492.7907,32.0397 492.8368,-58.8583 -8e-4,-86.09855 -387.7863,-348.88985 -477.9432,-409.7708 -90.1569,-60.88088 -212.4356,-95.08348 -339.9364,-95.08368 z"
+       sodipodi:nodetypes="cccccsc"
+       inkscape:export-filename="/home/erode/git/Memori/src/pictures/hills.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       id="path31"
+       style="opacity:1;fill:url(#linearGradient4667);fill-opacity:1;fill-rule:evenodd;stroke-width:1.34876"
+       d="M 744.48456,128.24795 C 460.1412,128.24765 8.3001854,498.08458 8.3006954,678.48353 c 0.11066,103.1748 296.9186846,36.6668 428.8548246,38.2445 h 615.08318 c 130.3111,-61.6447 585.0486,65.5814 585.0594,-37.5456 2e-4,-86.63065 -432.2073,-394.00645 -528.7603,-455.2637 -96.5529,-61.25708 -227.50677,-95.67088 -364.05324,-95.67078 z"
+       sodipodi:nodetypes="cccccsc"
+       inkscape:export-filename="/home/erode/git/Memori/src/pictures/hills.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+  </g>
+</svg>
