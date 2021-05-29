@@ -97,7 +97,7 @@ class Map extends Component {
             let cardValue = selectedLevel.cards[card];
 
             const currentValue = names.find(element => element.name === cardValue);
-            positions.push({ x: 0, y: 0, draggable: true, left: retrievedX + retrievedWidth * currentValue.mapX /100, top: retrievedY + retrievedHeight * currentValue.mapY /100, picture: currentValue.image_paths[0] });
+            positions.push({ x: 0, y: 0, draggable: true, left: retrievedX + retrievedWidth * currentValue.mapX /100, top: retrievedY + retrievedHeight * currentValue.mapY /100, picture: currentValue.image_paths[0],sounds: [currentValue.sounds[3],currentValue.sounds[4]] });
         }
 
         this.setState({
@@ -119,6 +119,7 @@ class Map extends Component {
         position.y = e.y + window.pageYOffset;
         position.draggable = true;
         position.top = position.top,
+        position.sounds=position.sounds;
             position.left = position.left,
             // 4. Put it back into our array. N.B. we *are* mutating the array here, but that's why we made a copy first
             positions[i] = position;
@@ -186,16 +187,18 @@ class Map extends Component {
     onStop = (e, ui, i) => {
         this.setState({ activeDrags: --this.state.activeDrags });
 
+                    // 1. Make a shallow copy of the items
+                    let positions = [...this.state.position];
+                    // 2. Make a shallow copy of the item you want to mutate
+                    let position = { ...positions[i] };
         if (this.checkBorders(i) == 1) {
-            // 1. Make a shallow copy of the items
-            let positions = [...this.state.position];
-            // 2. Make a shallow copy of the item you want to mutate
-            let position = { ...positions[i] };
+
             // 3. Replace the property you're intested in
             position.x = position.x;
             position.y = position.y;
             position.draggable = false;
             position.top = position.top,
+            position.sounds = position.sounds;
                 position.left = position.left,
                 // 4. Put it back into our array. N.B. we *are* mutating the array here, but that's why we made a copy first
                 positions[i] = position;
@@ -204,7 +207,14 @@ class Map extends Component {
                 position: positions,
 
             });
-            winSound.play();
+
+            const correctS = new UIfx(window.location.origin + position.sounds[1],
+                {
+                    volume: 0.6, // number between 0.0 ~ 1.0
+                });
+                correctS.play();
+
+           // winSound.play();
             this.props.incrementCounter();
 
             if (this.checkFinished(positions)) {
@@ -213,7 +223,11 @@ class Map extends Component {
             }
         } else if (this.checkBorders(i) == -1) {
             this.props.incrementCounter();
-            wrongSound.play();
+            const wrongS = new UIfx(window.location.origin + position.sounds[0],
+                {
+                    volume: 0.6, // number between 0.0 ~ 1.0
+                });
+                wrongS.play();
         } else {
             dropSound.play();
         }
