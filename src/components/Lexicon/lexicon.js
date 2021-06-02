@@ -11,13 +11,18 @@ const Lexicon = () => (
                         <div className={"parent"}>
                             <div className={"row"}>
                                 <div className={"column"}>
-                                <button onClick={function (e){ prevElement("description")}}>Back</button>
+                                    <div className={"explanationLink"}>
+                                    <a className={"back-button"} onClick={function (e){ prevElement("description")}}>zurück</a>
+                                    </div>
                                 </div>
                                 <div className={"column"}>
-                            <button onClick={function (e){ nextElement("description")}}>Next</button>
+                                    <div className={"explanationLink"}>
+                                    <a className={"forward-button"} onClick={function (e){ nextElement("description")}}weiter></a>
+                                    </div>
                                 </div>
-                        </div>
-                <article id={"description1"}>
+                            </div>
+                            <div className={"row"}>
+                                <article className={"fade_in"} id={"description1"} style={{display:"block"}}>
                     <h1>Erklärungen</h1>
                     <h2>*</h2>
                     <div className="text-column">
@@ -173,6 +178,7 @@ const Lexicon = () => (
                         </p>
                     </div>
                 </article>
+                    </div>
             </div>
             </div>
         </div>

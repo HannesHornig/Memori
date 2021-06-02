@@ -38,11 +38,9 @@ const Impressum = () => (
                     </p>
                     </div>
         </div>
-<div className="row">
-    <img className={"banner"} src={foerderer} style={{ width: "1400px", height: "400px" }}/>
-</div>
 </div>
         </div>
+        <img className={"banner"} src={foerderer} style={{ width: "1400px", height: "400px" }}/>
         </div>
 );
 

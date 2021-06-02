@@ -1,8 +1,6 @@
 .home{
     content: "";
 }
-.app {
-}
 h1 {
     font-family:RocknRoll One, sans-serif;
     font-size: 1.8em;
@@ -111,7 +109,6 @@ nav a:hover {
     column-count: 2;
     column-span: 2;
     margin-bottom: 40px;
-    margin-right: 20%;
 }
 
 
@@ -150,12 +147,8 @@ Impressum
  */
 
 img.banner {
-    margin-left: 0;
-    margin-right: auto;
-    margin-top: 5%;
-    max-width: 80%;
-    height: auto;
-    width: auto\9; /* ie8 */
+    margin: auto;
+    display: block;
 }
 
 /* Impression Class */
@@ -177,6 +170,24 @@ lexicon
 .lexicon article {
     display: none;
 }
+.lexicon .column{
+    align-content: center;
+}
+.direction{
+
+}
+.lexicon .explanationLink  {
+margin-top: 12px;
+}
+
+.lexicon.explanationLing a{
+    padding-top: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1em;
+}
+
+
 .arrow{
     bottom: 20%;
     right: 10%;
@@ -213,14 +224,41 @@ lexicon
     }
 }
 
+.fade-out{
+    animation: fade_out_an 3s;
+}
 
-/* Grid Setup
+@keyframes fade_out_an {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 5;
+    }
+    100%{
+        opacity: 10;
+    }
+}
+.fade-in{
+    animation: fade_in_an 3s;
+}
 
+@keyframes fade_in_an {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 5;
+    }
+    100%{
+        opacity: 10;
+    }
+}
 
- */
 .parent {
-    margin-left: 20%;
     margin-top: 1%;
+    margin-left: 20%;
+    margin-right: 5%;
     padding-bottom: 50px;
     z-index: 1;
 }
@@ -239,34 +277,12 @@ lexicon
     z-index: 1;
 }
 
-.bg{
-}
-
-.bg::after {
-    content: "";
-    opacity: 0.7;
-    position: absolute;
-    height: 1000px;
-    width: 100%;
-    top: -10%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image:  url("../../pictures/Hill_background.png");
-    z-index: -100;
-}
 
 
 
-.parent.home {
-    height: 2000px;
-}
 
-@media screen and (min-width: 3100px) {
+@media screen and (min-height: 460px) {
 
-    .bg{
-
-        display: block;
-    }
     .body {
         overflow: scroll;
     }
@@ -275,7 +291,6 @@ lexicon
 
 @media screen and (min-width: 1080px) {
     .app{
-
         display: block;
     }
     .parent.home{
@@ -298,6 +313,9 @@ lexicon
     {
         top: 5%;
     }
+    .border{
+        display: none;
+    }
 }
 @media screen and (max-width: 952px) {
     .parent.home {
@@ -314,13 +332,58 @@ lexicon
 {
     padding-left: 10%;
     padding-right: 10%;
-    position: relative;
+    position: absolute;
     right: 0;
     left: 0;
     bottom: 0;
     z-index: 0;
 }
-.border{
-    background: url("../../images/Klammer-Slider_transp.png")  top no-repeat;
+
+
+.bg::before {
+    content: "";
+    z-index: 100;
+    opacity: 0.9;
+}
+.bg{
+    background-image:  url("../../pictures/granz_wide.png");
+    position: fixed;
+    height: 600px;
+    max-width: 100%;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
+.potato{
+    left: 10px;
+    bottom: 0;
+    max-height: 65%;
+    position: fixed;
+    z-index: 10;
+}
+
+.border::after{
+    content: "";
+    z-index: 100;
+}
+.border{
+    position: absolute;
+background: url("../../images/Klammer-Slider_transp.png")  top no-repeat;
+}
+
+.root{
+    max-width: 2000px;
+}
+
+.text-box{
+    background:rgba(167, 214, 30, 0.5);
+    margin-top: 100px;
+    border-radius: 150px;
+    box-shadow: 0 30px 30px 40px rgba(167, 214, 30, 0.5);
+    z-index: -100;
+
+}

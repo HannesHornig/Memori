@@ -105,6 +105,9 @@
     height: auto;
     border: 2px  #7a9d0a solid;
 }
+.game img{
+    position: absolute;
+}
 .sideImage{
     height: 100%;
     width: 100%;
@@ -115,6 +118,12 @@
     cursor: pointer;
 }
 
+@media screen and (min-width: 3000px) {
+    .big{
+        padding-left: 20%;
+        padding-right: 5%;
+    }
+}
 @media screen and (max-width: 800px) {
     .game { flex-flow: column;
     margin-left: 0;

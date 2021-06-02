@@ -14,8 +14,6 @@ body {
     margin: 0;
     text-align: justify;
     text-justify: inter-word;
-    overflow: hidden;
-
 }
 
 
@@ -155,8 +153,25 @@ button:hover {
 
 
 
-@media screen and (max-width: 952px) {
-    header h1{
-        font-size: smaller;
+@media screen and (max-width: 1480px) {
+    header h1,
+    nav {
+        font-size: medium;
     }
+    .border{
+        background-image: none;
+    }
+    .bg{
+        z-index: -1000;
+        height: 0;
+    }
+    .parent { z-index: 100}
+    .text-box{
+        background: rgb(167, 214, 30);
+    }
+    .explanation {
+        top: 0;
+    }
+
+
 }
