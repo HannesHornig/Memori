@@ -161,20 +161,23 @@ lexicon
 =====================
  */
 .lexicon {
-    border-left: 40px;
-    border-right: 40px;
-    margin-left: 10%;
-    margin-right: 10%;
     font-size: 1.8em;
 }
 .lexicon article {
     display: none;
+    margin: 0 auto;
+    font-size: 1.8em;
 }
-.lexicon .column{
-    align-content: center;
-}
-.direction{
+.lexicon .parent{
+    display: block;
 
+}
+.lexicon a:hover{
+    animation:  shake 0.8s;
+}
+.lexicon .row{
+    justify-content: center;
+    display: flex;
 }
 .lexicon .explanationLink  {
 margin-top: 12px;
@@ -187,29 +190,6 @@ margin-top: 12px;
     font-size: 1em;
 }
 
-
-.arrow{
-    bottom: 20%;
-    right: 10%;
-    position: fixed;
-    transform: translate(-50%,-50%);
-}
-.arrow span{
-    display: block;
-    width: 40px;
-    height: 40px;
-    border-bottom: 5px solid #7a9d0a;
-    border-right: 5px solid #7a9d0a;
-    transform: rotate(45deg);
-    margin: -10px;
-    animation: animate 3s infinite;
-}
-.arrow span:nth-child(2){
-    animation-delay: -0.2s;
-}
-.arrow span:nth-child(3){
-    animation-delay: -0.1s;
-}
 @keyframes animate {
     0%{
         opacity: 0;
@@ -281,14 +261,13 @@ margin-top: 12px;
 
 
 
-@media screen and (min-height: 460px) {
-
-    .body {
-        overflow: scroll;
+@media screen and (max-height: 600px) {
+    body {
     }
 
 }
 
+/* If screen is >= 1080px */
 @media screen and (min-width: 1080px) {
     .app{
         display: block;
@@ -317,6 +296,8 @@ margin-top: 12px;
         display: none;
     }
 }
+
+/* If screen is <= 952px */
 @media screen and (max-width: 952px) {
     .parent.home {
         padding-left: 0;
@@ -380,10 +361,10 @@ background: url("../../images/Klammer-Slider_transp.png")  top no-repeat;
 }
 
 .text-box{
-    background:rgba(167, 214, 30, 0.5);
+    background: rgba(255, 255, 255, 0.8);
     margin-top: 100px;
     border-radius: 150px;
-    box-shadow: 0 30px 30px 40px rgba(167, 214, 30, 0.5);
+    box-shadow: 0 30px 30px 10px rgba(167, 214, 30, 0.5);
     z-index: -100;
 
 }

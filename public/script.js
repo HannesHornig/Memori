@@ -1,4 +1,5 @@
 let idNum = 2;
+let currentElement = "start";
 
 function start(){
     idNum = 2;
@@ -22,7 +23,15 @@ function start(){
         }
     }
 
-    function nextElement(elemId) {
+function showElement(elemId) {
+    document.getElementById(currentElement).className = "fade-out"
+    document.getElementById(currentElement).style.display = "none"
+    document.getElementById(elemId).style.display = "block"
+    document.getElementById(elemId).className = "fade-in"
+    currentElement = elemId
+}
+
+function nextElement(elemId) {
         let elementId = elemId + idNum
         if (idNum < 12) {
             document.getElementById(elementId).style.display = "block"

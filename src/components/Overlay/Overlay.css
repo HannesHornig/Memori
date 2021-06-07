@@ -1,7 +1,7 @@
 .overlay {
     border: 1px solid;
     border-radius: 6%;
-    background: rgb(167, 214, 30);
+    background: rgba(142, 184, 94, 0.9);
 }
 .overlay{
     position: fixed;

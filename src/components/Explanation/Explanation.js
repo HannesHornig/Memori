@@ -29,7 +29,7 @@ class Explanation extends Component {
      * @param {URL} img - image which is shown over the text (can be null)
      */
     setOverlay(toDisplay, explanation, image, sound) {
-        this.overflow("body")
+        this.SetOverflow("body")
         this.setState({
             overlay: toDisplay,
             explanation: explanation,
@@ -79,7 +79,7 @@ class Explanation extends Component {
     }
 
     /* Set css overflow property */
-    overflow(id) {
+    SetOverflow(id) {
         if (document.getElementById(id).style.overflow !== 'hidden') {
             document.getElementById(id).style.overflow = 'hidden';
         } else {
@@ -90,7 +90,7 @@ class Explanation extends Component {
 
     memoryIntroduction = () => {
         return (
-            <div className={"description-container text-box"}>
+        <div className={"description-container text-box"}>
                 <div className={"parent"}>
                     <div className={"row"}>
                         <h1>Klicke auf die Früchte.</h1>
@@ -143,10 +143,15 @@ class Explanation extends Component {
     }
 
     testBg(textPage, stage) {
-        if (textPage && stage == 0) {
+        if (textPage && stage === 0) {
             return "border explanation background-set border"
         }
         return "explanation"
+    }
+    callBg(textPage, stage) {
+        if (textPage && stage === 0) {
+            return "bg"
+        }
     }
 
     render() {
@@ -174,8 +179,8 @@ class Explanation extends Component {
                          buttonName="x"
                          sound={this.state.sound} stop={() => this.setOverlay(false, [], [], null)}></Overlay>
 
+                <div className={this.callBg(textPage, status)}></div>
                 <div className={this.testBg(textPage, status)}>
-                    <div className={"bg"}></div>
                     <img className={"potato"} src={"/pictures/potato_high.png"}/>
                     {textPage && (reference.entryText(status))}
 
@@ -214,6 +219,7 @@ class Explanation extends Component {
                     }
                     {reference.endText(difficulty, status, textPage)}
                     <div className="explanationLink">
+                        <br/>
                         {reference.button(difficulty, status, textPage)}
                     </div>
                 </div>

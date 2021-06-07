@@ -24,6 +24,7 @@ class Overlay extends React.Component {
         this.setState({
             page: 0
         });
+        this.state.overflow
     }
 
     increasePage() {
@@ -81,9 +82,6 @@ class Overlay extends React.Component {
         });
     }
 
-    removeClass(className){
-        console.log(document.getElementById(className))
-    }
 
 
     render() {

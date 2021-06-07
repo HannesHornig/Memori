@@ -42,8 +42,9 @@
 
 
 .cardOverview {
-    width: 700px;
+    width: 500px;
     display: flex;
+    max-width: 5500px;
     flex-flow: wrap ;
     justify-content: space-evenly;
     z-index:1;
@@ -51,8 +52,6 @@
 
 .explanationLink {
     z-index:1;
-    margin-left: 25%;
-    margin-right: 25%;
 }
 
 .explanationLink a {
@@ -60,6 +59,8 @@
     color: #3e6f2d;
     border-radius: 15px;
     padding: 20px;
+    background-color: rgba(255,255,255,0.6);
+    align-content: space-around;
 }
 
 div.explanationLink.homeButton a{
