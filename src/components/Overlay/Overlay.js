@@ -1,8 +1,7 @@
 import React from 'react';
 import "./Overlay.css";
-import UIfx from 'uifx';
 
-import { Howl, Howler } from 'howler';
+import { Howl } from 'howler';
 
 let sound;
 
@@ -80,8 +79,6 @@ class Overlay extends React.Component {
             playing: false
         });
     }
-
-
 
     render() {
         return (
