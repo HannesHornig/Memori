@@ -1,0 +1,62 @@
+{  "lexicon" : [
+    {
+  "name": "start",
+  "title": "*",
+  "text": "Es gibt Frauen.<br/>Es gibt Männer.<br/>Aber es gibt viel mehr Geschlechter.<br/>Zum Beispiel Menschen, die sich nicht als Frau oder Mann fühlen.<br/>Das wollen wir auch zeigen.<br/>Deshalb schreiben wir zum Beispiel:<br/><em><b>Freund*innen.</b></em><br/>Das Sternchen steht für alle Menschen,die sich nicht als Frau oder Mann verstehen.<br/>Im Wort Freund*innen<br/>stecken also alle Menschen drinnen, egal wie sie sich bezeichnen oder fühlen.<br/>Alle sollen sich angesprochen fühlen.<br/> "
+    },
+    {
+      "name": "einfach_spreche",
+      "title": "Einfache Sprache",
+      "text": "Einfache Sprache ist eine sehr leicht verständliche Sprache.<br/> Mensch kann sie sprechen und schreiben.<br/>Es werden leichte Wörter und kurze Sätze benutzt.<br/> Es gibt viele Beispiele und Bilder.<br/>Einfache Sprache verstehen viele Menschen besser.<br/>Einfache Sprache macht das Lesen für viele Menschen leichter. <br/>Deshalb nutzen wir in dem Lernspiel Einfache Sprache.<br/>"
+    },
+    {
+      "name": "grenze",
+      "title": "Grenze",
+      "text" : "Eine Grenze ist eine Linie zwischen zwei Gebieten.<br/>Gebiete können Städte, Dörfer oder Länder sein.<br/>Grenzen sind von Menschen gemacht.<br/>Deswegen können sie sich auch verändern.<br/><br/>Das fällt auch in den Gemüse-Geschichten auf:<br/>Die Länder, die es heute gibt, waren früher noch nicht da.<br/>Zum Beispiel in der Geschichte der Kartoffel das Land Peru.<br/>Deshalb sagen wir in der Geschichte zum Beispiel: „im heutigen Land Peru."
+    },
+    {
+      "name": "handel",
+      "title": "Handel",
+      "text" : "Beim Handel tauschen Menschen Waren untereinander aus.<br/>Waren sind zum Beispiel Lebensmittel, Kleidung oder Geräte.<br/>Früher haben die Menschen eine Ware direkt gegen eine andere getauscht.<br/>Das war der Tauschhandel.<br/>Heute bezahlen Menschen eine Ware oft mit Geld.<br/>Der gesamte Handel mit Waren ist ein Teil der Wirtschaft."
+    },
+    {
+      "name": "kolonie_heist",
+      "heading" : "Kolonialismus",
+      "title": "Kolonie heißt",
+      "text" : "Ein Land erobert Gebiete in einem anderen Land.<br/>Die Eroberer*innen übernehmen die Herrschaft über die Einwohner*innen.<br/>Das eroberte Land wird Kolonie genannt."
+    },
+    {
+      "name": "kolonislidmis_heist",
+      "heading" : "Kolonialismus",
+      "title": "Kolonialismus heist",
+      "text" : "Vor 500 Jahren haben viele Länder Kolonien errichtet.<br/>Zum Beispiel Spanien und Portugal.<br/>Später hat auch Deutschland beim Kolonialismus mitgemacht.<br/>Alle deutschen Kolonien zusammen waren am Ende 6 Mal so groß wie Deutschland."
+    },
+    {
+      "name": "die_menschen",
+      "heading" : "Kolonialismus",
+      "title": "Die Menchen in den Kolonien",
+      "text" : "Die Menschen waren nach der Eroberung nicht mehr frei.<br/>Viele haben sich gegen die Eroberung gewehrt.<br/>Sie wurden unterdrückt und es gab viele Kämpfe.<br/>Sie mussten für die Kolonialmächte arbeiten.<br/>Sie mussten neue Gesetze annehmen.<br/>Und die Sprache und Lebensweise.<br/>Es gab auch Probleme mit Krankheiten.<br/>Zum Beispiel mit ansteckenden Krankheiten, die die Kolonialmächte mitgebracht haben.<br/>Daran sind viele Einwohner*innen gestorben."
+    },
+    {
+      "name": "kolonialismus_heute",
+      "heading" : "Kolonialismus",
+      "title": "Kolonialismus heute",
+      "text" : "Heute gibt es keine Kolonien mehr. <br/>Trotzdem gibt es noch immer Probleme durch die alten Kolonialmächte.<br/>Zum Beispiel bei der Bezahlung von Arbeit.<br/>Video: Was ist eine Kolonie? (Logo TV/ ZDF)<br/>\"Kolonialismus. Was hat Deutschland damit zu tun?\" Erklärung in Leichter Sprache von Das Parlament"
+    },
+    {
+      "name": "migration",
+      "title": "Migration",
+      "text" : "Menschen begeben sich von einem Ort an einen anderen Ort.<br/>Zum Beispiel in eine neue Stadt oder ein neues Land. <br/>Sie bleiben an diesem neuen Ort.<br/>Sie machen dort was ihnen wichtig ist:<br/>Sie treffen Freunde und Familie oder gehen zur Schule oder Arbeit.<br/>Dann sind sie migriert.<br/>Menschen haben schon immer Migration gemacht.<br/>Früher und heute."
+    },
+    {
+      "name": "sklaverei",
+      "title": "Sklaverei",
+      "text" : "Ein versklavter Mensch hat keine Freiheit und keine Rechte.<br/>Er gehört einer anderen Person.<br/>Oft müssen versklavte Menschen hart arbeiten.<br/>Sie werden schlecht behandelt oder geschlagen.<br/>Manchmal sogar eingesperrt oder getötet.<br/>Heute gibt es offiziell keine Sklaverei mehr.<br/>Trotzdem arbeiten in einigen Ländern immer noch viele Menschen wie Sklaven."
+    },
+    {
+      "name": "sklavereihandel",
+      "title": "Sklaverehandeli",
+      "text" : "Ein Land oder eine Person handeln mit versklavten Menschen.<br/>Das bedeutet, dass die Menschen gegen Ware eingetauscht werden.<br/>Zum Beispiel gegen Gold, Silber, Geld oder Gewürze.<br/>Das ist dann Sklavenhandel.<br/>Den größten Handel mit Sklaven gab es zwischen Afrika und Amerika.<br/>Menschen aus Europa entführten mehr als 12 Millionen Menschen aus Afrika.<br/>So viele Menschen leben zum Beispiel heute in Paris oder Rio de Janeiro.<br/>Sie brachten sie auf Schiffen in die Amerikas.<br/>Viele Menschen sind auf dem Weg in den Schiffen gestorben.<br/>In der Geschichte der Mango geht es zum Beispiel um Sklavenhandel."
+    }
+  ]
+}

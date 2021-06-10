@@ -5,7 +5,7 @@ import Game from "../Game/Game";
 import Map from "../Map/Map";
 import Explanation from "../Explanation/Explanation";
 import "./App.css";
-import logo from "../../pictures/Grenzgaenger_Logo.PNG";
+import background from "../../pictures/kartoffel_startpage_cleaned.png";
 import { Link } from "react-router-dom";
 import Impressum from "../Impressum/impressum";
 import Ueber from "../Impressum/ueber";
@@ -13,7 +13,36 @@ import Lexicon from "../Lexicon/lexicon";
 
 const App = () => (
 <div className="app">
-        <header><Link to="/"><h1>Wandernde Früchte<img src={logo}></img></h1></Link><Link to="/lexicon" class="lexiconClass">Erklärungen</Link><Link to="/ueber" class="impressumClass">Über das Spiel</Link><Link to="/impressum" class="impressumClass">Impressum</Link></header>
+        <header>
+                <div className={"parent"}>
+                        <div className="bird-container bird-container--one">
+                                <div className="bird bird--one"></div>
+                        </div>
+                        <div className="bird-container bird-container--two">
+                                <div className="bird bird--two"></div>
+                        </div>
+                        <div className="bird-container bird-container--three">
+                                <div className="bird bird--three"></div>
+                        </div>
+                        <div className="bird-container bird-container--four">
+                                <div className="bird bird--four"></div>
+                        </div>
+                <div className={"row"}>
+                        <div className={"column"}>
+                                <Link to="/">
+                                        <h1>Wandernde Früchte</h1>
+                                </Link>
+                        </div>
+                        <div className={"column"}>
+                                <nav>
+                                        <Link to="/lexicon">Erklärungen</Link>
+                                        <Link to="/ueber">Über das Spie</Link>
+                                        <Link to="/impressum" >Impressum</Link>
+                                </nav>
+                        </div>
+                </div>
+                </div>
+        </header>
         <Route exact path="/" component={Home} />
         <Route
             exact
@@ -28,7 +57,7 @@ const App = () => (
         <Route 
         exact
         path="/finished/:difficulty/explanation" 
-        render={props => <Explanation difficulty={props.match.params.difficulty} status={1} textPage={true} fruitPage={false}/>
+        render={props => <Explanation difficulty={props.match.params.difficulty} status={1} textPage={true} fruitPage={false} />
         } />
         <Route 
         exact
@@ -53,9 +82,9 @@ const App = () => (
         <Route exact path="/impressum" component={Impressum} />
         <Route exact path="/lexicon" component={Lexicon} />
         <Route exact path="/ueber" component={Ueber} />
-   
-    </div>
-    
+</div>
+
+
 );
 
 export default App;

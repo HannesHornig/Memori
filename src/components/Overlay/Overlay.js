@@ -23,6 +23,7 @@ class Overlay extends React.Component {
         this.setState({
             page: 0
         });
+        this.state.overflow
     }
 
     increasePage() {
@@ -84,12 +85,16 @@ class Overlay extends React.Component {
         return (
             <div>
                 {this.props.display &&
-                    <div className="overlay">
+                    <div className="overlay" id="overlay">
+
+                        <a className={"close"} id={"close"} onClick={()=> {this.props.stop(); this.stopSound();}}>{this.props.buttonName}</a>
                         <div className="text">
 
-                            <div className="row">
+                            <div className="parent">
+
+
                                 {this.props.image &&
-                                    <div className="column">
+                                    <div className="row">
                                         <img src={window.location.origin + this.props.image} className="picStyle" alt="icon" />
                                     </div>
                                 }
@@ -101,23 +106,20 @@ class Overlay extends React.Component {
                                     {this.props.explanation[this.state.page].text}
                                 </div>
                             </div>
+                        </div>
                             {this.props.explanation.length > 1 ?
-                                <div>
+                                <div className={"overlay-nav"}>
                                     {this.state.page > 0 ? <a onClick={() => this.decreasePage()}><i className="material-icons" >arrow_back</i></a> : ''}
-                                    {this.state.page < this.props.explanation.length - 1 ? <a onClick={() => this.increasePage()}><i className="material-icons">arrow_forward</i></a> : ''}
+                                    {this.state.page < this.props.explanation.length - 1 ? <a onClick={() => this.increasePage()}>
+                                        <i className="material-icons">arrow_forward</i></a> : ''}
                                 </div> : ''
                             }
-                            <button onClick={()=> {this.props.stop(); this.stopSound();}}>{this.props.buttonName}</button>
 
-                        </div>
                     </div>
                 }
-            </div>
-
-
+                </div>
         );
     }
 }
-
 
 export default Overlay;

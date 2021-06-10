@@ -1,13 +1,12 @@
-.column{
-   column-count: 2;
-}
 .content{
     height: fit-content;
 }
 .game {
     display: flex;
+    flex-wrap: wrap;
+    flex-flow: row;
     padding-top: 3%;
-    margin-left: 20%;
+    margin-left: 10%;
     margin-right: 10%;
 }
 
@@ -31,43 +30,48 @@
 
 
 .big{
-    margin: 2px;
-    padding: 10px;
-    width: 100%;
+    display: inline-block;
+    flex-wrap: wrap;
+    margin: 4px;
+    padding-top: 3px;
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 
 .aside{
     flex: 1 1 10em;
-    font-size: 4vmax;
 
 }
 .grid-wrapper {
     position: relative;
-    justify-content: space-evenly;
+    justify-content: flex-start  ;
+
 }
 
 .grid {
     display: grid;
-    position: absolute;
+    position: relative;
     max-height: content-box;
     max-width: content-box;
-    padding: 4px;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
+    padding-top: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
     grid-gap: 2rem;
     overflow: hidden;
 }
 
 .big .grid-wrapper {
-    padding-top: 100%;
 }
 
 .big .grid {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
 }
 
 .countries {
@@ -85,11 +89,10 @@
 
 
 .aside .grid-wrapper {
-    padding-top: 100%;
 }
 
 .aside .grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
 }
 
@@ -101,8 +104,12 @@
 
 .big img {
     width: 100%;
-    height: 100%;
+    max-width: 100%;
+    height: auto;
     border: 2px  #7a9d0a solid;
+}
+.game img{
+    position: absolute;
 }
 .sideImage{
     height: 100%;
@@ -114,9 +121,54 @@
     cursor: pointer;
 }
 
-@media screen and (max-width:900px) {
-    .game { flex-flow: column;   }
+@media screen and (min-width: 3000px) {
+    .big .grid{
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .big{
+        padding-right: 0;
+        width: 50%;
+    }
 }
-@media screen and (max-width:700px) {
-    .big img {   width: 50%; height: 50% }
+@media screen and (max-width: 1080px) {
+    .game {
+        flex-flow: column;
+
+        margin-left: 0;
+    }
+
+    .big .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    aside{
+        margin-left: 10%;
+    }
+}
+@media screen and (max-width: 800px) {
+    .game { flex-flow: column;
+    margin-left: 0;
+    }
+    aside{
+        margin-left: 10%;
+        padding-left: 10%;
+    }
+    .big .grid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .big img {   width: 100%; height: auto }
+    .big{
+        width: 80%;
+        height: 100%
+    }
+}
+@media screen and (max-width:500px) {
+    .game { flex-flow: column;   }
+    .big .grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .big img {   width: 100%; height: auto }
+    .big{
+        width: 100%;
+        height: 100%
+    }
 }

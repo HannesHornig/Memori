@@ -1,48 +1,376 @@
-.home {
-    height: 100%;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
-
-   /* justify-content: center;*/
-  /* background-image: url('/public/Gurke.jpg');
-      background-image: url('/pictures/Weltkarte.jpg');
-    background-size:contain;
-    background-position:top;
-    background: cover;*/
+.home{
+    content: "";
 }
-
-
 h1 {
-    font-size: 1.3rem;
+    font-family:RocknRoll One, sans-serif;
+    font-size: 1.8em;
 }
 
 h2 {
-    font-size: 1.2rem;
+    font-family:RocknRoll One, sans-serif;
+    font-size: 1.5em;
 }
 
 h3 {
-    font-size: 1.1rem;
+    font-family:RocknRoll One, sans-serif;
+    font-size: 1.3em;
 }
 
 p {
-    font-size: 1rem;
+    font-size: 1.2em;
 }
 
-div{
-    text-align: center;
+article {
+    margin-bottom: 100px;
 }
-.description-container {
-    padding: 1.0rem;
-    text-align: center;
-    font-size: 1.5em;
-}
+
 
 .difficulty-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-bottom: 2rem;
+    padding-bottom: 2em;
+}
+
+header{
+    overflow: hidden;
+}
+
+/*
+=====================
+Root
+=====================
+ */
+#root {
+    height: 100%;
+}
+
+ul{
+    margin: 2px;
+}
+ul li{
+    display: inline;
+}
+
+li{
+    margin-right: 20px;
+    margin-left: 20px;
+    border: 0.5px solid white;
+}
+li:hover {
+    cursor: pointer;
+    border: 0.5px solid #8da74d;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+/* Shakes on mouseover */
+nav a:hover {
+    animation:  shake 0.8s;
+}
+
+@keyframes shake{
+    0%{
+        transform: translateX(0)
+    }
+    25%{
+        transform: translateX(15px);
+    }
+    50%{
+        transform: translateX(-15px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+
+/* Aligns the main header navigation content */
+.column{
+    float: left;
+    align-content: space-between;
+}
+
+.left {
+    width: 35%;
+    align-content: flex-end;
+}
+.middle {
+    width: 45%;
+    float: left;
+    align-content: flex-start;
+}
+.right {
+    width: 20%;
+    float: left;
+    align-content: flex-start;
+}
+
+.text-column {
+    column-gap: 100px;
+    column-count: 2;
+    column-span: 2;
+    margin-bottom: 40px;
+}
+
+
+.row:after {
+    display: table;
+    clear: both;
+}
+
+nav{
+    font-size: 2em;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header div.parent{
+    position: relative;
+}
+nav.header{
+    border-top: 0.5px solid #8da74d;
+    border-bottom: 0.5px solid #8da74d;
+}
+.column a{
+    z-index: 99;
+}
+
+a{
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+a h1{
+    font-size: 1.5em;
+}
+
+/*
+=====================
+Impressum
+=====================
+ */
+
+img.banner {
+    margin: auto;
+    display: block;
+}
+
+/* Impression Class */
+a.impressumClass {
+    font-size: 2em;
+}
+/*
+=====================
+lexicon
+=====================
+ */
+.lexicon {
+    font-size: 1.8em;
+}
+.lexicon article {
+    display: none;
+    margin: 0 auto;
+    font-size: 1.8em;
+}
+.lexicon .parent{
+    display: block;
+
+}
+
+.lexicon a:hover{
+    animation:  shake 0.8s;
+}
+.lexicon .row{
+    justify-content: center;
+    display: flex;
+}
+.lexicon .explanationLink  {
+margin-top: 12px;
+}
+
+.lexicon.explanationLing a{
+    padding-top: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1em;
+}
+
+@keyframes animate {
+    0%{
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px,-20px);
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(45deg) translate(20px,20px);
+    }
+}
+
+.fade-out{
+    animation: fade_out_an 3s;
+}
+
+@keyframes fade_out_an {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 5;
+    }
+    100%{
+        opacity: 10;
+    }
+}
+.fade-in{
+    animation: fade_in_an 3s;
+}
+
+@keyframes fade_in_an {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 5;
+    }
+    100%{
+        opacity: 10;
+    }
+}
+
+.parent {
+    margin-top: 1%;
+    margin-left: 20%;
+    margin-right: 5%;
+    padding-bottom: 50px;
+    z-index: 1;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    z-index: 1;
+}
+
+.column {
+    flex-basis: 50%;
+    display: flex;
+    flex-flow:wrap column;
+    z-index: 1;
+}
+
+
+
+
+
+@media screen and (max-height: 600px) {
+    body {
+    }
+
+}
+
+/* If screen is >= 1080px */
+@media screen and (min-width: 1080px) {
+    .app{
+        display: block;
+    }
+    .parent.home{
+        padding-left: 28%;
+        padding-right: 30%;
+        margin-left: 18%;
+        margin-top: 1%;
+        align-content: center;
+    }
+    .column {
+        flex: 1;
+        margin-bottom: 0;
+        padding-top: 0;
+    }
+    .column img {
+        max-width: 20%;
+        height: auto;
+    }
+    .background-set
+    {
+        top: 5%;
+    }
+    .border{
+        display: none;
+    }
+}
+
+/* If screen is <= 952px */
+@media screen and (max-width: 952px) {
+    .parent.home {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 5%;
+        margin-right: 0;
+    }
+    .column{
+        flex-basis: available;
+    }
+}
+.background-set
+{
+    padding-left: 10%;
+    padding-right: 10%;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+
+.bg::before {
+    content: "";
+    z-index: 100;
+    opacity: 0.9;
+}
+.bg{
+    background-image:  url("../../pictures/granz_wide.png");
+    position: fixed;
+    height: 600px;
+    max-width: 100%;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.potato{
+    left: 10px;
+    bottom: 0;
+    max-height: 65%;
+    position: fixed;
+    z-index: 10;
+}
+
+.border::after{
+    content: "";
+    z-index: 100;
+}
+.border{
+    position: absolute;
+background: url("../../images/Klammer-Slider_transp.png")  top no-repeat;
+}
+
+.root{
+    max-width: 2000px;
+}
+
+.text-box{
+    background: rgba(255, 255, 255, 0.8);
+    margin-top: 100px;
+    border-radius: 150px;
+    box-shadow: 0 30px 30px 10px rgba(167, 214, 30, 0.5);
+    z-index: -100;
+
 }

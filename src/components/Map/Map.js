@@ -87,7 +87,12 @@ class Map extends Component {
             let cardValue = selectedLevel.cards[card];
 
             const currentValue = names.find(element => element.name === cardValue);
-            positions.push({ x: 0, y: 0, draggable: true, left: retrievedX + retrievedWidth * currentValue.mapX /100, top: retrievedY + retrievedHeight * currentValue.mapY /100, picture: currentValue.image_paths[0],sounds: [currentValue.sounds[3],currentValue.sounds[4]] });
+            positions.push({ x: 0, y: 0,
+                draggable: true, left: retrievedX + retrievedWidth * currentValue.mapX /100,
+                top: retrievedY + retrievedHeight * currentValue.mapY /100,
+                picture: currentValue.image_paths[0],
+                sounds: [currentValue.sounds[3],
+                    currentValue.sounds[4]] });
         }
 
         this.setState({
@@ -249,33 +254,37 @@ class Map extends Component {
                 <GameHeader difficulty={this.props.difficulty} gameStatus={this.state.status} counter={this.props.counter} onReset={() => location.reload() } />
                 <Overlay display={this.state.overlay} explanation={this.state.explanation} image={this.state.image} buttonName={this.state.buttonName} stop={() => this.setOverlay(false, [], null, "")}></Overlay>
 
-                <div className="content">
+                    <div className={"content"}>
                     {
                         this.state.position.map(function (d, idx) {
                             return (
-                                <div key={idx} className="fruit" style={{ display: position[idx].draggable ? "block" : "none", width: fruitSize, height: fruitSize, backgroundColor: "rgb(255, 255, 255, 0.4)", position: "absolute", top: position[idx].top, left: position[idx].left }}></div>
+                                <div key={idx} className="fruit" style={
+                                    { display: position[idx].draggable ? "block" : "none",
+                                        width: fruitSize,
+                                        height: fruitSize,
+                                        backgroundColor: "rgb(255, 255, 255, 0.4)",
+                                        position: "absolute",
+                                        top: position[idx].top,
+                                        left: position[idx].left } }></div>
                             )
                         })}
-
-
-                    <div className="game">
-                        <img src={worldmap} ref={reference.mapSize} style={mapWidth}></img>
-                        {
+                        <img className={"map"} src={worldmap} ref={reference.mapSize} style={mapWidth}></img>
+                                {
                             this.state.position.map(function (d, idx) {
                                 return (
-                                    <Draggable key={idx} onDrag={(e, ui) => reference.handleDrag(e, ui, idx)} onStart={() => position[idx].draggable ? reference.onStart : false} onStop={(e, ui) => reference.onStop(e, ui, idx)}>
-                                        <div style={{ position: "absolute", top:reference.mapSize.current.offsetTop+ 80*idx, left: reference.mapSize.current.offsetLeft -100 }}>
+                                    <Draggable key={idx} onDrag={(e, ui) => reference.handleDrag(e, ui, idx)} onStart={() => position[idx].draggable ? reference.onStart : false}
+                                               onStop={(e, ui) => reference.onStop(e, ui, idx)}>
+
+                                        <div style={
+                                            { position: "absolute",
+                                                top:reference.mapSize.current.offsetTop+ 80*idx,
+                                                left: reference.mapSize.current.offsetLeft -100 }
+                                        }>
                                             <img className="fruit" src={window.location.origin + position[idx].picture} style={{ width: fruitSize, height: fruitSize }}></img>
                                         </div>
                                     </Draggable>
                                 )
                             })}
-
-
-
-                    </div>
-
-
                 </div>
             </React.Fragment>
         );

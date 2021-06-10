@@ -1,12 +1,33 @@
-.header {
-    font-size: 1rem;
+.app header {
+    font-size: 1em;
+}
+.explanation::before {
 }
 .explanation {
-    background-color: white;
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    top: 20%;
+    padding-bottom: 220px;
+}
+.explanation .parent {
+    padding-top: 5%;
+}
+
+.bubbles::before{
+    content: url("../../images/circles.svg") ;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: auto;
+    width: 100%;
+    opacity: 0.3;
+    z-index:-3;
+}
+
+
+.description-container {
+    width: auto;
+    z-index: 1;
 }
 
 .cardItem {
@@ -21,22 +42,30 @@
 
 
 .cardOverview {
-    width: 700px;
+    width: 500px;
     display: flex;
+    max-width: 5500px;
     flex-flow: wrap ;
     justify-content: space-evenly;
+    z-index:1;
 }
 
-
 .explanationLink {
-    margin: 30px;
+    z-index:1;
 }
 
 .explanationLink a {
-    font-size: 2rem;
+    font-size: 2em;
     color: #3e6f2d;
     border-radius: 15px;
     padding: 20px;
+    background-color: rgba(255,255,255,0.6);
+    align-content: space-around;
+}
+
+div.explanationLink.homeButton a{
+    display: inline;
+    flex-shrink:1;
 }
 
 .explanationLink a:hover {
@@ -59,11 +88,12 @@ li:hover {
 ul {
     list-style-type: none;
 }
-    
+
 .centerText {
-    font-size: 1.5rem;
+    font-size: 1.5em;
     border-radius: 15px;
     color:#3e6f2d;
+    border: 2px solid;
     text-align: center;
 }
 
