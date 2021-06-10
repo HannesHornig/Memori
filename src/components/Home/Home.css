@@ -32,7 +32,9 @@ article {
     padding-bottom: 2em;
 }
 
-
+header{
+    overflow: hidden;
+}
 
 /*
 =====================
@@ -123,6 +125,9 @@ nav{
     flex-wrap: wrap;
 }
 
+header div.parent{
+    position: relative;
+}
 nav.header{
     border-top: 0.5px solid #8da74d;
     border-bottom: 0.5px solid #8da74d;
@@ -172,6 +177,7 @@ lexicon
     display: block;
 
 }
+
 .lexicon a:hover{
     animation:  shake 0.8s;
 }

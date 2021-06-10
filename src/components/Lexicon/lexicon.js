@@ -18,14 +18,14 @@ const lexicon = () => (
                         {
                             lexi.lexicon.map((lexiItem, i) => (
                                 <a onClick={function (e) {
-                                    showElement(lexiItem.ID)}}>{lexiItem.title}</a>
+                                    showElement(lexiItem.name)}}>{lexiItem.title}</a>
                             ))
                         }
                                 </div>
                     <div className={"container"}>
                         {
                             lexi.lexicon.map((lexiItem, i) => (
-                                <article id={lexiItem.ID}>
+                                <article id={lexiItem.name}>
                                         <h2>{lexiItem.title}</h2>
                                     <p>{parse(lexiItem.text)}</p>
                                 </article>

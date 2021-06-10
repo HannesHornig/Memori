@@ -111,7 +111,7 @@ class Overlay extends React.Component {
                             </div>
                         </div>
                             {this.props.explanation.length > 1 ?
-                                <div>
+                                <div className={"overlay-nav"}>
                                     {this.state.page > 0 ? <a onClick={() => this.decreasePage()}><i className="material-icons" >arrow_back</i></a> : ''}
                                     {this.state.page < this.props.explanation.length - 1 ? <a onClick={() => this.increasePage()}>
                                         <i className="material-icons">arrow_forward</i></a> : ''}
