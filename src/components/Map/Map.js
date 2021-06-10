@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import * as Animated from "animated/lib/targets/react-dom";
 import { connect } from "react-redux";
 import GameHeader from "../GameHeader/GameHeader";
-import Card from "../Card/Card";
 import games from "../../games.json";
 import names from "../../names.json";
 import "./Map.css";
@@ -14,29 +12,21 @@ import resetCounter from "../../actions/resetCounter";
 // import React in our code
 import UIfx from 'uifx';
 import Draggable from 'react-draggable'; // The default
-
-import win from '../../winner.mp3';
-import wrong from '../../wrong.mp3';
+import { Howl } from 'howler';
 import finished from '../../finished.mp3';
 import drop from '../../ablegen.mp3';
 
 import worldmap from "../../pictures/Weltkarte.jpg";
 
+let sound;
 
-const AnimatedCard = Animated.createAnimatedComponent(Card);
-
-const winSound = new UIfx(win);
 
 const finishedSound = new UIfx(finished);
 
 const dropSound = new UIfx(drop,{
-    volume: 0.05, // number between 0.0 ~ 1.0
+    volume: 0.4, // number between 0.0 ~ 1.0
 });
 
-const wrongSound = new UIfx(wrong,
-    {
-        volume: 0.6, // number between 0.0 ~ 1.0
-    });
 
 const widthValue = screen.width * 0.6;
 const fruitSize = screen.width * 0.03;
@@ -91,7 +81,7 @@ class Map extends Component {
         const retrievedHeight = this.mapSize.current.offsetHeight;
         console.log(retrievedWidth, retrievedHeight, retrievedX, widthValue);
         let positions = [];
-        let counter = 0;
+        let counter;
         for (let card in selectedLevel.cards) {
             counter++;
             let cardValue = selectedLevel.cards[card];
@@ -189,6 +179,26 @@ class Map extends Component {
         }
     }
 
+    playSound(soundUri) {
+        this.stopSound();
+        if(soundUri) {
+        sound = new Howl({
+            src: [soundUri]
+        });
+
+        sound.play();
+        }
+    }
+
+    stopSound() {
+        if(sound) {
+            sound.stop();
+            sound = null;
+        }
+
+    }
+
+
     onStop = (e, ui, i) => {
         this.setState({ activeDrags: --this.state.activeDrags });
 
@@ -213,27 +223,23 @@ class Map extends Component {
 
             });
 
-            const correctS = new UIfx(window.location.origin + position.sounds[1],
-                {
-                    volume: 0.6, // number between 0.0 ~ 1.0
-                });
-                correctS.play();
 
-           // winSound.play();
+            this.playSound(window.location.origin + position.sounds[1]);
+
             this.props.incrementCounter();
 
             if (this.checkFinished(positions)) {
-                finishedSound.play();
-                this.props.history.push(`/map/${this.props.difficulty}/finished`);
+                const ref=this;
+                setTimeout(function(){ 
+                    ref.playSound(finished);
+                    ref.props.history.push(`/map/${ref.props.difficulty}/finished`);
+                }, 3000);
             }
         } else if (this.checkBorders(i) == -1) {
             this.props.incrementCounter();
-            const wrongS = new UIfx(window.location.origin + position.sounds[0],
-                {
-                    volume: 0.6, // number between 0.0 ~ 1.0
-                });
-                wrongS.play();
+                this.playSound(window.location.origin + position.sounds[0]);
         } else {
+            this.stopSound();
             dropSound.play();
         }
     };
