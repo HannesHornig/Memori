@@ -28,7 +28,7 @@ const dropSound = new UIfx(drop,{
 });
 
 
-const widthValue = screen.width * 0.6;
+const widthValue = screen.width * 0.55;
 const fruitSize = screen.width * 0.03;
 const mapWidth = {
     'width': widthValue,
@@ -81,7 +81,7 @@ class Map extends Component {
         const retrievedHeight = this.mapSize.current.offsetHeight;
         console.log(retrievedWidth, retrievedHeight, retrievedX, widthValue);
         let positions = [];
-        let counter;
+        let counter=0;
         for (let card in selectedLevel.cards) {
             counter++;
             let cardValue = selectedLevel.cards[card];
@@ -105,6 +105,9 @@ class Map extends Component {
 
 
     handleDrag = (e, ui, i) => {
+        console.log('Event: ', e);
+        //console.log(e.targetTouches[0].Touch.screenX);
+
         // 1. Make a shallow copy of the items
         let positions = [...this.state.position];
         // 2. Make a shallow copy of the item you want to mutate
@@ -115,9 +118,9 @@ class Map extends Component {
         position.draggable = true;
         position.top = position.top,
         position.sounds=position.sounds;
-            position.left = position.left,
-            // 4. Put it back into our array. N.B. we *are* mutating the array here, but that's why we made a copy first
-            positions[i] = position;
+        position.left = position.left,
+        // 4. Put it back into our array. N.B. we *are* mutating the array here, but that's why we made a copy first
+        positions[i] = position;
         // 5. Set the state to our new copy
         this.setState({
             position: positions,
@@ -149,6 +152,8 @@ class Map extends Component {
 
     checkBorders(id) {
         const position = this.state.position;
+        
+        console.log(position[id].x," ",position[id].y);
         for (let i=0; i < position.length; i++) {
             let insight = this.checkBorder(fruitSize, position[i].left, position[i].top, position[id].x, position[id].y);
 
@@ -206,6 +211,7 @@ class Map extends Component {
                     let positions = [...this.state.position];
                     // 2. Make a shallow copy of the item you want to mutate
                     let position = { ...positions[i] };
+
         if (this.checkBorders(i) == 1) {
 
             // 3. Replace the property you're intested in
@@ -237,7 +243,7 @@ class Map extends Component {
             }
         } else if (this.checkBorders(i) == -1) {
             this.props.incrementCounter();
-                this.playSound(window.location.origin + position.sounds[0]);
+            this.playSound(window.location.origin + position.sounds[0]);
         } else {
             this.stopSound();
             dropSound.play();
@@ -264,6 +270,7 @@ class Map extends Component {
                                         height: fruitSize,
                                         backgroundColor: "rgb(255, 255, 255, 0.4)",
                                         position: "absolute",
+                                        zIndex:1,
                                         top: position[idx].top,
                                         left: position[idx].left } }></div>
                             )
@@ -278,7 +285,9 @@ class Map extends Component {
                                         <div style={
                                             { position: "absolute",
                                                 top:reference.mapSize.current.offsetTop+ 80*idx,
-                                                left: reference.mapSize.current.offsetLeft -100 }
+                                                left: reference.mapSize.current.offsetLeft -100,
+                                                zIndex:3    
+                                                 }
                                         }>
                                             <img className="fruit" src={window.location.origin + position[idx].picture} style={{ width: fruitSize, height: fruitSize }}></img>
                                         </div>

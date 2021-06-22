@@ -26,7 +26,7 @@ const lexicon = () => (
                         {
                             lexi.lexicon.map((lexiItem, i) => (
                                 <article id={lexiItem.name}>
-                                        <h2>{lexiItem.title}</h2>
+                                        <h2> {lexiItem.heading?lexiItem.heading+" - "+lexiItem.title:lexiItem.title}</h2>
                                     <p>{parse(lexiItem.text)}</p>
                                 </article>
                                     ))
