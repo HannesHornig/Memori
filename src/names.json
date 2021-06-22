@@ -31,11 +31,11 @@
         "mapX":64,
         "mapY":28,
         "sounds": [
-            "/sounds/Kartoffel 1.mp3",
-            "/sounds/Kartoffel 2.mp3",
-            "/sounds/Kartoffel 3.mp3",
-            "/sounds/Kartoffel Falsch.mp3",
-            "/sounds/Kartoffel Richtig.mp3"
+            "/sounds/Mango 1.mp3",
+            "/sounds/Mango 2.mp3",
+            "/sounds/Mango 3.mp3",
+            "/sounds/Mango Falsch.mp3",
+            "/sounds/Mango Richtig.mp3"
         ],
         "texts": ["Hi, ich bin die Mango.<br> Ich bin eine kugelige Frucht.<br> Wenn ich reif bin, bin von außen grün, gelb oder rot.<br> Oft sogar dreifarbig.<br> Ich wachse an langen Stielen.<br> Wenn ich reif bin, bin von außen grün, gelb oder rot.<br> Oft auch dreifarbig.<br> Ich wachse an riesigen Bäumen, die das ganze Jahr über grün sind.<br> Sie können bis zu 40 Meter hoch werden.",
         "Ich komme ich aus der heutigen Region Assam.<br> Diese Region befindet sich heute in Indien.<br> Genauer gesagt im nordöstlichen Teil von Indien.<br> Die Menschen haben mich dort schon vor über 4 Tausend Jahren angebaut.<br> Sie haben in Büchern ihr Wissen über mich aufgeschrieben.",
