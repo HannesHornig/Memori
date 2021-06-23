@@ -4,7 +4,8 @@
         "image_paths": [
             "/pictures/Kartoffel.jpg",
             "/pictures/Kartoffel_Produkt.jpg",
-            "/pictures/Kartoffel_Pflanze.jpeg"            
+            "/pictures/Kartoffel_Pflanze.jpeg",
+            "/pictures/Kartoffel_Weltkarte.jpeg"            
         ],
         "mapX":29,
         "mapY":47,
@@ -25,8 +26,8 @@
         "image_paths": [
             "/pictures/Mango.jpeg",
             "/pictures/Mango_Produkt.jpg",
-            "/pictures/Mango_Pflanze.jpeg"
-
+            "/pictures/Mango_Pflanze.jpeg",
+            "/pictures/Mango_Weltkarte.jpeg"     
         ],
         "mapX":64,
         "mapY":28,
@@ -47,7 +48,8 @@
         "image_paths": [
             "/pictures/Banane.jpeg",
             "/pictures/Banane_Produkt.jpeg",
-            "/pictures/Banane_Pflanze.jpeg"
+            "/pictures/Banane_Pflanze.jpeg",
+            "/pictures/Banane_Weltkarte.jpeg"
         ],
         "mapX":69,
         "mapY":45,
@@ -68,7 +70,8 @@
         "image_paths": [
             "/pictures/Orange.jpeg",
             "/pictures/Orange_Produkt.jpeg",
-            "/pictures/Orange_Pflanze.jpeg"
+            "/pictures/Orange_Pflanze.jpeg",
+            "/pictures/Orange_Weltkarte.jpeg"
         ],
         "mapX":70,
         "mapY":25,
@@ -89,7 +92,8 @@
         "image_paths": [
             "/pictures/Mais.jpeg",
             "/pictures/Mais_Produkt.jpeg",
-            "/pictures/Mais_Pflanze.jpeg"
+            "/pictures/Mais_Pflanze.jpeg",
+            "/pictures/Mais_Weltkarte.jpeg"
         ],
         "mapX":26,
         "mapY":37,

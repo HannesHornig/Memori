@@ -7,9 +7,13 @@ import Overlay from "../Overlay/Overlay";
 import games from "../../games.json";
 import names from "../../names.json";
 import ReturnBar from "../GameHeader/ReturnBar";
+import UIfx from 'uifx';
 
 
 class Explanation extends Component {
+
+
+
     constructor(props) {
         super(props);
         this._child = React.createRef();
@@ -18,7 +22,7 @@ class Explanation extends Component {
             overlay: false,
             images: [],
             explanation: [],
-            sound: null,
+            sound: null
         };
     }
 
@@ -74,8 +78,11 @@ class Explanation extends Component {
         if (status == 1)
             return (this.memoryFinished())
 
-        if (status == 2)
+        if (status == 2) {
+
+            this.playSound(window.location.origin + "/sounds/Mango_Weltkarte_mit_Musik.mp3");
             return (this.mapFinished())
+        }
     }
 
     /* Set css overflow property */
@@ -137,6 +144,17 @@ class Explanation extends Component {
                     Dann auf ...</p>)
 
     }
+
+    
+    playSound(soundUri) {
+        console.log("play play");
+        if(soundUri) {
+        const sound = new UIfx(soundUri);
+        console.log("play play");
+        sound.play();
+        }
+    }
+
 
     componentDidMount() {
         window.scrollTo(0, 0)
@@ -200,7 +218,7 @@ class Explanation extends Component {
                                                     }] : [{
                                                         title: '',
                                                         text: parse(d.texts[0])
-                                                    }], d.image_paths[status ? 0 : 1], status ? [d.sounds[1], d.sounds[2]] : [d.sounds[0]])}>
+                                                    }], d.image_paths[status ? 3 : 1], status ? [d.sounds[1], d.sounds[2]] : [d.sounds[0]])}>
                                                 <div class="centerText">{d.name}</div>
 
                                                 <img src={window.location.origin + d.image_paths[0]} alt={d.name}/>

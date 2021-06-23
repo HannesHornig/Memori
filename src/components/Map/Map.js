@@ -200,7 +200,6 @@ class Map extends Component {
             sound.stop();
             sound = null;
         }
-
     }
 
 
