@@ -109,7 +109,7 @@
     border: 2px  #7a9d0a solid;
 }
 .game img{
-    position: absolute;
+    position: relative;
 }
 .sideImage{
     height: 100%;
