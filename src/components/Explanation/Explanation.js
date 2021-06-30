@@ -79,7 +79,6 @@ class Explanation extends Component {
             return (this.memoryFinished())
 
         if (status == 2) {
-
             this.playSound(window.location.origin + "/sounds/Mango_Weltkarte_mit_Musik.mp3");
             return (this.mapFinished())
         }
