@@ -49,24 +49,39 @@ class Explanation extends Component {
 
     memoryFinished = () => {
         return (
-            <div>
-                <h2><p>Super!! Du hast alle Drillinge mit {this.props.counter} Versuchen gefunden!</p></h2>
-                <p>Jetzt weißt du Bescheid!</p>
-                <p>Auf der nächsten Seite findest du nochmal alle Früchte.</p>
-                <p>Dort kannst du erfahren, wo sie ursprünglich herkommen.</p>
+            <div className={"description-container text-box"}>
+                <div className={"parent"}>
+                    <div className={"row"}>
+                <h2>Super!! Du hast alle Drillinge mit {this.props.counter} Versuchen gefunden!</h2>
+                    </div>
+                    <div className={"row"}>
+                        <p>
+                Jetzt weißt du Bescheid!<br/>
+                Auf der nächsten Seite findest du nochmal alle Früchte.<br/>
+                Dort kannst du erfahren, wo sie ursprünglich herkommen.</p>
+                    </div>
+                </div>
             </div>
         )
     }
 
     mapFinished = () => {
         return (
-            <div>
-                <h2><p>Du hast es geschafft! Du bist super! </p></h2>
-                <p>Erzähl unsere Geschichten gerne deinen Freund*innen oder deiner Familie.</p>
-                <p>Wir sehen uns bestimmt bald im Supermarkt.</p>
+                <div className={"description-container text-box"}>
+                    <div className={"parent"}>
+                        <div className={"row"}>
+                <h2>Du hast es geschafft! Du bist super! </h2>
+                        </div>
+                        <div className={"row"}>
+            <p>
+                Erzähl unsere Geschichten gerne deinen Freund*innen oder deiner Familie.<br/>
+                Wir sehen uns bestimmt bald im Supermarkt.<br/>
                 <img src="/pictures/mango_schlusspage.png"></img>
-                <p>Achte doch mal darauf, woher ich komme und wer mich anbaut.</p>
-                <p>Bis bald!</p>
+                Achte doch mal darauf, woher ich komme und wer mich anbaut.<br/>
+                Bis bald!<br/>
+            </p>
+                        </div>
+                    </div>
             </div>
         )
     }
