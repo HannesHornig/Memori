@@ -10,7 +10,7 @@ const Impressum = () => (
             <div className={"row"}>
                     <div className={"column"}>
                     <img src={logo}/>
-                    <h2>grenzgänger | forschung & training</h2>
+                    <h2>grenzgänger | bildung im stadtraum e.V.</h2>
                     <p>im Netzwerk Migration in Europa e.V.</p>
                     <p>
                     <h3>grenzgänger | berlin</h3>
@@ -19,7 +19,7 @@ const Impressum = () => (
                     </p>
                     <p>
                         mail@grenzgaenger-berlin.de<br/>
-                        www.grenzgaenger-berlin.de</p>
+                        www.grenzgaenger.net</p>
 
                     <br/>
                 </div>
