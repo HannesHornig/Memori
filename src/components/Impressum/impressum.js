@@ -10,16 +10,16 @@ const Impressum = () => (
             <div className={"row"}>
                     <div className={"column"}>
                     <img src={logo}/>
-                    <h2>grenzgänger | bildung im stadtraum e.V.</h2>
+                    <h2>grenzgänge | bildung im stadtraum e.V.</h2>
                     <p>im Netzwerk Migration in Europa e.V.</p>
                     <p>
-                    <h3>grenzgänger | berlin</h3>
+                    <h3>grenzgänge | berlin</h3>
                     Am Sudhaus 2<br/>
                     12053 Berlin<br/>
                     </p>
                     <p>
                         mail@grenzgaenger-berlin.de<br/>
-                        www.grenzgaenger.net</p>
+                        www.grenzgaenge.net</p>
 
                     <br/>
                 </div>
