@@ -154,7 +154,7 @@ class Explanation extends Component {
             return (<p>Na, weißt du jetzt, welche Frucht wie wächst? Dann auf zum Spiel.</p>)
         if (!textPage && stage == 1)
             return (
-                <p>Klicke auf die Früchte! Sie erzählen dir ihre Geschichte. Na, hast du dir alle Geschichten gemerkt?
+                <p>Klicke auf die Früchte! <br/>Sie erzählen dir ihre Geschichte.<br/> Na, hast du dir alle Geschichten gemerkt?<br/>
                     Dann auf ...</p>)
 
     }

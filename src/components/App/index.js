@@ -36,7 +36,7 @@ const App = () => (
                         <div className={"column"}>
                                 <nav>
                                         <Link to="/lexicon">Erklärungen</Link>
-                                        <Link to="/ueber">Über das Spie</Link>
+                                        <Link to="/ueber">Über das Spiel</Link>
                                         <Link to="/impressum" >Impressum</Link>
                                 </nav>
                         </div>
