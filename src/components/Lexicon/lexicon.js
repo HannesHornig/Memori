@@ -11,7 +11,7 @@ const lexicon = () => (
             <div className="lexicon" style={{display: "block"}}>
                 <div className={"parent"}>
                     <div className={"row"}>
-                        <h1>Erklärungen</h1>
+                        <p>Erklärungen</p>
                     </div>
 
                     <div className={"row"}>
@@ -22,7 +22,7 @@ const lexicon = () => (
                             ))
                         }
                                 </div>
-                    <div className={"container"}>
+                    <div className={"row"}>
                         {
                             lexi.lexicon.map((lexiItem, i) => (
                                 <article id={lexiItem.name} >
