@@ -21,14 +21,14 @@ const lexicon = () => (
                                     showElement(lexiItem.name)}}>{lexiItem.title}</a>
                             ))
                         }
-                                </div>
+                    </div>
                     <div className={"row"}>
                         {
                             lexi.lexicon.map((lexiItem, i) => (
-                                <article id={lexiItem.name} >
+                                <div className={"row"} id={lexiItem.name} style={{display:"none"}}>
                                         <h2> {lexiItem.heading?lexiItem.heading+" - "+lexiItem.title:lexiItem.title}</h2>
                                     <p>{parse(lexiItem.text)}</p>
-                                </article>
+                                </div>
                                     ))
                         }
                             </div>
