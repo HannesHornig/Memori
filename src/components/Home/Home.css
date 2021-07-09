@@ -166,12 +166,12 @@ lexicon
 =====================
  */
 .lexicon {
-    font-size: 1.8em;
+    font-size: 1.4em;
 }
-.lexicon article {
+lexicon {
     display: none;
     margin: 0 auto;
-    font-size: 1.8em;
+    font-size: 0.8em;
 }
 .lexicon .parent{
     display: block;
@@ -227,6 +227,7 @@ margin-top: 12px;
 }
 .fade-in{
     animation: fade_in_an 3s;
+    font-size: 0.6em;
 }
 
 @keyframes fade_in_an {
