@@ -22,7 +22,7 @@ const lexicon = () => (
                             ))
                         }
                     </div>
-                    <div className={"row"}>
+                    <div className={"row lexi-content"}>
                         {
                             lexi.lexicon.map((lexiItem, i) => (
                                 <div className={"row"} id={lexiItem.name} style={{display:"none"}}>
