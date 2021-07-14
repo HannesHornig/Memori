@@ -14,8 +14,9 @@ const Impressum = () => (
                     <p>
                     Am Sudhaus 2<br/>
                     12053 Berlin<br/>
-                    mail@grenzgaenger-berlin.de<br/>
-                    www.grenzgaenge.net</p>
+                    <a href="mailto:mail@grenzgaenger-berlin.de">mail@grenzgaenger-berlin.de</a> <br/>
+                    <a href="https://grenzgaenge.net">www.grenzgaenge.net</a>
+                    </p>
                         <img src={logo}/>
                     <br/>
                
