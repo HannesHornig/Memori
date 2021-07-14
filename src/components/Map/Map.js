@@ -105,7 +105,7 @@ class Map extends Component {
 
 
     handleDrag = (e, ui, i) => {
-        console.log('Event: ', e);
+        //console.log('Event: ', e);
         //console.log(e.targetTouches[0].Touch.screenX);
 
         // 1. Make a shallow copy of the items
@@ -184,14 +184,18 @@ class Map extends Component {
         }
     }
 
-    playSound(soundUri) {
+
+    playSound(soundUri,onend) {
         this.stopSound();
         if(soundUri) {
         sound = new Howl({
-            src: [soundUri]
+            src: [soundUri],
+            onend: onend
         });
 
         sound.play();
+
+        return sound;
         }
     }
 
@@ -229,17 +233,19 @@ class Map extends Component {
             });
 
 
-            this.playSound(window.location.origin + position.sounds[1]);
-
             this.props.incrementCounter();
+            const ref=this;
 
-            if (this.checkFinished(positions)) {
-                const ref=this;
-                setTimeout(function(){ 
+ 
+            const onFinished = function() {
+            if (ref.checkFinished(positions)) {
                     ref.playSound(finished);
                     ref.props.history.push(`/map/${ref.props.difficulty}/finished`);
-                }, 3000);
             }
+        }
+
+        this.playSound(window.location.origin + position.sounds[1],onFinished);
+
         } else if (this.checkBorders(i) == -1) {
             this.props.incrementCounter();
             this.playSound(window.location.origin + position.sounds[0]);
